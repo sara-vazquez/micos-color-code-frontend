@@ -56,6 +56,11 @@
         --space-card: 24px;
         --space-body: 20px;   /* h + body / body + body */
         --space-button: 16px; /* h/body + button / buttons */
+
+        /* ⚙️ Border radius */
+        --border-radius-button: 50px;
+        --border-radius-card: 12px;
+        --border-radius-img: 8px;
       }
       
   }

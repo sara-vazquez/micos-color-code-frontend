@@ -1,4 +1,6 @@
-@import "./variables.css";
+@import "./components/styles/Variables.css";
+
+
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;

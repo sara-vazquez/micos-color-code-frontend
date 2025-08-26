@@ -1,65 +1,81 @@
 # MICOS COLOR CODE
 ```mermaid
-
 flowchart TD
-    A[HOME] --> B[PERFIL - Acceso]
-    A --> C[Que es Micos Color Code]
-    A --> D[Que es el daltonismo]
-    A --> E[Materiales para imprimir]
-    A --> F[Entrar a jugar]
-    A --> G[Zona adultos]
+    A[Inicio - Landing Page] --> B{Usuario autenticado?}
     
-    B --> B1[Login Form]
-    B --> B2[User Dashboard]
-    B --> B3[Profile Settings]
+    B -->|No| C[Página de Login]
+    B -->|Sí| D[Dashboard Principal]
     
-    C --> C1[Informacion del proyecto]
-    C --> C2[Paso a paso]
+    C --> C1[Formulario Login]
+    C1 --> C2{Credenciales válidas?}
+    C2 -->|No| C3[Mostrar error]
+    C3 --> C1
+    C2 -->|Sí| D
     
-    D --> D1[Explicacion daltonismo]
-    D --> D2[Tipos de daltonismo]
+    D --> E[¿Qué es Micos Color Code?]
+    D --> F[¿Qué es el daltonismo?]
+    D --> G[Materiales para imprimir 🖨️]
+    D --> H[Entrar a jugar 🎮]
+    D --> I[Zona adultos - Botón flotante]
     
-    E --> E1[Listado de recursos PDF]
-    E1 --> E2[Marcadores universales]
-    E1 --> E3[Poster del sistema]
-    E1 --> E4[Animalario]
+    E --> E1[Página informativa]
+    E1 --> D
     
-    F --> F1[Selector de juego]
-    F1 --> F2[Juego 1: Memory cards]
-    F2 --> F3[Seleccion de nivel]
-    F2 --> F4[Interface de juego]
-    F2 --> F5[Pantalla de resultados]
-    F2 --> F6[Historial puntuaciones]
+    F --> F1[Página educativa sobre daltonismo]
+    F1 --> D
     
-    G --> G1[Consejos de uso con niños]
-    G --> G2[Contacto / Feedback]
-    G1 --> G3[Guia pedagogica]
-    G1 --> G4[Recomendaciones por edad]
-    G2 --> G7[Sistema de feedback]
+    G --> G1[Lista de recursos PDF]
+    G1 --> G2{Seleccionar PDF}
+    G2 --> G3[Descargar/Ver PDF]
+    G3 --> G1
+    G1 --> D
     
-    classDef homeStyle fill:#FFFCFC,stroke:#333,stroke-width:3px
-    classDef gameStyle fill:#F5F7FF,stroke:#333,stroke-width:1px
-    classDef infoStyle fill:#FFF5CC,stroke:#333,stroke-width:1px
-    classDef resourceStyle fill:#FFECEA,stroke:#333,stroke-width:1px
-    classDef adultStyle fill:#FFFCFC,stroke:#333,stroke-width:1px
-    classDef profileStyle fill:#FFFCFC,stroke:#333,stroke-width:1px
+    H --> H1[Selector de juego]
+    H1 --> H2[Memory Cards]
+    H2 --> H3[Pantalla de juego]
+    H3 --> H4{Juego terminado?}
+    H4 -->|No| H3
+    H4 -->|Sí| H5[Pantalla de resultados]
+    H5 --> H6{Jugar de nuevo?}
+    H6 -->|Sí| H3
+    H6 -->|No| H1
+    H1 --> D
     
-    class A homeStyle
-    class F,F1,F2,F3,F4,F5,F6 gameStyle
-    class D,D1,D2 infoStyle
-    class E,E1,E2,E3,E4 resourceStyle
-    class G,G1,G2,G3,G4,G7 adultStyle
-    class B,B1,B2,B3,C,C1,C2 profileStyle
+    I --> I1{Seleccionar opción}
+    I1 --> I2[Consejos de uso con niños]
+    I1 --> I3[Contacto/Feedback]
+    
+    I2 --> I4[Modal de consejos]
+    I4 --> D
+    
+    style A fill:#244790,stroke:#FFFFFF,stroke-width:2px,color:#FFFFFF
+    style D fill:#244790,stroke:#FFFFFF,stroke-width:2px,color:#FFFFFF
+    style C fill:#244790,stroke:#FFFFFF,stroke-width:2px,color:#FFFFFF
+    style C1 fill:#244790,stroke:#FFFFFF,stroke-width:2px,color:#FFFFFF
+    style C3 fill:#244790,stroke:#FFFFFF,stroke-width:2px,color:#FFFFFF
+    style E1 fill:#244790,stroke:#FFFFFF,stroke-width:2px,color:#FFFFFF
+    style F1 fill:#244790,stroke:#FFFFFF,stroke-width:2px,color:#FFFFFF
+    style G1 fill:#244790,stroke:#FFFFFF,stroke-width:2px,color:#FFFFFF
+    style G3 fill:#244790,stroke:#FFFFFF,stroke-width:2px,color:#FFFFFF
+    style H1 fill:#244790,stroke:#FFFFFF,stroke-width:2px,color:#FFFFFF
+    style H2 fill:#244790,stroke:#FFFFFF,stroke-width:2px,color:#FFFFFF
+    style H3 fill:#244790,stroke:#FFFFFF,stroke-width:2px,color:#FFFFFF
+    style H5 fill:#244790,stroke:#FFFFFF,stroke-width:2px,color:#FFFFFF
+    style I4 fill:#244790,stroke:#FFFFFF,stroke-width:2px,color:#FFFFFF
+    
+    style B fill:#FFECEA,stroke:#EB5200,stroke-width:2px,color:#EB5200
+    style C2 fill:#FFECEA,stroke:#EB5200,stroke-width:2px,color:#EB5200
+    style G2 fill:#FFECEA,stroke:#EB5200,stroke-width:2px,color:#EB5200
+    style H4 fill:#FFECEA,stroke:#EB5200,stroke-width:2px,color:#EB5200
+    style H6 fill:#FFECEA,stroke:#EB5200,stroke-width:2px,color:#EB5200
+    style I1 fill:#FFECEA,stroke:#EB5200,stroke-width:2px,color:#EB5200
+    
+    style E fill:#99B2E6,stroke:#142852,stroke-width:2px,color:#142852
+    style F fill:#99B2E6,stroke:#142852,stroke-width:2px,color:#142852
+    style G fill:#99B2E6,stroke:#142852,stroke-width:2px,color:#142852
+    style H fill:#99B2E6,stroke:#142852,stroke-width:2px,color:#142852
+    style I fill:#99B2E6,stroke:#142852,stroke-width:2px,color:#142852
+    style I2 fill:#99B2E6,stroke:#142852,stroke-width:2px,color:#142852
+    style I3 fill:#99B2E6,stroke:#142852,stroke-width:2px,color:#142852
 
 ```
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

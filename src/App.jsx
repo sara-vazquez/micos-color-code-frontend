@@ -1,6 +1,6 @@
 import React from 'react'
 import Button from './components/buttons/Button'
-
+import "./components/styles/Variables.css";
 import './App.css'
 
 function App() {

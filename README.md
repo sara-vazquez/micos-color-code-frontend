@@ -1,4 +1,6 @@
 # MICOS COLOR CODE
+
+## User flow
 ```mermaid
 flowchart TD
     A[Inicio - Landing Page] --> B{Usuario autenticado?}

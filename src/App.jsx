@@ -5,6 +5,8 @@ import './App.css'
 import FeedbackButton from './components/feedbackButtons/FeedbackButton';
 import ScrollUpButton from './components/scrollUpButtons/ScrollUpButton';
 import LetsPlayButton from './components/letsPlayButtons/LetsPlayButton';
+import ResourceButton from './components/resourcesButtons/ResourceButton';
+
 
 function App() {
 
@@ -15,7 +17,7 @@ function App() {
     <FeedbackButton />
     <ScrollUpButton />
     <LetsPlayButton />
-    <Button />
+    <ResourceButton />
     <Button />
     </>
   )

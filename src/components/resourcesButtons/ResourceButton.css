@@ -1,0 +1,12 @@
+.resources {
+    height: 210px;
+    width: 210px;
+    border-radius: var(--border-radius-card);
+    border: none;
+    background-color: #CC0004;
+    color: var(--white);
+    font-family: var(--font-family);
+    font-size: var(--h2-size);
+    font-weight: var(--h2-weight);
+
+}

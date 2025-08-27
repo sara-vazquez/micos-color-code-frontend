@@ -1,0 +1,11 @@
+.lets-play {
+    height: 260px;
+    width: 260px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--primary-300);
+    color: var(--primary-500);
+    font-family: var(--font-family);
+    font-size: var(--h1-size);
+    font-weight: var(--h1-weight);
+}

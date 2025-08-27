@@ -16,7 +16,7 @@
 
 }
 
-  .feedback {
+.feedback {
   position: absolute;
   top: 8px;
   left: 8px;
@@ -31,5 +31,5 @@
   color: var(--primary-500);
   cursor: pointer;
   font-size: var(--button-size);
-  }
+}
   

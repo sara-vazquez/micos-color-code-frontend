@@ -1,0 +1,15 @@
+.scroll-up{
+    background-color: var(--secondary-400);
+    border-radius: 50%;
+    height: 48px;
+    width: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+.faArrowUp{
+    color: var(--primary-50);
+    font-size: var(--h1-size);
+}

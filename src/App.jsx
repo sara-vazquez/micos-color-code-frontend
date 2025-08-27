@@ -3,6 +3,7 @@ import Button from './components/buttons/Button'
 import "./components/styles/Variables.css";
 import './App.css'
 import FeedbackButton from './components/feedbackButtons/FeedbackButton';
+import ScrollUpButton from './components/scrollUpButtons/ScrollUpButton';
 
 function App() {
 
@@ -11,7 +12,7 @@ function App() {
     <Button variant="primary">ACEPTAR</Button>
     <Button variant="secondary">CANCELAR</Button>
     <FeedbackButton />
-    <Button />
+    <ScrollUpButton />
     <Button />
     <Button />
     <Button />

@@ -6,6 +6,7 @@ import FeedbackButton from './components/feedbackButtons/FeedbackButton';
 import ScrollUpButton from './components/scrollUpButtons/ScrollUpButton';
 import LetsPlayButton from './components/letsPlayButtons/LetsPlayButton';
 import ResourceButton from './components/resourcesButtons/ResourceButton';
+import DaltonicButton from './components/daltonicButtons/DaltonicButton';
 
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
     <ScrollUpButton />
     <LetsPlayButton />
     <ResourceButton />
-    <Button />
+    <DaltonicButton />
     </>
   )
 }

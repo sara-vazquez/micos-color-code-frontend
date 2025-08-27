@@ -11,6 +11,7 @@
   .btn-primary {
     background-color: var(--primary-400);
     color: var(--white);
+    border: none;
   }
   
   .btn-secondary {

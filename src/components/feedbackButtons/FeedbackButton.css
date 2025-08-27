@@ -1,0 +1,35 @@
+.feedback-wrapper {
+    position: relative;
+    width: 64px;
+    height: 64px;
+}
+
+.wavy-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--secondary-400);
+  -webkit-mask: url("/help-01.svg") center/contain no-repeat;
+  mask: url("/help-01.svg") center/contain no-repeat;
+
+}
+
+  .feedback {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  color: var(--primary-500);
+  cursor: pointer;
+  font-size: var(--button-size);
+  }
+  

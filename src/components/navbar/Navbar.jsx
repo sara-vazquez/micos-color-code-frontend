@@ -3,6 +3,8 @@ import './Navbar.css';
 import Logo from '../../assets/micosLogo.svg';
 import Menu from './Menu';
 import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faCircleUser } from "@fortawesome/free-regular-svg-icons";
 
 
 export default function Navbar() {
@@ -16,8 +18,12 @@ export default function Navbar() {
                     </Link>
                 </div>
                 <div className="navbar__buttons">
-                <Profile to="/profile" className="profile__button"/>
-                <Menu className="menu__button"/>
+                <Link to="/profile" className="profile__button">
+                    <FontAwesomeIcon icon={faCircleUser} />
+                </Link>
+                <button className="menu__button">
+                    <FontAwesomeIcon icon={faBars}/>
+                </button>
                 </div>
             </div>
         </header></>

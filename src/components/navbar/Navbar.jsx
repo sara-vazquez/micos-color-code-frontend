@@ -1,10 +1,10 @@
 import React from 'react';
 import './Navbar.css';
 import Logo from '../../assets/micosLogo.svg';
-import Menu from './Menu';
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faCircleUser } from "@fortawesome/free-regular-svg-icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faCircleUser } from "@fortawesome/free-regular-svg-icons";
 
 
 export default function Navbar() {
@@ -26,6 +26,7 @@ export default function Navbar() {
                 </button>
                 </div>
             </div>
-        </header></>
+        </header>
+        </>
     );
 }

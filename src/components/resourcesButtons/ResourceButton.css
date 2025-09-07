@@ -8,5 +8,9 @@
     font-family: var(--font-family);
     font-size: var(--h2-size);
     font-weight: var(--h2-weight);
+    position: absolute;
+    top: 212px;
+    left: 12px;
+    transform: rotate(25deg);
 
 }

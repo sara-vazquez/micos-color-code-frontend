@@ -13,4 +13,8 @@
     justify-content: center;
     -webkit-mask: url("/daltonic-01.svg") center/contain no-repeat;
     mask: url("/daltonic-01.svg") center/contain no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(15deg);
 }

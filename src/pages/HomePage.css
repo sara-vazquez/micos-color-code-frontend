@@ -2,6 +2,25 @@
     background-color: var(--white);
 }
 
+.homepage__intro {
+    margin-top: var(--space-card);
+    margin-bottom: var( --space-section);
+}
+
+.homepage_title-h1 {
+    font-family: var(--font-family);
+    font-size: var(--h1-size);
+    color: var(--primary-500);
+    margin-bottom: var( --space-body);
+}
+
+.homepage__text {
+    color: var(--primary-500);
+    font-family: var(--font-family);
+    font-size: var(--body-size);
+    margin-bottom: var( --space-button) ;
+}
+
 .buttons__container {
     position: relative;
     width: 100%;

@@ -14,15 +14,17 @@ export default function SystemPage() {
     return(
         <>
         <Navbar />
-        <div className="system__intro">
+        <div className="system__container">
             <h1 className="system__title">Micos, el sistema</h1>
             <p className="system__text">MICOS color code es un proyecto social con vocación inclusiva enfocado hacia un <strong>público infantil de entre 3 y 8 años con daltonismo dicromático</strong>. El fin de MICOS es facilitar a niños y niñas con esta alteración visual el <strong>aprendizaje de los colores de forma lúdica y aumentativa</strong> a partir de las tres figuras básicas (círculo, triángulo y cuadrado) y la superposición de estas, asociándolas a un color.</p>
-            <img src={sistema} alt={sistema} className="system__image" />
+            <div className="system-img__container">
+                <img src={sistema} alt={sistema} className="system__image" />
+            </div>
         </div>
-        <div className="system__body">
+        <div className="system__container">
             <h2 className="system_h2">Paso a paso</h2>
             <p className="system_text">Con este sistema conseguimos representar 21 tonos, los colores primarios, secundarios, colores claros y oscuros. Estos últimos se logran con la suma del blanco o el negro.</p>
-            <div className="system__descriptions">
+            <div className="system__container">
                 <h3 className="system__h3">Colores primarios</h3>
                 <div className="system-img__container">
                     <img src={coloresPrimarios} alt={coloresPrimarios} className="system__primary-colors" />

@@ -1,0 +1,5 @@
+.profile__title {
+    font-family: var(--font-family);
+    font-size: var(--h1-size);
+    color: var(--primary-500);
+}

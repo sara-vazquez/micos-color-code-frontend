@@ -14,6 +14,7 @@ export default function HomePage() {
         <Navbar />
         <Button variant="primary">Saber más →</Button>
         <FeedbackButton />
+      
         <div className="buttons__container">
             <LetsPlayButton />
             <ResourceButton />

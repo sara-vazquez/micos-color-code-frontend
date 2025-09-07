@@ -2,6 +2,10 @@
     position: relative;
     width: 64px;
     height: 64px;
+    position: fixed;
+    bottom:100px;
+    right: 12px;
+    z-index: 1000;
 }
 
 .wavy-background {
@@ -13,7 +17,6 @@
   background: var(--secondary-400);
   -webkit-mask: url("/help-01.svg") center/contain no-repeat;
   mask: url("/help-01.svg") center/contain no-repeat;
-
 }
 
 .feedback {

@@ -9,6 +9,7 @@
     top: 0;
     position: static;
     z-index: 11;
+    overflow: hidden;
 }
 
 .navbar__container {
@@ -36,6 +37,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    gap: 20px;
 }
 
 .profile__button {

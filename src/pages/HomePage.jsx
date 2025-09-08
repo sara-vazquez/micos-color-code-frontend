@@ -15,10 +15,9 @@ export default function HomePage() {
     const handleClick = () => {
         navigate("/system");
     }
-
     
     return(
-        <>
+        <div className="homepage">
         <Navbar />
         <div className = "homepage__intro">
             <h1 className = "homepage_title-h1">¿Qué es Micos Color Code?</h1>
@@ -35,6 +34,6 @@ export default function HomePage() {
         </div>
         
         <Footer />
-            </>
+            </div>
     )
 }

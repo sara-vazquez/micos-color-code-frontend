@@ -1,0 +1,28 @@
+.daltonism {
+    background-color: var(--light-yellow);
+}
+
+.daltonism__title {
+    font-family: var(--font-family);
+    font-size: var(--h1-size);
+    font-weight: var(--h1-weight);
+    color: var(--primary-500);
+    margin-bottom: var(--space-body);
+}
+
+.daltonism__h2 {
+    font-family: var(--font-family);
+    font-size: var(--h2-size);
+    font-weight: var(--h2-weight);
+    color: var(--primary-500);
+    margin-bottom: var(--space-body);
+}
+
+.daltonism__text {
+    font-family: var(--font-family);
+    font-size: var(--body-size);
+    font-weight: var(--body-weight);
+    color: var(--primary-500);
+    margin-bottom: var(--space-card);
+
+}

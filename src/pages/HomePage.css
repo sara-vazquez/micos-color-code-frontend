@@ -15,6 +15,7 @@
 .homepage_title-h1 {
     font-family: var(--font-family);
     font-size: var(--h1-size);
+    font-weight: var(--h1-weight);
     color: var(--primary-500);
     margin-bottom: var( --space-body);
 }
@@ -23,6 +24,7 @@
     color: var(--primary-500);
     font-family: var(--font-family);
     font-size: var(--body-size);
+    font-weight: var(--body-weight);
     margin-bottom: var( --space-button) ;
 }
 

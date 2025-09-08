@@ -24,6 +24,7 @@ html, body {
 .system__title {
     font-family: var(--font-family);
     font-size: var(--h1-size);
+    font-weight: var(--h1-weight);
     color: var(--primary-500);
     margin-bottom: var(--space-body);
 }
@@ -31,6 +32,7 @@ html, body {
 .system__h2 {
     font-family: var(--font-family);
     font-size: var(--h2-size);
+    font-weight: var(--h2-weight);
     color: var(--primary-500);
     margin-bottom: var(--space-body);
 }
@@ -38,6 +40,7 @@ html, body {
 .system__h3 {
     font-family: var(--font-family);
     font-size: var(--h3-size);
+    font-weight: var(--h3-weight);
     color: var(--primary-500);
     margin-bottom: var(--space-button);
 }
@@ -45,6 +48,7 @@ html, body {
 .system__text {
     font-family: var(--font-family);
     font-size: var(--body-size);
+    font-weight: var(--body-weight);
     color: var(--primary-500);
     margin-bottom: var(--space-body);
 }

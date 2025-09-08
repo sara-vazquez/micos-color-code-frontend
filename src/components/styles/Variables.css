@@ -26,6 +26,10 @@
         --grey: #A6A6A6;
         --black: #1A1A1A;
         --blur: rgba(245, 245, 245, 0.6);
+
+        /* Neutral */
+        --yellow: #FFCC00;
+        --light-yellow: #FFF5CC;
       
         /* ✍️ Typography (Nunito) */
         --font-family: "Nunito", sans-serif;

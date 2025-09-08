@@ -38,29 +38,16 @@
 }
 
 .system-img__container {
+    flex: 1;
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 
 }
 
 .system__image{
-
-}
-
-.system__primary-colors{
-
-}
-
-.system__secondary-colors{
-    
-}
-
-.system__neutral-colors{
-    
-}
-
-.system__dark-colors{
-    
-}
-
-.system__light-colors{
-    
+    width: 100%;
+    height: auto;
+    object-fit: contain;
 }

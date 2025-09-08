@@ -27,27 +27,27 @@ export default function SystemPage() {
             <div className="system__container">
                 <h3 className="system__h3">Colores primarios</h3>
                 <div className="system-img__container">
-                    <img src={coloresPrimarios} alt={coloresPrimarios} className="system__primary-colors" />
+                    <img src={coloresPrimarios} alt={coloresPrimarios} className="system__image" />
                 </div>
                 <p className="system__text">Los colores primarios se representan con las formas básicas, asociándolas a un color determinado según la teoría del color de Kandinsky. Por tanto, el azul es el circulo, el rojo el cuadrado y el amarillo el triangulo.</p>
                 <h3 className="system__h3">Colores secundarios</h3>
                 <div className="system-img__container">
-                    <img src={coloresSecundarios} alt={coloresSecundarios} className="system__secondary-colors" />
+                    <img src={coloresSecundarios} alt={coloresSecundarios} className="system__image" />
                 </div>
                 <p className="system__text">Cuando mezclamos los colores primarios entre ellos, nacen los colores secundarios. Entonces, cuando sumamos el azul y el amarillo obtenemos el verde, un triangulo contenido en un circulo, el amarillo con el rojo suman el naranja, con el triangulo en el interior del cuadrado. Y por último el rojo con el azul forman el púrpura, es decir, un circulo dentro de un cuadrado.</p>
                 <h3 className="system__h3">Colores neutros</h3>
                 <div className="system-img__container">
-                    <img src={coloresNeutros} alt={coloresNeutros} className="system__neutral-colors" />
+                    <img src={coloresNeutros} alt={coloresNeutros} className="system__image" />
                 </div>
                 <p className="system__text">También existen los colores neutros: blanco, negro y gris. Son necesarios para crear nuevos tonos. Estos los representamos con otra forma geométrica: el rectángulo. El gris sería un rectángulo medio relleno, el blanco hueco y el negro con otro rectángulo en su espacio interior.</p>
                 <h3 className="system__h3">Colores oscuros</h3>
                 <div className="system-img__container">
-                    <img src={coloresOscuros} alt={coloresOscuros} className="system__dark-colors" />
+                    <img src={coloresOscuros} alt={coloresOscuros} className="system__image" />
                 </div>
                 <p className="system__text">Los colores oscuros se consiguen sumando el negro al resto de tonalidades. Estos colores se basan en la misma filosofía que utiliza con el negro, rellenando el interior.</p>
                 <h3 className="system__h3">Colores claros</h3>
                 <div className="system-img__container">
-                    <img src={coloresClaros} alt={coloresClaros} className="system__light-colors" />
+                    <img src={coloresClaros} alt={coloresClaros} className="system__image" />
                 </div>
                 <p className="system__text">Los colores claros por su parte, se obtienen añadiendo el blanco. Logramos representarlos también siguiendo la filosofía de este tono, por tanto dejamos los interiores huecos.</p>
             </div>

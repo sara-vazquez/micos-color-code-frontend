@@ -28,9 +28,9 @@ export default function HomePage() {
         <FeedbackButton />
       
         <div className="buttons__container">
-            <LetsPlayButton />
-            <ResourceButton />
-            <DaltonicButton />
+            <LetsPlayButton onClick={handleClick}/>
+            <ResourceButton onClick={handleClick}/>
+            <DaltonicButton onClick={handleClick}/>
         </div>
         
         <Footer />

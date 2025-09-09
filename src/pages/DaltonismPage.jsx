@@ -17,8 +17,22 @@ export default function DaltonismPage() {
             <div className="daltonism__types">
                 <h2 className="daltonism__h2">Tipos de daltonismo</h2>
                 <p className="daltonism__text">Existen diversos tipos de daltonismo reconocidos en la actualidad, en total <strong>8 arquetipos</strong> divididos en tres grandes bloques: <strong>acromático, monocromático y el dicromático.</strong></p>
+                <div className="daltonism__cards">
+                
+                </div>
             </div>
+            <div className="daltonisim__main">
+                <h2 className="daltonism__h2">Daltonismo dicromático. Casos principales</h2>
+                <p className="daltonism__text">Estos son los casos principales del  daltonismo dicromático, de los cuales los más comunes son la <strong> protanopia y la deuteranopia.</strong></p>
+                <div className="daltonism__cards">
+
+                </div>
+            </div>
+            
+            
             <Footer />
         </div>
     )
 }
+
+/* crear cards con tipos de daltonismo */

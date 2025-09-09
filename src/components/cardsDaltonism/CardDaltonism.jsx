@@ -6,7 +6,7 @@ export default function CardDaltonism({ title, text, image }) {
         <>
         <div className='daltonism-card__container'>
             <div className="daltonsim-card__content">
-                <h3 className='daltonism__h3'>{title}</h3>
+                <h3 className='daltonism-card__h3'>{title}</h3>
                 <p className="daltonism-card__text">{text}</p>
             </div>
             <div className="daltonism-card__image">

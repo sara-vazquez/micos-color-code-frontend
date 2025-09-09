@@ -1,24 +1,23 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 html, body {
     width: 100%;
     height: 100%;
 }
 
-:root {
+.system {
     background-color: var(--white);
+    width: 100vw;
+    min-height: 100vh;
+    margin: 0;
+    padding: 12px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    position: relative;
 }
 
 .system__container {
     height: auto;
     width: 100%;
     margin: 0 auto;
-    margin-bottom: var(--space-body);
-    padding: 12px;
 }
 
 .system__title {
@@ -50,7 +49,7 @@ html, body {
     font-size: var(--body-size);
     font-weight: var(--body-weight);
     color: var(--primary-500);
-    margin-bottom: var(--space-body);
+    margin-bottom: var(--space-button);
 }
 
 .system-img__container {

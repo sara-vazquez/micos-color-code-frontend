@@ -12,7 +12,7 @@ import coloresClaros from '../assets/coloresClaros.svg';
 
 export default function SystemPage() {
     return(
-        <>
+        <div className="system">
         <Navbar />
         <div className="system__container">
             <h1 className="system__title">Micos, el sistema</h1>
@@ -53,6 +53,6 @@ export default function SystemPage() {
             </div>
         </div>
         <Footer />
-        </>
+        </div>
     )
 }

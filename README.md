@@ -5,7 +5,7 @@
 flowchart TD
     A[Inicio - Landing Page] --> B{Usuario autenticado?}
     
-    B -->|No| C[Página de Login]
+    B -->|No| C[Página de Log in/Sign in]
     B -->|Sí| D[Dashboard Principal]
     
     C --> C1[Formulario Login]

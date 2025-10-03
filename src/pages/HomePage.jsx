@@ -19,19 +19,19 @@ export default function HomePage() {
     return(
         <div className="homepage">
         <Navbar />
-        <div className = "homepage__intro">
+        <section className = "homepage__intro">
             <h1 className = "homepage_title-h1">¿Qué es Micos Color Code?</h1>
             <p className = "homepage__text">Micos es un sistema visual creado para niños y niñas de entre <strong>3 y 8 años con daltonismo dicromático.</strong> El objetivo es <strong>facilitar el aprendizaje de los colores</strong> mediante formas geométricas y su superposición.
             </p>
             <Button variant="primary" onClick={goToSystem}>Saber más →</Button>
-        </div>
-        <FeedbackButton />
+        </section>
+        <FeedbackButton className="feedback__flying-button"/>
       
-        <div className="buttons__container">
+        <section className="buttons__container">
             <LetsPlayButton />
             <ResourceButton />
             <DaltonicButton onClick={goToDaltonism}/>
-        </div>
+        </section>
         
         <Footer />
             </div>

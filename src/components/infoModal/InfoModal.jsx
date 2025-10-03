@@ -1,9 +1,9 @@
 import React from 'react';
 import './InfoModal.css';
 
-export default function InfoModal() {
+export default function InfoModal({onClose}) {
     return(
-        <div className="info-modal__overlay">
+        <div className="info-modal__overlay" onClick={onClose}>
         <section className="info-modal">
             <article className="info-modal__header">
                 <h2 className="info-modal__subtitle">👋 Bienvenidos a Micos Color Code</h2>

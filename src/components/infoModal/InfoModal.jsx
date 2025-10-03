@@ -3,9 +3,10 @@ import './InfoModal.css';
 
 export default function InfoModal() {
     return(
+        <div className="info-modal__overlay">
         <section className="info-modal">
             <article className="info-modal__header">
-                <h2 className="info-modal__title">👋 Bienvenidos a Micos Color Code</h2>
+                <h2 className="info-modal__subtitle">👋 Bienvenidos a Micos Color Code</h2>
                     <p className="info-modal__body">Esta web está pensada para acompañar a niños y niñas con daltonismo dicromático en el aprendizaje de los colores de una manera <strong>lúdica, visual y sencilla.</strong> Aquí encontraréis juegos, recursos y explicaciones que podéis compartir y disfrutar juntos.</p>
             </article>
             <article classNae="info-modal__content">
@@ -37,5 +38,6 @@ export default function InfoModal() {
                     <p className="info-modal__body">El fin de Micos es <strong>favorecer la inclusión</strong> y dar herramientas gratuitas a las familias para que los niños con daltonismo puedan aprender los colores de manera más <strong>accesible y divertida.</strong></p>
             </article>
         </section>
+        </div>
     )
 }

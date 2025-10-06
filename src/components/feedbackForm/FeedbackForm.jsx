@@ -3,6 +3,7 @@ import './FeedbackForm.css';
 import Button from '../buttons/Button';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { sendFeedback } from '../../services/FeedbackService';
 
 export default function FeedbackForm({onClose}) {
     const [email, setEmail] = useState("");
@@ -22,7 +23,7 @@ export default function FeedbackForm({onClose}) {
                 setStatus("¡Gracias por tu feedback!🤗 ✅");
                 setEmail("");
                 setMessage("");
-        } catch (error) {
+        } catch {
             setStatus("Parece que ha habido un error 😔, inténtalo de nuevo")
         }
     }

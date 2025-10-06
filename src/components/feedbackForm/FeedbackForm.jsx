@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import './FeedbackForm.css';
 import Button from '../buttons/Button';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
-export default function FeedbackForm() {
+export default function FeedbackForm({onClose}) {
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
     const [status, setStatus] = useState(null);
@@ -26,11 +28,14 @@ export default function FeedbackForm() {
     }
 
     return(
-        <div className="feedback-form__overlay">
+        <div className="feedback-form__overlay" onClick={onClose}>
         <form className="feedback-form" onSubmit={handleSubmit}>
             <article className="feedback-form__header">
-                <h2 className='feedback-form__title'>¡Cuéntanos tu experiencia!</h2>
+                <button className="feedback-form__exit">
+                    <FontAwesomeIcon icon={faXmark} onClick={onClose}/>
+                </button>
             </article>
+            <h2 className='feedback-form__title'>¡Cuéntanos tu experiencia!</h2>
             <article className="feedback-form__info">
                 <label className="feedback-form__subtitle">Correo electrónico</label>
                 <input className="feedback-form__input"

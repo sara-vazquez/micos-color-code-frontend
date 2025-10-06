@@ -16,9 +16,12 @@
     background-color: var(--white);
     border-radius: var(--border-radius-card);
     width: 300px;
-    height: 460px;
+    height: auto;
     padding: 24px;
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    z-index: 1300;
 }
 
 .feedback-form__exit {
@@ -38,12 +41,13 @@
     margin-bottom: var(--space-card);
 }
 
-.feedback-title {
+.feedback-form__title {
     font-family: var(--font-family);
     font-size: var(--h2-size);
     font-weight: var(--h2-weight);
     color: var(--primary-500);
-    margin-bottom: var(--space-button);
+    margin-bottom: var(--space-card);
+    margin-top: var(--space-card);
 }
 
 .feedback-form__subtitle {
@@ -55,17 +59,19 @@
 }
 
 .feedback-form__input {
-    height: 28px;
-    width: 200px;
+    height: 32px;
+    width: 280px;
+    padding: 4px 8px;
 }
 
 .feedback-form__textarea-field {
     min-height: 60px;
-    width: 200px;
+    width: 280px;
+    padding: 4px 8px;
 }
 
 .feedback-form__input, .feedback-form__textarea-field {
-    border: solid 1px var(--secondary-500);
+    border: solid 2px var(--secondary-200);
     border-radius: var(--border-radius-img);
     background-color: var(--white);
     color: var(--neutral-500);
@@ -73,6 +79,7 @@
     font-size: var(--body-size);
     font-weight: var(--body-weight);
     margin-bottom: var(--space-card);
+    margin-top: var(--space-button);
 }   
 
 .feedback-form__status {

@@ -11,6 +11,7 @@ export default function FeedbackForm({onClose}) {
     const [status, setStatus] = useState(null);
 
     const handleSubmit = async (e) => {
+        console.log("📩 Enviando feedback...", { email, message });
         e.preventDefault();
 
         if(!message.trim()) {
@@ -30,7 +31,7 @@ export default function FeedbackForm({onClose}) {
 
     return(
         <div className="feedback-form__overlay" onClick={onClose}>
-        <form className="feedback-form" onSubmit={handleSubmit}>
+        <form className="feedback-form" onClick={(e) => e.stopPropagation()} onSubmit={handleSubmit} >
             <article className="feedback-form__header">
                 <button className="feedback-form__exit">
                     <FontAwesomeIcon icon={faXmark} onClick={onClose}/>
@@ -49,7 +50,7 @@ export default function FeedbackForm({onClose}) {
                 
             </article>
             <article className="feedback-form__textarea">
-                <label className="feedback-for__subtitle">¿Qué piensas sobre la web? Aceptamos sugerencias 😋</label>
+                <label className="feedback-form__subtitle">¿Qué piensas sobre la web? Aceptamos sugerencias 😋</label>
                 <textarea className="feedback-form__textarea-field"
                 id="message"
                 value={message}

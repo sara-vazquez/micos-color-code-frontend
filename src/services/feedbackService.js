@@ -9,10 +9,11 @@ export async function sendFeedback({ email, message }) {
       });
   
       if (!response.ok) {
-        throw new Error("Error al enviar el feedback");
+        throw new Error(`Error HTTP ${response.status}`);
       }
+
+      return response.json();
   
-      return await response.json();
     } catch (error) {
       console.error("❌ Error en sendFeedback:", error);
       throw error;

@@ -2,7 +2,7 @@ const API_URL = "http://localhost:8080";
 
 export async function sendFeedback({ email, message }) {
     try {
-      const response = await fetch(`${API_URL}/feedback`, {
+      const response = await fetch(`${API_URL}/api/feedback`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, message }),

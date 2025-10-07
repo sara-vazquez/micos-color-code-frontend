@@ -13,7 +13,7 @@ import Tritanopia from "../assets/tritanopia.png";
 
 export default function DaltonismPage() {
     return(
-        <section className="daltonism">
+        <section className="daltonism" id="top">
             <Navbar />
             <article className="daltonism__intro">
                 <h1 className="daltonism__title">Daltonismo</h1>

@@ -13,6 +13,7 @@
     right: 20px;
     bottom: 160px;
     z-index: 900;
+    text-decoration: none;
 }
 
 .scroll-up:hover {

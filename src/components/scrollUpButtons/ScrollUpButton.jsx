@@ -8,7 +8,7 @@ export default function ScrollUpButton() {
 
     useEffect(() => {
         const toggleVisibility = () => {
-            if(window.pageYOffset > 300) {
+            if(window.pageYOffset > 100) {
                 setIsVisible(true);
             } else{
                 setIsVisible(false);

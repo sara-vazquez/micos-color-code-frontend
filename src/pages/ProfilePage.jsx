@@ -11,10 +11,10 @@ export default function ProfilePage() {
         <header>
             <h1 className="profile__title">¡Hola `${}`</h1>
         </header>
-        <div className="profile__container">
+        <section className="profile__container">
 
         <Button variant = "primary">Guardar</Button>
-        </div>
+        </section>
         <Footer />
         </>
     )

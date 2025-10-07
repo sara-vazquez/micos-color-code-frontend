@@ -8,7 +8,6 @@ export default function ProfilePage() {
         <div className= "login__container">
             <h1 className='login__title'>Regístrate o inicia sesión</h1>
             <Button variant = "primary">Iniciar sesión</Button>
-            <Button variant = "secondary">Iniciar sesión con google</Button>
             <section className="login-checkbox__section"></section>
             <div className="login__checkbox-group">
                 <label className="login__checkbox">

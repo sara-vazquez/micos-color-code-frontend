@@ -1,5 +1,6 @@
 .scroll-up{
     background-color: var(--secondary-400);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
     border-radius: 50%;
     height: 48px;
     width: 48px;
@@ -8,6 +9,14 @@
     justify-content: center;
     border: none;
     cursor: pointer;
+    position: fixed;
+    right: 20px;
+    bottom: 160px;
+    z-index: 900;
+}
+
+.scroll-up:hover {
+    background-color: var(--secondary-200);
 }
 
 .faArrowUp{

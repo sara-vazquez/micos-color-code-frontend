@@ -5,9 +5,7 @@
     margin: 0;
     padding: 12px;
     box-sizing: border-box;
-    overflow-x: hidden;
     position: relative;
-
 }
 
 .daltonism__title {

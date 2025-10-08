@@ -14,7 +14,7 @@ import coloresClaros from '../assets/coloresClaros.svg';
 
 export default function SystemPage() {
     return(
-        <section className="system">
+        <section className="system" id="top">
         <Navbar />
         <section className="system__container">
             <h1 className="system__title">Micos, el sistema</h1>

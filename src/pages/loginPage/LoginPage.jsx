@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import './LoginPage.css';
 import LoginForm from "../../components/loginForm/LoginForm";
 import { useNavigate } from "react-router-dom";
+import { loginUser } from "../../services/authService";
 
 export default function LoginPage() {
     const [loading, setLoading] = useState(false);
@@ -11,13 +12,13 @@ export default function LoginPage() {
     const handleLogin = async (formData) => {
         setLoading(true);
         setError(null);
-
+    
         try {
-            const data = await authService.login(formData);
-            localStorage.setItem('token', data.token);
+            const data = await loginUser(formData);
+            console.log('Usuario logueado:', data);
             navigate('/dashboard');
         } catch (err) {
-            setError(err.message || 'Error al iniciar sesión');
+            setError(err.message);
         } finally {
             setLoading(false);
         }

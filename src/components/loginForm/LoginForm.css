@@ -1,4 +1,4 @@
-.signup-form {
+.login-form {
     background-color: var(--blur);
     height: auto;
     width: 370px;
@@ -9,7 +9,7 @@
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
 }
 
-.signup-form__title {
+.login-form__title {
     font-family: var(--font-family);
     font-size: var(--h1-size);
     font-weight: var(--h1-weight);
@@ -18,7 +18,7 @@
     margin-bottom: var(--space-card);
 }
 
-.signup-form__input-group {
+.login-form__input-group {
     margin-bottom: var(--space-button);
     display: flex;
     flex-direction: column;
@@ -27,21 +27,21 @@
     align-items: left;
 }
 
-.signup-form__input-field {
+.login-form__input-field {
     display: flex;
     flex-direction: column;
     gap: 8px;
     justify-content:left;
 }
 
-.signup-form__label {
+.login-form__label {
     color: var(--primary-500);
     font-family: var(--font-family);
     font-size: var(--button-size);
     font-weight: var(--button-weight);
 }
 
-.signup-form__input {
+.login-form__input {
     height: 32px;
     width: 280px;
     padding: 4px 8px;
@@ -54,7 +54,7 @@
     font-weight: var(--body-weight);
 }
 
-.form-error, .form-success {
+.login-error {
     color: var(--primary-500);
     font-family: var(--font-family);
     font-size: var(--h3-size);
@@ -63,18 +63,18 @@
     text-align: center;
 }
 
-.signup-form__footer {
+.login-form__footer {
     text-align: center;
     margin-top: 20px;
   }
   
-  .signup-form__footer-text {
+  .login-form__footer-text {
     font-size: var(--body-size);
     color: var(--primary-500);
     font-family: var(--font-family);
   }
   
-  .login-link {
+  .register-link {
     background: none;
     border: none;
     color: var(--primary-500);
@@ -85,7 +85,7 @@
     font-size: var(--button-size);
   }
   
-  .login-link:hover {
+  .register-link:hover {
     color: var(--primary-300);
   }
   

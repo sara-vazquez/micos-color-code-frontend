@@ -1,0 +1,8 @@
+.login-page {
+    background-color: var(--primary-300);
+}
+
+.login-page__content {
+    display: flex;
+    align-items: center;
+}

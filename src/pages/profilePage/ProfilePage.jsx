@@ -2,11 +2,11 @@ import React, {useState, useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import './ProfilePage.css';
 import Navbar from '../components/navbar';
-import Button from '../components/buttons/Button';
-import Footer from '../components/footer/Footer';
+import Button from '../../components/buttons/Button';
+import Footer from '../../components/footer/Footer';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisVertical, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
-import OptionsProfile from "../components/optionsProfile/OptionsProfile";
+import OptionsProfile from "../../components/optionsProfile/OptionsProfile";
 
 export default function ProfilePage() {
     const navigate = useNavigate();

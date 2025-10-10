@@ -5,6 +5,7 @@ import Button from '../components/buttons/Button';
 import Footer from '../components/footer/Footer';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisVertical, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import OptionsProfile from "../components/optionsProfile/OptionsProfile";
 
 export default function ProfilePage() {
     return(

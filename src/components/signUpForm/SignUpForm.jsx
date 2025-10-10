@@ -1,63 +1,69 @@
 import React, { useState } from 'react';
-import { useForm } from "react-hook-form";
 import './SignUpForm.css';
 import Button from '../buttons/Button';
+import Captcha from '../captcha/Captcha';
+//import {registerUser}
 
-export default function SignUpForm({onClose, onSuccess, onGoToLogin}) {
-    const { register, handleSubmit, formState: { errors }, watch } = useForm();
-    const [preview, setPreview] = useState(null);
-    const [isLoading, setIsLoading] = useState(false);
-    const [message, setMessage] = useState('');
-    const [captchaData, setCaptchaData] = useState(null); 
-    
-    const password = watch("password");
-    /* const handleCaptchaSolved = ({ captchaId, captchaAnswer }) => {
-    setFormData((prev) => ({ ...prev, captchaId, captchaAnswer }));
-  };*/
+export default function SignUpForm({onGoToLogin}) {
+    const [formData, setFormData] = useState({username: "", email: "", password: "", captchaId: null, captchaAnswer: null,});
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
+    const [success, setSuccess] = useState(false);
 
-  const onSubmit = async (data) => {
-    setIsLoading(true);
-    setMessage('');
+    const handleChange = (e) => {
+        setFormData({...formData, [e.target.name]: e.target.value});
+    };
 
-    if (!captchaData) {
-      setMessage("⚠️ Por favor, resuelve el captcha antes de registrarte.");
-      setIsLoading(false);
-      return;
+    const handleCaptchaSolved = ({captchaId, captchaAnswer}) => {
+        setFormData({...formData, captchaId, captchaAnswer});
     }
 
-    try {
-        const formData = new FormData();
-        formData.append("name", data.name);
-        formData.append("email", data.email);
-        formData.append("password", data.password);
-        formData.append("captchaId", captchaData.captchaId);
-        formData.append("captchaAnswer", captchaData.captchaAnswer);
-        // here i need to put the photo field
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setError(null);
+        setSuccess(false);
 
-        const response = await registerUser(formData);
+        if(!formData.captchaAnswer) {
+            alert("Para registrarte debes resolver el captcha");
+            return;
+        }
 
-        onSuccess(response);
-    }   catch (error) {
-        console.error(error);
-        setMessage(error.message || "❌ Error al registrarse. Inténtalo de nuevo.");
-    } finally {
-        setIsLoading(false);
-    }
-};
+        try {
+            setLoading(true);
+            const result = await registerUser(formData);
+            setSuccess(true);
+            console.log("Usuario registrado:", result);
+      
+            setFormData({
+              username: "",
+              email: "",
+              password: "",
+              captchaId: null,
+              captchaAnswer: null,
+            });
 
-
+          } catch (err) {
+            console.error("Error al registrar:", err);
+            setError("No se pudo completar el registro 😔");
+          } finally {
+            setLoading(false);
+          }
+        };
+       
         return(
         <>
         <form className="signup-form" onSubmit={handleSubmit}>
-            <input name="username" placeholder="Nombre de usuario" onChange={handleChange} />
-            <input name="email" type="email" placeholder="Correo electrónico" onChange={handleChange} />
-            <input name="password" type="password" placeholder="Contraseña" onChange={handleChange} />
+            <input className="signup-form__input" name="username" value={formData.username}  onChange={handleChange} placeholder="lisasimpson8" required/>
+            <input className="signup-form__input" name="email" value={formData.email} onChange={handleChange} placeholder="lisasimpson@gmail.com" required/>
+            <input className="signup-form__input" name="password" type="password" value={formData.password} onChange={handleChange} placeholder="UsaUnaContraseñaSegura123!" required/>
 
-            {/*<Captcha onCaptchaSolved={handleCaptchaSolved} />*/}
+            <Captcha onCaptchaSolved={handleCaptchaSolved} />
             
-            <Button type="submit" variant="primary">Registrarse</Button>
-            {status && <p>{status}</p>}
+            <Button type="submit" variant="primary" disabled={loading}>{loading ? "Registrando..." : "Registrarse"}</Button>
+            {error && <p className="form-error">{error}</p>}
+            {success && <p className="form-success">🎉 Registro exitoso</p>}
         </form>
+        
         <section className="signup-form__footer">
         <span className="signup-form__footer-text">
             ¿Ya tienes cuenta?{' '}
@@ -66,6 +72,4 @@ export default function SignUpForm({onClose, onSuccess, onGoToLogin}) {
     </section>
     </>
     );
-}
-
-/* */
+};

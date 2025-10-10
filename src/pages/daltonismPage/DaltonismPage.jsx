@@ -1,10 +1,10 @@
 import React from "react";
-import Navbar from '../components/navbar/Navbar';
-import Footer from '../components/footer/Footer';
+import Navbar from '../../components/navbar/Navbar';
+import Footer from '../../components/footer/Footer';
 import './DaltonismPage.css';
-import FeedbackButton from '../components/feedbackButtons/FeedbackButton';
-import ScrollUpButton from '../components/scrollUpButtons/ScrollUpButton';
-import CardDaltonism from "../components/cardsDaltonism/CardDaltonism";
+import FeedbackButton from '../../components/feedbackButtons/FeedbackButton';
+import ScrollUpButton from '../../components/scrollUpButtons/ScrollUpButton';
+import CardDaltonism from "../../components/cardsDaltonism/CardDaltonism";
 import Acromatopsia from "../assets/acromatopsia.png";
 import Dicromático from "../assets/anomalias.png";
 import Deuteranopia from "../assets/deuteranopia.png";

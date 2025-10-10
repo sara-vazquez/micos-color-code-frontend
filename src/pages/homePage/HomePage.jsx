@@ -1,13 +1,13 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
 import './HomePage.css';
-import Navbar from '../components/navbar/Navbar';
-import Button from '../components/buttons/Button'
-import FeedbackButton from '../components/feedbackButtons/FeedbackButton';
-import LetsPlayButton from '../components/letsPlayButtons/LetsPlayButton';
-import ResourceButton from '../components/resourcesButtons/ResourceButton';
-import DaltonicButton from '../components/daltonicButtons/DaltonicButton';
-import Footer from '../components/footer/Footer';
+import Navbar from '../../components/navbar/Navbar';
+import Button from '../../components/buttons/Button'
+import FeedbackButton from '../../components/feedbackButtons/FeedbackButton';
+import LetsPlayButton from '../../components/letsPlayButtons/LetsPlayButton';
+import ResourceButton from '../../components/resourcesButtons/ResourceButton';
+import DaltonicButton from '../../components/daltonicButtons/DaltonicButton';
+import Footer from '../../components/footer/Footer';
 
 export default function HomePage() {
     

@@ -1,9 +1,9 @@
 import React from "react";
 import './SystemPage.css';
-import Navbar from '../components/navbar/Navbar'
-import Footer from '../components/footer/Footer';
-import FeedbackButton from '../components/feedbackButtons/FeedbackButton';
-import ScrollUpButton from '../components/scrollUpButtons/ScrollUpButton';
+import Navbar from '../../components/navbar/Navbar'
+import Footer from '../../components/footer/Footer';
+import FeedbackButton from '../../components/feedbackButtons/FeedbackButton';
+import ScrollUpButton from '../../components/scrollUpButtons/ScrollUpButton';
 import sistema from '../assets/sistema.svg';
 import coloresPrimarios from '../assets/coloresPrimarios.svg';
 import coloresSecundarios from '../assets/coloresSecundarios.svg';

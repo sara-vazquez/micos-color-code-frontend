@@ -43,6 +43,7 @@ export default function ProfilePage() {
     return(
         <>
         <Navbar />
+        <div className="profile__page">
         <header className="profile__header">
             <button className="profile__back" aria-label="botón para volver atrás" onClick={handleBack}>
                 <FontAwesomeIcon icon={faArrowLeft}/>
@@ -59,7 +60,7 @@ export default function ProfilePage() {
         </section>
 
         {showOptions && <OptionsProfile onClose={handleCloseOptions} />}
-
+        </div>
         <Footer />
         </>
     )

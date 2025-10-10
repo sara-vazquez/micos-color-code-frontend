@@ -1,3 +1,4 @@
+
 .profile__header{
     display: flex;
     flex-direction: row;
@@ -10,6 +11,7 @@
     font-weight: var(--h1-weight);
     text-align: left;
     color: var(--primary-500);
+    margin-bottom: var(--space-section);
 }
 
 .profile__text {

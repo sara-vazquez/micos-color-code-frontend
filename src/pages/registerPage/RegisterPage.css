@@ -1,0 +1,8 @@
+.register-page {
+    background-color: var(--primary-300);
+}
+
+.register-page__content {
+    display: flex;
+    align-items: center;
+}

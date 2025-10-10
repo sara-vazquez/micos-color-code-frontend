@@ -15,8 +15,12 @@ export default function LoginPage() {
     
         try {
             const data = await loginUser(formData);
-            console.log('Usuario logueado:', data);
-            navigate('/dashboard');
+            
+            if (data.role === 'ADMIN') {
+                navigate('/admin/dashboard');
+            } else {
+                navigate('/user/home');
+            }
         } catch (err) {
             setError(err.message);
         } finally {

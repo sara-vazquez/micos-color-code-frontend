@@ -2,11 +2,11 @@ import React, {useState, useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import './ProfilePage.css';
 import Navbar from '../components/navbar';
-import Button from '../../components/buttons/Button';
 import Footer from '../../components/footer/Footer';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisVertical, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import OptionsProfile from "../../components/optionsProfile/OptionsProfile";
+import {logoutUser} from "../../services/authService";
 
 export default function ProfilePage() {
     const navigate = useNavigate();
@@ -23,9 +23,9 @@ export default function ProfilePage() {
       };
 
     useEffect(() => {
-        const fetchProfile = async () => {
+        const fetchLogout = async () => {
           try {
-            const data = await getProfile();
+            const data = await logoutUser();
             setProfile(data);
           } catch (err) {
             console.error("Error al obtener perfil:", err);
@@ -34,7 +34,7 @@ export default function ProfilePage() {
             setLoading(false);
           }
         };
-        fetchProfile();
+        fetchLogout();
       }, []);
     
       if (loading) return <p className="profile__loading">Cargando perfil...</p>;

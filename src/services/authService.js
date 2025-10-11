@@ -2,7 +2,7 @@ const API_URL = "http://localhost:8080";
 
 export async function loginUser(credentials) {
     try {
-        const response = await fetch(`${API_URL}/auth/login`, {
+        const response = await fetch(`${API_URL}/login`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -22,10 +22,9 @@ export async function loginUser(credentials) {
             throw new Error(errorData.message || `Error ${response.status}`);
         }
 
+
         const data = await response.json();
         
-        console.log('✅ Respuesta del servidor:', data);
-
         // Saves token
         if (data.token) {
             localStorage.setItem('token', data.token);
@@ -53,7 +52,7 @@ export async function logoutUser() {
     try {
         const token = localStorage.getItem('token');
 
-        const response = await fetch(`${API_URL}/auth/logout`, {
+        const response = await fetch(`${API_URL}/logout`, {
             method: "POST",
             headers: {
                 "Authorization": `Bearer ${token}`,
@@ -69,12 +68,12 @@ export async function logoutUser() {
         // Cleans localStorage
         localStorage.removeItem('token');
         localStorage.removeItem('user');
-        
         console.log('✅ Sesión cerrada correctamente');
+
         return true;
+
     } catch (error) {
         console.error("❌ Error en logoutUser:", error);
-
         localStorage.removeItem('token');
         localStorage.removeItem('user');
         throw error;

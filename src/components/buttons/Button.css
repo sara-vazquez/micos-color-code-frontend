@@ -21,3 +21,14 @@
     border: 1px solid var(--primary-400);
   }
   
+  .btn-primary:hover {
+    background-color: var(--primary-200);
+    color: var(--black);
+    border: 1px solid var(--primary-400);
+  }
+
+  .btn-secondar:hover {
+    background-color: var(--neutral-200);
+    color: var(--primary-500);
+    border: 1px solid var(--primary-500);
+  }

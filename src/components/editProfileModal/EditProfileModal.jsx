@@ -37,16 +37,50 @@ export default function EditProfileModal({profile, onClose, onProfileUpdate}) {
     return(
         <div className="edit-modal__overlay" onClick={onClose}>
         <section className="edit-modal" onSubmit={handleSubmit}>
-            <header className="edit-modal">
+            <header className="edit-modal__header">
                 <h2 className="edit-modal__title">Editar perfil</h2>
             </header>
             <article className="edit-modal__content">
-
+            <article className="edit-modal__input-field">
+                        <label className="edit-modal__label">Nombre de usuario</label>
+                        <input 
+                            className="edit-modal__input" 
+                            name="username" 
+                            value={formData.username} 
+                            onChange={handleChange} 
+                            placeholder={profile.username}
+                            required
+                        />
+                    </article>
+                    <article className="edit-modal__input-field">
+                        <label className="edit-modal__label">Correo electrónico</label>
+                        <input 
+                            className="edit-modal__input" 
+                            name="email"
+                            type="email"
+                            value={formData.email} 
+                            onChange={handleChange} 
+                            placeholder={profile.email} 
+                            required
+                        />
+                    </article>
+                    <article className="edit-modal__input-field">
+                        <label className="edit-modal__label">Contraseña</label>
+                        <input 
+                            className="edit-modal__input" 
+                            name="password" 
+                            type="password" 
+                            value={formData.password} 
+                            onChange={handleChange} 
+                            placeholder="" 
+                            required
+                        />
+                    </article>
             </article>
             <article className="edit-modal__actions">
-                <Button type="button" variant="secondary" aria-label="botón para cancelar la edición">Cancelar</Button>
+                <Button type="button" variant="secondary" aria-label="botón para cancelar la edición" onClick={onClose}>Cancelar</Button>
                 <Button type="submit" variant="primary" aria-label="botón para guardar los cambios" disabled={loading}>{loading ? "Guardando..." : "Guardar"}</Button>
-                {error && <p className="error">{error}</p>}
+                {error && <p className="edit-modal__error">{error}</p>}
             </article>
         </section>
         </div>

@@ -23,7 +23,7 @@
     display: flex;
     flex-direction: column;
     gap: var(--space-button);
-    justify-content: left;
+    justify-content: center;
     align-items: left;
 }
 

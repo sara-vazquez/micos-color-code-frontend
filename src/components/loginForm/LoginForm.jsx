@@ -1,9 +1,31 @@
-import React, {useState} from "react";
+import React, {useState, useEffect } from "react";
 import './LoginForm.css';
 import Button from '../buttons/Button';
 
 export default function LoginForm({onSubmit, loading, error, onGoToRegister}) {
     const [formData, setFormData] = useState({ email: "", password: "" });
+    const [confirmationMessage, setConfirmationMessage] = useState('');
+    const [isConfirmationError, setIsConfirmationError] = useState(false);
+
+    useEffect(() => {
+        const params = new URLSearchParams(window.location.search);
+        
+        if (params.get('confirmed') === 'true') {
+            setConfirmationMessage('✅ ¡Cuenta confirmada exitosamente! Ya puedes iniciar sesión.');
+            setIsConfirmationError(false);
+            
+            setTimeout(() => {
+                window.history.replaceState({}, '', '/login');
+            }, 5000);
+        } else if (params.get('error')) {
+            setConfirmationMessage(`❌ ${params.get('error')}`);
+            setIsConfirmationError(true);
+            
+            setTimeout(() => {
+                window.history.replaceState({}, '', '/login');
+            }, 5000);
+        }
+    }, []);
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -18,6 +40,11 @@ export default function LoginForm({onSubmit, loading, error, onGoToRegister}) {
         <>
            <form className="login-form" onSubmit={handleSubmit}>
                 <h1 className='login-form__title'>Iniciar sesión</h1>
+                {confirmationMessage && (
+                    <div className={`login-form__message ${isConfirmationError ? 'login-form__message--error' : 'login-form__message--success'}`}>
+                        {confirmationMessage}
+                    </div>
+                )}
                 <section className="login-form__input-group">
                     <article className="login-form__input-field">
                         <label className="login-form__label">Correo electrónico</label>

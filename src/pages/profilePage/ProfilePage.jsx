@@ -6,11 +6,13 @@ import Footer from '../../components/footer/Footer';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisVertical, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import OptionsProfile from "../../components/optionsProfile/OptionsProfile";
-import {logoutUser} from "../../services/authService";
+import {getProfile} from "../../services/profileService";
+import EditProfileModal from "../../components/editProfileModal/EditProfileModal";
 
 export default function ProfilePage() {
     const navigate = useNavigate();
     const [showOptions, setShowOptions] = useState(false);
+    const [showEditModal, setShowEditModal] = useState(false);
     const [profile, setProfile] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -18,14 +20,17 @@ export default function ProfilePage() {
     const handleOpenOptions = () => setShowOptions(true);
     const handleCloseOptions = () => setShowOptions(false);
 
+    const handleOpenEdit = () => setShowEditModal(true);
+    const handleCloseEdit = () => setShowEditModal(false);
+
     const handleBack = () => {
         navigate(-1); // go back to the previous page the user was
       };
 
     useEffect(() => {
-        const fetchLogout = async () => {
+        const fetchProfile = async () => {
           try {
-            const data = await logoutUser();
+            const data = await getProfile();
             setProfile(data);
           } catch (err) {
             console.error("Error al obtener perfil:", err);
@@ -34,7 +39,7 @@ export default function ProfilePage() {
             setLoading(false);
           }
         };
-        fetchLogout();
+        fetchProfile();
       }, []);
     
       if (loading) return <p className="profile__loading">Cargando perfil...</p>;
@@ -48,7 +53,7 @@ export default function ProfilePage() {
             <button className="profile__back" aria-label="botón para volver atrás" onClick={handleBack}>
                 <FontAwesomeIcon icon={faArrowLeft}/>
             </button>
-            <h1 className="profile__title">¡Hola {profile.username}</h1>
+            <h1 className="profile__title">¡Hola {profile.username}!</h1>
             <button className="profile__menu" aria-label="menú opciones del perfil" onClick={handleOpenOptions}>
                 <FontAwesomeIcon icon={faEllipsisVertical}/>
             </button>
@@ -59,7 +64,8 @@ export default function ProfilePage() {
             <p className="profile__text">{profile.password}</p>
         </section>
 
-        {showOptions && <OptionsProfile onClose={handleCloseOptions} />}
+        {showOptions && <OptionsProfile onClose={handleCloseOptions} onEditProfile={handleOpenEdit}/>}
+        {showEditModal && (<EditProfileModal profile={profile} onClose={handleCloseEdit} onProfileUpdate={setProfile}/>)}
         </div>
         <Footer />
         </>

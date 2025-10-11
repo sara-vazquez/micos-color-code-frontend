@@ -13,7 +13,7 @@ export default function Navbar() {
         <header className= "navbar">
             <div className= "navbar__container">
                 <div className= "logo__container">
-                    <Link to="/" aria-label="Ir de vuelta a la home">
+                    <Link to="/home" aria-label="Ir de vuelta a la home">
                     <img src={Logo} alt="logotype" className="logo"></img>
                     </Link>
                 </div>

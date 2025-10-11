@@ -29,7 +29,6 @@ export async function registerUser(userData) {
         }
 
         const data = await response.json();
-        console.log('✅ Usuario registrado:', data);
         
         return data;
     } catch (error) {

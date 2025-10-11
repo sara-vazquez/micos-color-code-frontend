@@ -5,11 +5,11 @@ import './DaltonismPage.css';
 import FeedbackButton from '../../components/feedbackButtons/FeedbackButton';
 import ScrollUpButton from '../../components/scrollUpButtons/ScrollUpButton';
 import CardDaltonism from "../../components/cardsDaltonism/CardDaltonism";
-import Acromatopsia from "../assets/acromatopsia.png";
-import Dicromático from "../assets/anomalias.png";
-import Deuteranopia from "../assets/deuteranopia.png";
-import Protanopia from "../assets/protanopia.png";
-import Tritanopia from "../assets/tritanopia.png";
+import Acromatopsia from "../../assets/acromatopsia.png";
+import Dicromático from "../../assets/anomalias.png";
+import Deuteranopia from "../../assets/deuteranopia.png";
+import Protanopia from "../../assets/protanopia.png";
+import Tritanopia from "../../assets/tritanopia.png";
 
 export default function DaltonismPage() {
     return(

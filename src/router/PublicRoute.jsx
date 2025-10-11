@@ -3,9 +3,11 @@ import { Navigate } from "react-router-dom";
 import { isAuthenticated } from "../services/authService";
 
 export default function PublicRoute({children}) {
-    if(isAuthenticated()) {
+    const isAuth = isAuthenticated();
+
+    if (isAuth) {
         // If it's already authenticated, returns home -> this helps logged users to aboid login/signup pages
-        return <Navigate to="/" replace />;
+        return <Navigate to="/home" replace />;
     }
     return children;
 }

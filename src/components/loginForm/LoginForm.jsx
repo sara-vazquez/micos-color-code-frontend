@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import './LoginForm.css';
+import Button from '../buttons/Button';
 
 export default function LoginForm({onSubmit, loading, error, onGoToRegister}) {
     const [formData, setFormData] = useState({ email: "", password: "" });

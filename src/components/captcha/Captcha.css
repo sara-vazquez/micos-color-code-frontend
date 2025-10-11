@@ -1,8 +1,14 @@
 .captcha {
     height:auto;
-    width: 370px;
+    width: 300px;
     padding: 20px;
     background-color: transparent;
+}
+
+.captcha__refresh{
+    background-color: transparent;
+    border: none;
+    font-size: var(--h3-size);
 }
 
 .captcha__question {

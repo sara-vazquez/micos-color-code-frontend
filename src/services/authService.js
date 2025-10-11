@@ -2,7 +2,7 @@ const API_URL = "http://localhost:8080";
 
 export async function loginUser(credentials) {
     try {
-        const response = await fetch(`${API_URL}/login`, {
+        const response = await fetch(`${API_URL}/auth/login`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -52,7 +52,7 @@ export async function logoutUser() {
     try {
         const token = localStorage.getItem('token');
 
-        const response = await fetch(`${API_URL}/logout`, {
+        const response = await fetch(`${API_URL}/auth/logout`, {
             method: "POST",
             headers: {
                 "Authorization": `Bearer ${token}`,

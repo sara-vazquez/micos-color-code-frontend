@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import './ProfilePage.css';
-import Navbar from '../../components/navbar/Navbar';
-import Footer from '../../components/footer/Footer';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisVertical, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import OptionsProfile from "../../components/optionsProfile/OptionsProfile";
@@ -46,28 +44,27 @@ export default function ProfilePage() {
       if (error) return <p className="profile__error">{error}</p>;
 
     return(
-        <>
-        <Navbar />
-        <div className="profile__page">
+      <section className="profile__page">
         <header className="profile__header">
             <button className="profile__back" aria-label="botón para volver atrás" onClick={handleBack}>
                 <FontAwesomeIcon icon={faArrowLeft}/>
             </button>
-            <h1 className="profile__title">¡Hola {profile.username}!</h1>
+            <h2 className="profile__title">¡Hola {profile.username}!</h2>
             <button className="profile__menu" aria-label="menú opciones del perfil" onClick={handleOpenOptions}>
                 <FontAwesomeIcon icon={faEllipsisVertical}/>
             </button>
         </header>
         <section className="profile__container">
+            <label className="profile__label">Nombre de usuario</label>
             <p className="profile__text">{profile.username}</p>
+            <label className="profile__label">Correo electrónico</label>
             <p className="profile__text">{profile.email}</p>
-            <p className="profile__text">{profile.password}</p>
+            <label className="profile__label">Contraseña</label>
+            <p className="profile__text">●●●●●●●●●●●</p>
         </section>
 
         {showOptions && <OptionsProfile onClose={handleCloseOptions} onEditProfile={handleOpenEdit}/>}
         {showEditModal && (<EditProfileModal profile={profile} onClose={handleCloseEdit} onProfileUpdate={setProfile}/>)}
-        </div>
-        <Footer />
-        </>
+        </section>
     )
 }

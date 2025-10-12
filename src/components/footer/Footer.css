@@ -1,12 +1,12 @@
 .footer {
     width: 100%;
     height: 88px;
-    background-color: transparent;
     padding: 12px;
     margin: 0;
     bottom: 0;
     box-sizing: border-box;
     position: relative;
+    background-color: inherit;
 }
 
 .footer__container {

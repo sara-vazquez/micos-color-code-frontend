@@ -1,6 +1,4 @@
 import React from "react";
-import Navbar from '../../components/navbar/Navbar';
-import Footer from '../../components/footer/Footer';
 import './DaltonismPage.css';
 import FeedbackButton from '../../components/feedbackButtons/FeedbackButton';
 import ScrollUpButton from '../../components/scrollUpButtons/ScrollUpButton';
@@ -14,7 +12,6 @@ import Tritanopia from "../../assets/tritanopia.png";
 export default function DaltonismPage() {
     return(
         <section className="daltonism" id="top">
-            <Navbar />
             <article className="daltonism__intro">
                 <h1 className="daltonism__title">Daltonismo</h1>
                 <p className = "daltonism__text">El daltonismo afecta a <strong>350 millones de personas</strong>, el 8% de la población, aproximadamente <strong>1 de cada 12 hombres y 1 de cada 200 mujeres.</strong> Los primeros síntomas se detectan durante la etapa escolar, mostrando dificultades a la hora de reconocer colores.
@@ -57,7 +54,6 @@ export default function DaltonismPage() {
             </section>
             <ScrollUpButton />
             
-            <Footer />
         </section>
     )
 }

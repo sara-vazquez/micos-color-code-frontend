@@ -1,7 +1,5 @@
 import React from "react";
 import './SystemPage.css';
-import Navbar from '../../components/navbar/Navbar';
-import Footer from '../../components/footer/Footer';
 import FeedbackButton from '../../components/feedbackButtons/FeedbackButton';
 import ScrollUpButton from '../../components/scrollUpButtons/ScrollUpButton';
 import sistema from '../../assets/sistema.svg';
@@ -15,7 +13,6 @@ import coloresClaros from '../../assets/coloresClaros.svg';
 export default function SystemPage() {
     return(
         <section className="system" id="top">
-        <Navbar />
         <section className="system__container">
             <h1 className="system__title">Micos, el sistema</h1>
             <p className="system__text">MICOS color code es un proyecto social con vocación inclusiva enfocado hacia un <strong>público infantil de entre 3 y 8 años con daltonismo dicromático</strong>. El fin de MICOS es facilitar a niños y niñas con esta alteración visual el <strong>aprendizaje de los colores de forma lúdica y aumentativa</strong> a partir de las tres figuras básicas (círculo, triángulo y cuadrado) y la superposición de estas, asociándolas a un color.</p>
@@ -57,7 +54,6 @@ export default function SystemPage() {
         <ScrollUpButton />
         <FeedbackButton className="feedback__flying-button"/>
         
-        <Footer />
         </section>
     )
 }

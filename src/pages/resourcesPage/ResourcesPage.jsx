@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import FeedbackButton from '../../components/feedbackButtons/FeedbackButton';
 import ResourcesCard from '../../components/resourcesCard/ResourcesCard';
+import ScrollUpButton from '../../components/scrollUpButtons/ScrollUpButton';
 
 export default function ResourcesPage() {
     const navigate = useNavigate();
@@ -37,7 +38,8 @@ export default function ResourcesPage() {
                 title="Animalario"
                 text="Pinta los animales según el código, recorta y... ¡prueba a ver qué sale!"/>
             </article>
-            <article className='resources__action'>
+            <article className='resources__actions'>
+                <ScrollUpButton />
                 <FeedbackButton className="feedback__flying-button" />
             </article>
         </section>

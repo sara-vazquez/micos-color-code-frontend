@@ -9,7 +9,7 @@ export default function ModalResources({onClose}) {
     
     return(
         <div className="modal-resources__overlay" onClick={onClose}>
-            <section className='modal-resources'>
+            <section className='modal-resources' onClick={(e) => e.stopPropagation()}>
                 <header className="modal-resources__header">
                     <button className="modal-resources__exit">
                         <FontAwesomeIcon icon={faXmark} onClick={onClose}/>

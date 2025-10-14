@@ -3,10 +3,10 @@ import './ResourcesCard.css';
 import { Eye, Download } from 'lucide-react';
 import ModalResources from '../modalResources/ModalResources';
 
-export default function ResourcesCard({ title, text, onClose }) {
+export default function ResourcesCard({ title, text }) {
     const [openModalResources, setOpenModalResources] = useState(false);
 
-        if(openModalResources) return <ModalResources onClose={onClose}/>
+        if(openModalResources) return <ModalResources onClose={() => setOpenModalResources(false)}/>
 
     return(
         <>

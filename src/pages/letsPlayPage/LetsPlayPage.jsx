@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import FeedbackButton from '../../components/feedbackButtons/FeedbackButton'
+import CardPlay from '../../components/cardPlay/CardPlay';
 
 export default function LetsPlayPage() {
     const navigate = useNavigate();
@@ -23,6 +24,7 @@ export default function LetsPlayPage() {
                 <p className = "play-page__text">Aquí tienes una selección de juegos para poner en práctica lo aprendido y seguir mejorando cada día un poquito más.</p>
             </header>
             <main className="play-page__content">
+                <CardPlay />
 
             </main>
             <article className="feedback__flying-button">

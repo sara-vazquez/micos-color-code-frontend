@@ -7,7 +7,6 @@ import memory from '../../assets/memory.png';
 
 export default function CardPlay({onClose}) {
     return(
-        <div className="play-card__overlay" onClick={onClose}>
             <section className="play-card"  onClick={(e) => e.stopPropagation()}>
                 <header className="play-card__header">
                     <button className="play-card__exit">
@@ -23,6 +22,5 @@ export default function CardPlay({onClose}) {
                     </section>                 
                 </article>
             </section>
-        </div>
     );
 }

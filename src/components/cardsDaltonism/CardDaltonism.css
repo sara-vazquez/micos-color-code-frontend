@@ -9,6 +9,8 @@
     justify-content: space-between;
     align-items: center;
     gap: 8px;
+    -webkit-mask: url("/mask_daltonism_card.svg") center/contain no-repeat;
+    mask: url("/mask_daltonism_card.svg") center/contain no-repeat;
 }
 
 .daltonsim-card__content {

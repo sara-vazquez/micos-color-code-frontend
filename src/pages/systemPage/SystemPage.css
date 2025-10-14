@@ -20,6 +20,7 @@ html, body {
     display: flex;
     flex-direction: row;
     gap: 12px;
+    margin: 0;
 }
 
 .system__back {
@@ -27,6 +28,7 @@ html, body {
     color: var(--primary-500);
     border: none;
     background-color: transparent;
+    margin-top: var(--space-body);
 }
 
 .system__container {
@@ -40,7 +42,8 @@ html, body {
     font-size: var(--h1-size);
     font-weight: var(--h1-weight);
     color: var(--primary-500);
-    margin-bottom: var(--space-body);
+    margin: 0;
+    margin-top: var(--space-body);
 }
 
 .system__h2 {

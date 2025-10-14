@@ -26,7 +26,8 @@ html, body {
     font-size: var(--h1-size);
     font-weight: var(--h1-weight);
     color: var(--primary-500);
-    margin-bottom: var(--space-body);
+    margin: 0;
+    margin-top: var(--space-body);
 }
 
 .resources__text {
@@ -42,4 +43,5 @@ html, body {
     color: var(--primary-500);
     border: none;
     background-color: transparent;
+    margin-top: var(--space-body);
 }

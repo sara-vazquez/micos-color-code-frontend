@@ -24,6 +24,7 @@ margin-bottom: var(--space-card);
     display: flex;
     flex-direction: row;
     justify-content: left;
+    gap: 12px;
     margin-bottom: var(--space-card);
 }
 
@@ -32,7 +33,7 @@ margin-bottom: var(--space-card);
     color: var(--primary-500);
     border: none;
     background-color: transparent;
-    margin-right: 8px;
+    margin-top: var(--space-body);
 }
 
 .play-page__title {
@@ -41,7 +42,8 @@ margin-bottom: var(--space-card);
     font-weight: var(--h1-weight);
     text-align: left;
     color: var(--primary-500);
-    margin-bottom: var(--space-button);
+    margin: 0;
+    margin-top: var(--space-body);
 }
 
 .play-page__text {

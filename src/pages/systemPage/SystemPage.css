@@ -16,6 +16,19 @@ html, body {
     position: relative;
 }
 
+.system__header {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+
+.system__back {
+    font-size: 24px;
+    color: var(--primary-500);
+    border: none;
+    background-color: transparent;
+}
+
 .system__container {
     height: auto;
     width: 100%;

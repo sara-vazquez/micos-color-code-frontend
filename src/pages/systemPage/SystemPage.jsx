@@ -1,5 +1,8 @@
 import React from "react";
 import './SystemPage.css';
+import { useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import FeedbackButton from '../../components/feedbackButtons/FeedbackButton';
 import ScrollUpButton from '../../components/scrollUpButtons/ScrollUpButton';
 import sistema from '../../assets/sistema.svg';
@@ -11,10 +14,20 @@ import coloresClaros from '../../assets/coloresClaros.svg';
 
 
 export default function SystemPage() {
+    const navigate = useNavigate();
+
+    const handleBack = () => {
+        navigate(-1);
+    }
     return(
         <section className="system" id="top">
         <section className="system__container">
+            <article className="system__header">
+            <button className="system__back" aria-label="botón para volver a la página anterior" onClick={handleBack}>
+                <FontAwesomeIcon icon={faArrowLeft} />
+            </button>
             <h1 className="system__title">Micos, el sistema</h1>
+            </article>
             <p className="system__text">MICOS color code es un proyecto social con vocación inclusiva enfocado hacia un <strong>público infantil de entre 3 y 8 años con daltonismo dicromático</strong>. El fin de MICOS es facilitar a niños y niñas con esta alteración visual el <strong>aprendizaje de los colores de forma lúdica y aumentativa</strong> a partir de las tres figuras básicas (círculo, triángulo y cuadrado) y la superposición de estas, asociándolas a un color.</p>
             <div className="system-img__container">
                 <img src={sistema} alt="Ilustración del sistema" className="system__image" />

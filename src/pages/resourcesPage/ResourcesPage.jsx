@@ -13,7 +13,7 @@ export default function ResourcesPage() {
     }
 
     return(
-        <section className="resources" id="top">
+        <section className="resources__page" id="top">
             <article className='resources__intro'>
                 <article className="resources__header">
                     <button className="resources__back" aria-label="botón para volver atrás" onClick={handleBack}>
@@ -21,7 +21,7 @@ export default function ResourcesPage() {
                     </button>
                     <h1 className="resources__title" aria-label='título de la página actual'>Recursos</h1>
                 </article>
-                <p className='resources__text' aria-label="texto descriptivo de la página actual">Te presentamos esta sección donde podrás descargar diferentes materiales gráficos para que los peques practiquen manchándose las manitas.</p>
+                <p className='resources__text' aria-label="texto descriptivo de la página actual">Te presentamos la sección de recursos, donde podrás descargar diferentes materiales gráficos para que los peques sigan practicando mientras se manchan las manitas 🎨.</p>
             </article>
             <article className='resources__action'>
                 <FeedbackButton className="feedback__flying-button" />

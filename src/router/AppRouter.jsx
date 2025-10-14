@@ -11,6 +11,7 @@ import ProfilePage from "../pages/profilePage/ProfilePage";
 import HomePage from "../pages/homePage/HomePage";
 import DaltonismPage from "../pages/daltonismPage/DaltonismPage";
 import SystemPage from "../pages/systemPage/SystemPage";
+import ResourcesPage from "../pages/resourcesPage/ResourcesPage";
 
 export default function AppRouter() {
     return(
@@ -57,7 +58,7 @@ export default function AppRouter() {
                 element={
                     <PrivateRoute>
                         <MainLayout backgroundColor="var(--secondary-100)">
-                            <DaltonismPage />
+                            <ResourcesPage />
                         </MainLayout>
                     </PrivateRoute>} 
             />

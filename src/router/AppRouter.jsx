@@ -11,6 +11,7 @@ import ProfilePage from "../pages/profilePage/ProfilePage";
 import HomePage from "../pages/homePage/HomePage";
 import DaltonismPage from "../pages/daltonismPage/DaltonismPage";
 import SystemPage from "../pages/systemPage/SystemPage";
+import LetsPlayPage from "../pages/letsPlayPage/LetsPlayPage";
 
 export default function AppRouter() {
     return(
@@ -50,6 +51,14 @@ export default function AppRouter() {
                     <PrivateRoute>
                         <MainLayout backgroundColor="var(--light-yellow)">
                             <DaltonismPage />
+                        </MainLayout>
+                    </PrivateRoute>} 
+            />
+            <Route  path="/play" 
+                element={
+                    <PrivateRoute>
+                        <MainLayout backgroundColor="var(--primary-100)">
+                            <LetsPlayPage />
                         </MainLayout>
                     </PrivateRoute>} 
             />

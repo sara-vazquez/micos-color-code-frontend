@@ -12,6 +12,7 @@ export default function HomePage() {
     const navigate = useNavigate();
     const goToSystem = () => { navigate("/system"); }
     const goToDaltonism = () => { navigate("/daltonism"); }
+    const goToPlay = () => { navigate("/play");}
 
     
     return(
@@ -25,7 +26,7 @@ export default function HomePage() {
         <FeedbackButton className="feedback__flying-button"/>
       
         <section className="buttons__container">
-            <LetsPlayButton  aria-label="Ir a la página de juegos en línea" />
+            <LetsPlayButton  aria-label="Ir a la página de juegos en línea" onClick={goToPlay}/>
             <ResourceButton  aria-label="Ir a la página de recursos descargables" />
             <DaltonicButton  aria-label="Ir a la página de información sobre el daltonismo" onClick={goToDaltonism}/>
         </section>

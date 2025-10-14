@@ -9,7 +9,7 @@ export default function CardPlay({onClose}) {
     return(
         <div className="play-card__overlay" onClick={onClose}>
             <section className="play-card"  onClick={(e) => e.stopPropagation()}>
-            <header className="play-card_header">
+                <header className="play-card__header">
                     <button className="play-card__exit">
                         <FontAwesomeIcon icon={faXmark} onClick={onClose}/>
                     </button>

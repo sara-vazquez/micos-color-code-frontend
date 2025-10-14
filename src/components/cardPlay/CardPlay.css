@@ -1,0 +1,95 @@
+.play-card__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1200;
+    padding: var(--space-card);
+}
+
+.play-card {
+    background-color: var(--secondary-50);
+    border-radius: var(--border-radius-card);
+    height: 374px;
+    min-width: 320px;
+    padding: 16px 20px 20px 20px;
+    gap: 16px;
+
+    -webkit-mask-image: url("/mask_play_card.svg");
+    -webkit-mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center center;
+    
+    mask-image: url("/mask_play_card.svg");
+    mask-size: 100% 100%;
+    mask-repeat: no-repeat;
+    mask-position: center center;
+}
+
+.play-card__header {
+    position: relative;
+    height: auto;
+    width: 100%;
+    margin-bottom: var(--space-section);
+}
+
+.play-card__exit {
+    position: absolute;
+    right: 1px;
+    font-size: 24px;
+    color: var(--primary-500);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+
+}
+
+.play-card__content {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-family: var(--font-family);
+    color: var(--primary-500);
+    margin-top: var(--space-section);
+}
+
+.play-card__img-container {
+    margin-top: var(--space-button);
+    width: 280px;
+    height: 142px;
+    flex-shrink: 0;
+    display: flex;            
+    justify-content: center; 
+    align-items: center;    
+    margin: 0 auto;  
+    background-color: var(--secondary-50);
+}
+
+.play-card__img {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius-img);
+    overflow: hidden;
+    object-fit: contain;
+}
+
+.play-card__title {
+    font-weight: var(--h3-weight);
+    font-size: var(--h3-size);
+    margin-top: var(--space-button);
+    margin-bottom: var(--space-button);
+}
+
+.play-card__text {
+    font-weight: var(--body-weight);
+    font-size: var(--body-size);
+    margin-bottom: var(--space-card);
+}

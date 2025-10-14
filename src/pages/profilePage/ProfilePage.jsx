@@ -6,6 +6,7 @@ import { faEllipsisVertical, faArrowLeft } from "@fortawesome/free-solid-svg-ico
 import OptionsProfile from "../../components/optionsProfile/OptionsProfile";
 import {getProfile} from "../../services/profileService";
 import EditProfileModal from "../../components/editProfileModal/EditProfileModal";
+import FeedbackButton from "../../components/feedbackButtons/FeedbackButton";
 
 export default function ProfilePage() {
     const navigate = useNavigate();
@@ -23,7 +24,7 @@ export default function ProfilePage() {
 
     const handleBack = () => {
         navigate(-1); // go back to the previous page the user was
-      };
+    };
 
     useEffect(() => {
         const fetchProfile = async () => {
@@ -45,11 +46,13 @@ export default function ProfilePage() {
 
     return(
       <section className="profile__page">
-        <header className="profile__header">
+        <header className="profile__intro">
+          <article className="profile__header">
             <button className="profile__back" aria-label="botón para volver atrás" onClick={handleBack}>
                 <FontAwesomeIcon icon={faArrowLeft}/>
             </button>
-            <h2 className="profile__title">¡Hola {profile.username}!</h2>
+            <h2 className="profile__title">¡Hola, {profile.username}!</h2>
+          </article>
             <button className="profile__menu" aria-label="menú opciones del perfil" onClick={handleOpenOptions}>
                 <FontAwesomeIcon icon={faEllipsisVertical}/>
             </button>
@@ -62,9 +65,13 @@ export default function ProfilePage() {
             <label className="profile__label">Contraseña</label>
             <p className="profile__text">●●●●●●●●●●●</p>
         </section>
+        <article className="profile__action">
+          <FeedbackButton className="feedback__flying-button"/>
+        </article>
 
         {showOptions && <OptionsProfile onClose={handleCloseOptions} onEditProfile={handleOpenEdit}/>}
         {showEditModal && (<EditProfileModal profile={profile} onClose={handleCloseEdit} onProfileUpdate={setProfile}/>)}
         </section>
+        
     )
 }

@@ -1,4 +1,4 @@
-.resources {
+.resources__button {
     height: 210px;
     width: 210px;
     border-radius: var(--border-radius-card);
@@ -13,5 +13,5 @@
     left: 0;
     transform: rotate(25deg);
     margin: 0;
-
+    cursor: pointer;
 }

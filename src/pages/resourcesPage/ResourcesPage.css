@@ -6,7 +6,7 @@ html, body {
     overflow-x: hidden;
 }
 
-.daltonism {
+.resources__page {
     flex: 1;
     width: 100%;
     margin: 0;
@@ -14,14 +14,14 @@ html, body {
     box-sizing: border-box;
     position: relative;
 }
-
-.daltonism__header {
+.resources__header {
     display: flex;
     flex-direction: row;
     gap: 12px;
+    margin: 0;
 }
 
-.daltonism__title {
+.resources__title {
     font-family: var(--font-family);
     font-size: var(--h1-size);
     font-weight: var(--h1-weight);
@@ -29,15 +29,7 @@ html, body {
     margin-bottom: var(--space-body);
 }
 
-.daltonism__h2 {
-    font-family: var(--font-family);
-    font-size: var(--h2-size);
-    font-weight: var(--h2-weight);
-    color: var(--primary-500);
-    margin-bottom: var(--space-body);
-}
-
-.daltonism__text {
+.resources__text {
     font-family: var(--font-family);
     font-size: var(--body-size);
     font-weight: var(--body-weight);
@@ -45,7 +37,7 @@ html, body {
     margin-bottom: var(--space-card);
 }
 
-.daltonism__back {
+.resources__back {
     font-size: 24px;
     color: var(--primary-500);
     border: none;

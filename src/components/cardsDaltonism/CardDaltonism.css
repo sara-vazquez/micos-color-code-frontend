@@ -1,21 +1,28 @@
 .daltonism-card__container {
-    background-color: var(--blur);
-    border-radius: var(--border-radius-card);
-    height: auto;
-    width: 390;
+    background-color: var(--light-yellow);
+    width: 360px;
     margin: 12px;
+    margin-left: -2px; 
     padding: 12px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 8px;
+    
+    -webkit-mask-image: url("/mask_daltonism_card.svg");
+    -webkit-mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: left center;
+    
+    mask-image: url("/mask_daltonism_card.svg");
+    mask-size: 100% 100%;
+    mask-repeat: no-repeat;
+    mask-position: left center;
 }
 
 .daltonsim-card__content {
     flex: 1;
     margin-right: 12px;
-
-
 }
 
 .daltonism-card__h3 {

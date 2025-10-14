@@ -21,11 +21,14 @@ html, body {
     position: relative;
 }
 
+.profile__intro {
+    margin-bottom: var(--space-card);
+}
+
 .profile__header{
     display: flex;
     flex-direction: row;
-    justify-content: left;
-    margin-bottom: var(--space-card);
+    gap: 12px;
 }
 
 .profile__title {
@@ -83,4 +86,7 @@ html, body {
 
 .profile__back{
     margin-right: 8px;
+}
+.profile__menu {
+    align-items: end;
 }

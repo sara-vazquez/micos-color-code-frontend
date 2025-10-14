@@ -12,6 +12,7 @@ import HomePage from "../pages/homePage/HomePage";
 import DaltonismPage from "../pages/daltonismPage/DaltonismPage";
 import SystemPage from "../pages/systemPage/SystemPage";
 import LetsPlayPage from "../pages/letsPlayPage/LetsPlayPage";
+import ResourcesPage from "../pages/resourcesPage/ResourcesPage";
 
 export default function AppRouter() {
     return(
@@ -49,7 +50,7 @@ export default function AppRouter() {
             <Route  path="/daltonism" 
                 element={
                     <PrivateRoute>
-                        <MainLayout backgroundColor="var(--light-yellow)">
+                        <MainLayout backgroundColor="var(--yellow)">
                             <DaltonismPage />
                         </MainLayout>
                     </PrivateRoute>} 
@@ -59,6 +60,14 @@ export default function AppRouter() {
                     <PrivateRoute>
                         <MainLayout backgroundColor="var(--primary-100)">
                             <LetsPlayPage />
+                        </MainLayout>
+                    </PrivateRoute>} 
+            />
+            <Route  path="/resources" 
+                element={
+                    <PrivateRoute>
+                        <MainLayout backgroundColor="var(--secondary-100)">
+                            <ResourcesPage />
                         </MainLayout>
                     </PrivateRoute>} 
             />

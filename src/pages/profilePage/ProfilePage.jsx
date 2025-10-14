@@ -6,6 +6,7 @@ import { faEllipsisVertical, faArrowLeft } from "@fortawesome/free-solid-svg-ico
 import OptionsProfile from "../../components/optionsProfile/OptionsProfile";
 import {getProfile} from "../../services/profileService";
 import EditProfileModal from "../../components/editProfileModal/EditProfileModal";
+import FeedbackButton from "../../components/feedbackButtons/FeedbackButton";
 
 export default function ProfilePage() {
     const navigate = useNavigate();
@@ -23,7 +24,7 @@ export default function ProfilePage() {
 
     const handleBack = () => {
         navigate(-1); // go back to the previous page the user was
-      };
+    };
 
     useEffect(() => {
         const fetchProfile = async () => {
@@ -62,9 +63,13 @@ export default function ProfilePage() {
             <label className="profile__label">Contraseña</label>
             <p className="profile__text">●●●●●●●●●●●</p>
         </section>
+        <article className="profile__action">
+          <FeedbackButton className="feedback__flying-button"/>
+        </article>
 
         {showOptions && <OptionsProfile onClose={handleCloseOptions} onEditProfile={handleOpenEdit}/>}
         {showEditModal && (<EditProfileModal profile={profile} onClose={handleCloseEdit} onProfileUpdate={setProfile}/>)}
         </section>
+        
     )
 }

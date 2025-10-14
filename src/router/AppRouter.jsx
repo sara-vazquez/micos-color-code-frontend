@@ -53,6 +53,14 @@ export default function AppRouter() {
                         </MainLayout>
                     </PrivateRoute>} 
             />
+            <Route  path="/resources" 
+                element={
+                    <PrivateRoute>
+                        <MainLayout backgroundColor="var(--secondary-100)">
+                            <DaltonismPage />
+                        </MainLayout>
+                    </PrivateRoute>} 
+            />
             <Route path="/profile" 
                 element={
                     <PrivateRoute>

@@ -15,6 +15,12 @@ html, body {
     position: relative;
 }
 
+.daltonism__header {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+
 .daltonism__title {
     font-family: var(--font-family);
     font-size: var(--h1-size);
@@ -37,4 +43,11 @@ html, body {
     font-weight: var(--body-weight);
     color: var(--primary-500);
     margin-bottom: var(--space-card);
+}
+
+.daltonism__back {
+    font-size: 24px;
+    color: var(--primary-500);
+    border: none;
+    background-color: transparent;
 }

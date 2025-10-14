@@ -21,11 +21,14 @@ html, body {
     position: relative;
 }
 
+.profile__intro {
+    margin-bottom: var(--space-card);
+}
+
 .profile__header{
     display: flex;
     flex-direction: row;
-    justify-content: left;
-    margin-bottom: var(--space-card);
+    gap: 12px;
 }
 
 .profile__title {
@@ -79,4 +82,8 @@ html, body {
     color: var(--primary-500);
     border: none;
     background-color: transparent;
+}
+
+.profile__menu {
+    align-items: end;
 }

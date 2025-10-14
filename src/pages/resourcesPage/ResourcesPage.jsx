@@ -23,6 +23,9 @@ export default function ResourcesPage() {
                 </article>
                 <p className='resources__text' aria-label="texto descriptivo de la página actual">Te presentamos esta sección donde podrás descargar diferentes materiales gráficos para que los peques practiquen manchándose las manitas.</p>
             </article>
+            <article className='resources__action'>
+                <FeedbackButton className="feedback__flying-button" />
+            </article>
         </section>
     );
 }

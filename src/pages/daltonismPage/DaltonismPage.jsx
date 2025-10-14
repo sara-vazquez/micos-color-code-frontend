@@ -1,5 +1,8 @@
 import React from "react";
 import './DaltonismPage.css';
+import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import FeedbackButton from '../../components/feedbackButtons/FeedbackButton';
 import ScrollUpButton from '../../components/scrollUpButtons/ScrollUpButton';
 import CardDaltonism from "../../components/cardsDaltonism/CardDaltonism";
@@ -10,12 +13,22 @@ import Protanopia from "../../assets/protanopia.png";
 import Tritanopia from "../../assets/tritanopia.png";
 
 export default function DaltonismPage() {
+    const navigate = useNavigate();
+
+    const handleBack = () => {
+        navigate(-1);
+    }
+
     return(
         <section className="daltonism" id="top">
             <article className="daltonism__intro">
-                <h1 className="daltonism__title">Daltonismo</h1>
+                <article className="daltonism__header">
+                    <button className="daltonism__back" aria-label="botón para volver atrás" onClick={handleBack}>
+                        <FontAwesomeIcon icon={faArrowLeft}/>
+                    </button>
+                    <h1 className="daltonism__title">Daltonismo</h1>
+                </article>
                 <p className = "daltonism__text">El daltonismo afecta a <strong>350 millones de personas</strong>, el 8% de la población, aproximadamente <strong>1 de cada 12 hombres y 1 de cada 200 mujeres.</strong> Los primeros síntomas se detectan durante la etapa escolar, mostrando dificultades a la hora de reconocer colores.
-                
                 Con el tiempo, las limitaciones de esta patología van aumentando, afectando al abanico de posibilidades profesionales y a la realización personal.</p>
             </article>
             <section className="daltonism__types">

@@ -49,7 +49,7 @@ export default function AppRouter() {
             <Route  path="/daltonism" 
                 element={
                     <PrivateRoute>
-                        <MainLayout backgroundColor="var(--light-yellow)">
+                        <MainLayout backgroundColor="var(--yellow)">
                             <DaltonismPage />
                         </MainLayout>
                     </PrivateRoute>} 

@@ -9,14 +9,9 @@ html, body {
 .play-page {
     flex: 1;
     width: 100%;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
     margin: 0;
-    padding: 12px;
+    padding: 0;
+    box-sizing: border-box;
     overflow-x: hidden;
     position: relative;
 }
@@ -37,6 +32,7 @@ margin-bottom: var(--space-card);
     color: var(--primary-500);
     border: none;
     background-color: transparent;
+    margin-right: 8px;
 }
 
 .play-page__title {
@@ -54,8 +50,12 @@ margin-bottom: var(--space-card);
     font-weight: var(--body-weight);
     text-align: left;
     color: var(--primary-500);
+    margin-left: 12px;
+    margin-right: 12px;
 }
 
 .play-page__content {
-
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-card);
 }

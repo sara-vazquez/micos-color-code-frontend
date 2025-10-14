@@ -14,7 +14,7 @@ export default function LetsPlayPage() {
         <section className="play-page" id="top">
             <header className="play-page__intro">
                 <article className="play-page__header">
-                <button className="play-page-back" aria-label="botón para volver a la página anterior" onClick={handleBack}>
+                <button className="play-page__back" aria-label="botón para volver a la página anterior" onClick={handleBack}>
                     <FontAwesomeIcon icon={faArrowLeft} />
                 </button>
                 <h1 className="play-page__title">¡A jugar!</h1>

@@ -80,3 +80,7 @@ html, body {
     border: none;
     background-color: transparent;
 }
+
+.profile__back{
+    margin-right: 8px;
+}

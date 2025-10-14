@@ -3,6 +3,7 @@ import './LetsPlayPage.css';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import FeedbackButton from '../../components/feedbackButtons/FeedbackButton'
 
 export default function LetsPlayPage() {
     const navigate = useNavigate();
@@ -24,6 +25,9 @@ export default function LetsPlayPage() {
             <main className="play-page__content">
 
             </main>
+            <article className="feedback__flying-button">
+                <FeedbackButton />
+            </article>
         </section>
     );
 }

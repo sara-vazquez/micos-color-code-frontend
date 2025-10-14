@@ -37,3 +37,44 @@
     border: none;
     background-color: transparent;
 }
+
+.modal-resources__content {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-family: var(--font-family);
+    color: var(--primary-500);
+}
+
+.modal-resources__img-container {
+    width: 304px;
+    height: 152px;
+    flex-shrink: 0;
+    display: flex;            
+    justify-content: center; 
+    align-items: center;    
+    margin: 0 auto;  
+    background-color: var(--secondary-200);
+}
+
+.modal-resources__img {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius-img);
+    object-fit: contain;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.modal-resources__title {
+    font-weight: var(--h3-weight);
+    font-size: var(--h3-size);
+    margin-top: var(--space-button);
+    margin-bottom: var(--space-button);
+}
+
+.modal-resources__text {
+    font-weight: var(--body-weight);
+    font-size: var(--body-size);
+    margin-bottom: var(--space-card);
+}

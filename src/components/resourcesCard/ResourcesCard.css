@@ -1,14 +1,12 @@
 .resources-card__container {
-    background-color: var(--blur);
+    background-color: var(--secondary-200);
     border-radius: var(--border-radius-card);
     height: auto;
     min-width: 390;
     margin: 12px;
     padding: 12px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 8px;
+    flex-direction: column;
 }
 
 .resources-card__content {
@@ -37,14 +35,15 @@
     display: flex;
     flex-direction: row;
     gap: 16px;
-    align-items: end;
-    margin-top: var(--space-button);
-    margin-bottom: var(--space-card);
+    justify-content: end;    
+    margin: 0;
+    padding-right: 12px;
 }
 
 .resources-card__icon {
     color: var(--primary-500);
-    size: 24px;
+    height: 24px;
+    width: 24px;
     background-color: transparent;
     border: none;
 }

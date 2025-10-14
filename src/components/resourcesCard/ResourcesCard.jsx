@@ -1,8 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './ResourcesCard.css';
 import { Eye, Download } from 'lucide-react';
+import ModalResources from '../modalResources/ModalResources';
 
-export default function ResourcesCard({ title, text }) {
+export default function ResourcesCard({ title, text, onClose }) {
+    const [openModalResources, setOpenModalResources] = useState(false);
+
+        if(openModalResources) return <ModalResources onClose={onClose}/>
+
     return(
         <>
         <section className='resources-card__container'>
@@ -11,7 +16,7 @@ export default function ResourcesCard({ title, text }) {
                 <p className="resources-card__text">{text}</p>
             </article>
             <article className="resources-card__actions">
-                <button className="resources-card__icon" aria-label="Botón de vista previa del material">
+                <button className="resources-card__icon" aria-label="Botón de vista previa del material" onClick={() => setOpenModalResources(true)}>
                     <Eye />
                 </button>
                 <button className="resources-card__icon" aria-label="Botón de descargar el material">

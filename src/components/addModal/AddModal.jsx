@@ -2,11 +2,10 @@ import React from 'react';
 import './AddModal.css';
 import Button from '../buttons/Button';
 
-export default function AddModal({onCancel }) {
+export default function AddModal({onClose}) {
     return(
-        <section className="add-modal__overlay">
+        <section className="add-modal__overlay" onClick={onClose}>
             <form className="add-modal__content">
-                <h1 className="add-modal__title">Añadir recurso</h1>
                 <article className="add-modal__img-container" placeholder="Vista previa de tu archivo">
                     <img className="add-modal__img" />
                 </article>
@@ -24,7 +23,7 @@ export default function AddModal({onCancel }) {
                     <input className="add-modal__input" id={fileId} type="file" />
                 </article>
                 <article className="add-modal__actions">
-                    <Button type="button" onClick={onCancel} variant="secondary">Cancelar</Button>
+                    <Button type="button" onClick={onClose} variant="secondary">Cancelar</Button>
                     <Button type="submit" variant="primary">Guardar</Button>
                 </article>
             </form>

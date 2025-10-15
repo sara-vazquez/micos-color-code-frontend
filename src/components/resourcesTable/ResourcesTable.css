@@ -4,6 +4,8 @@
     font-family: var(--font-family);
     color: var(--primary-500);
     overflow-x: auto;
+    min-width: 420px;
+    height: auto;
 }
 
 .resources-table {

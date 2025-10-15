@@ -16,14 +16,21 @@ html, body {
 }
 
 .dashboard-page__header {
-    justify-content: end;
+    position: static;
     height: auto;
     width: 100vw;
     margin: 12px;
 }
 
 .dashboard-page__content {
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.dashboard-page__search-input {
+    display: flex;
+    align-items: end;
 }
 
 .dashboard-page__btn {

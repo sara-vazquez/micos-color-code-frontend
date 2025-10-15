@@ -4,6 +4,7 @@ import AddButton from '../../components/addButton/AddButton';
 import ResourcesTable from '../../components/resourcesTable/ResourcesTable';
 import SearchInput from '../../components/searchInput/SearchInput';
 import AddModal from '../../components/addModal/AddModal';
+import NavbarAdmin from '../../components/navbarAdmin/NavbarAdmin';
 
 export default function DashboardPage() {
     const [resources, setResources] = useState([]);
@@ -53,9 +54,12 @@ export default function DashboardPage() {
     return(
         <section className="dashboard-page">
             <header className="dashboard-page__header">
-                <SearchInput />
+                <Navbar />
             </header>
             <main className="dashboard-page__content">
+                <article className="dashboard-page__search-input">
+                <SearchInput />
+                </article>
                 <ResourcesTable 
                 data={resources}
                 onEdit={handleOpenEditModal}

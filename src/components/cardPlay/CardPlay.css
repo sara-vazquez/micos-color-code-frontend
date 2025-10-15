@@ -1,8 +1,8 @@
 .play-card {
     background-color: var(--primary-50);
     border-radius: var(--border-radius-card);
-    height: 374px;
-    min-width: 320px;
+    height: 360px;
+    min-width: 300px;
     padding: 16px 20px 20px 20px;
     gap: 16px;
     display: flex;

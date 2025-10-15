@@ -5,7 +5,7 @@ import './MainLayout.css';
 
 export default function MainLayout({children, backgroundColor}) {
     return (
-        <div className="main-layout" style={{ backgroundColor: backgroundColor }}>
+        <div className="main-layout" style={{ backgroundColor: backgroundColor || 'var(--white)' }}>
           <Navbar />
           <main className="main-layout__content">
             {children}

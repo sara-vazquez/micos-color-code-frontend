@@ -4,8 +4,9 @@ import Button from '../buttons/Button';
 
 export default function AddModal({onCancel }) {
     return(
-        <section className="add-modal">
+        <section className="add-modal__overlay">
             <form className="add-modal__content">
+                <h1 className="add-modal__title">Añadir recurso</h1>
                 <article className="add-modal__img-container" placeholder="Vista previa de tu archivo">
                     <img className="add-modal__img" />
                 </article>

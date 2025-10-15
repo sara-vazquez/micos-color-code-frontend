@@ -1,0 +1,103 @@
+.add-modal__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1200;
+    padding: var(--space-card);
+}
+
+.add-modal__content {
+    min-width: 370px;
+    height: auto;
+    margin: 12px;
+    padding: 16px 20px 20px 20px;
+    background-color: var(--white);
+    border-radius: var(--border-radius-card);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    overflow-y: auto;
+}
+
+.add-modal__title {
+    font-family: var(--font-family);
+    font-size: var(--h1-size);
+    font-weight: var(--h1-weight);
+    color: var(--primary-500);
+    text-align: center;
+    margin-bottom: var(--space-card);
+}
+
+.add-modal__img-container {
+    margin-top: var(--space-button);
+    width: 304px;
+    height: 160px;
+    flex-shrink: 0;
+    display: flex;            
+    justify-content: center; 
+    align-items: center;    
+    margin: 0 auto;  
+    background-color: var(--secondary-50);
+    border: 2px solid var(--primary-500);
+    border-radius: var(--border-radius-img);
+}
+
+.add-modal__img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    object-fit: contain;
+}
+
+.add-modal__input-group {
+    margin-bottom: var(--space-button);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-button);
+    align-items: center;
+}
+
+.add-modal__label {
+    color: var(--primary-500);
+    font-family: var(--font-family);
+    font-size: var(--button-size);
+    font-weight: var(--button-weight);
+}
+
+.add-modal__input {
+    height: 32px;
+    width: 280px;
+    padding: 4px 8px;
+}
+
+.add-modal_textarea {
+    min-height: 60px;
+    width: 280px;
+    padding: 4px 8px;
+}
+
+.add-modal__input, .add-modal__textarea {
+    border: solid 2px var(--secondary-200);
+    border-radius: var(--border-radius-img);
+    background-color: var(--white);
+    color: var(--neutral-500);
+    font-family: var(--font-family);
+    font-size: var(--body-size);
+    font-weight: var(--body-weight);
+    margin-bottom: var(--space-card);
+    margin-top: var(--space-button);
+    text-align: left;
+}   
+
+.add-modal__actions {
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-button);
+}

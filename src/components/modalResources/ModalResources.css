@@ -61,12 +61,12 @@
     align-items: center;    
     margin: 0 auto;  
     background-color: var(--secondary-50);
+    border-radius: var(--border-radius-img);
 }
 
 .modal-resources__img {
     width: 100%;
     height: 100%;
-    border-radius: var(--border-radius-img);
     overflow: hidden;
     object-fit: contain;
 }

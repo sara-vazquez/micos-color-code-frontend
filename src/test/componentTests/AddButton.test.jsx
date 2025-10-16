@@ -13,8 +13,8 @@ describe('AddButton', () => {
     })
 
     it('renders plus icon', () => {
-        render (<AddButton />)
-        const icon = document.querySelector('.faPlus')
+        const { container } = render(<AddButton />)
+        const icon = container.querySelector('svg')
         expect(icon).toBeInTheDocument()
     })
 

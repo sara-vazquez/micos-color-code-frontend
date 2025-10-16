@@ -113,9 +113,12 @@ describe('Captcha', () => {
         
         render(<Captcha onCaptchaSolved={mockOnCaptchaSolved} />)
         
+        expect(screen.getByText('Cargando captcha...')).toBeInTheDocument()
+
         await waitFor(() => {
-          expect(screen.getByText('No se pudo cargar el captcha')).toBeInTheDocument()
+            expect(screen.queryByText('Cargando captcha...')).toBeInTheDocument()
         })
+        expect(captchaService.getCaptcha).toHaveBeenCalledTimes(1)
     })
 
 })

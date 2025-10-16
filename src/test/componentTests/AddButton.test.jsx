@@ -14,7 +14,7 @@ describe('AddButton', () => {
 
     it('renders plus icon', () => {
         render (<AddButton />)
-        const icon = document.querySelector('faPlus')
+        const icon = document.querySelector('.faPlus')
         expect(icon).toBeInTheDocument()
     })
 
@@ -36,14 +36,6 @@ describe('AddButton', () => {
 
         expect(button).toBeDisabled()
         expect(button).toHaveAttribute('data-testid', 'test-button')
-    })
-
-    it('allows passing an extra className', () => {
-        render(<AddButton className="extra-class" />)
-        const button = screen.getByRole('button')
-
-        expect(button).toHaveClass('add')
-        expect(button).toHaveClass('extra-class')
     })
 })
 

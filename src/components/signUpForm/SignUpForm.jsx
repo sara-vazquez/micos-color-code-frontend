@@ -37,8 +37,9 @@ export default function SignUpForm({ onSubmit, loading, error, success, onGoToLo
                 <h1 className='signup-form__title'>Regístrate</h1>
                 <section className="signup-form__input-group">
                     <article className="signup-form__input-field">
-                        <label className="signup-form__label">Nombre de usuario</label>
+                        <label className="signup-form__label" htmlFor="username">Nombre de usuario</label>
                         <input 
+                            id="username"
                             className="signup-form__input" 
                             name="username" 
                             value={formData.username} 
@@ -47,9 +48,11 @@ export default function SignUpForm({ onSubmit, loading, error, success, onGoToLo
                             required
                         />
                     </article>
+
                     <article className="signup-form__input-field">
-                        <label className="signup-form__label">Correo electrónico</label>
+                        <label className="signup-form__label" htmlFor="email">Correo electrónico</label>
                         <input 
+                            id="email"
                             className="signup-form__input" 
                             name="email"
                             type="email"
@@ -59,9 +62,11 @@ export default function SignUpForm({ onSubmit, loading, error, success, onGoToLo
                             required
                         />
                     </article>
+
                     <article className="signup-form__input-field">
-                        <label className="signup-form__label">Contraseña</label>
+                        <label className="signup-form__label" htmlFor="password">Contraseña</label>
                         <input 
+                            id="password"
                             className="signup-form__input" 
                             name="password" 
                             type="password" 

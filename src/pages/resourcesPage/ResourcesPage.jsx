@@ -16,24 +16,20 @@ export default function ResourcesPage() {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetchResources();
-    }, []);
-
-    const fetchResources = async () => {
-        setLoading(true);
-        try {
-            // const data = await getResources();
-            // setResources(data);
-            
-            // TODO: Reemplazar con llamada real al backend
-            setResources([]);
-        } catch (err) {
+        const fetchResources = async () => {
+          setLoading(true);
+          try {
+            const data = await getResources();
+            setResources(data);
+          } catch (err) {
             setError('Error al cargar los recursos');
             console.error(err);
-        } finally {
+          } finally {
             setLoading(false);
-        }
-    };
+          }
+        };
+        fetchResources();
+      }, []);
 
     const handleBack = () => {
         navigate(-1);

@@ -33,13 +33,13 @@ export default function FeedbackForm({onClose}) {
         <div className="feedback-form__overlay" onClick={onClose}>
         <form className="feedback-form" onClick={(e) => e.stopPropagation()} onSubmit={handleSubmit} >
             <article className="feedback-form__header">
-                <button className="feedback-form__exit">
+                <button className="feedback-form__exit" aria-label="botón para cerrar el formulario">
                     <FontAwesomeIcon icon={faXmark} onClick={onClose}/>
                 </button>
             </article>
-            <h2 className='feedback-form__title'>¡Cuéntanos tu experiencia!</h2>
+            <h2 className='feedback-form__title' aria-label="¡Cuéntanos tu experiencia!">¡Cuéntanos tu experiencia!</h2>
             <article className="feedback-form__info">
-                <label className="feedback-form__subtitle">Correo electrónico</label>
+                <label className="feedback-form__subtitle" aria-label="Correo electrónico">Correo electrónico</label>
                 <input className="feedback-form__input"
                     id="email"
                     type="email"
@@ -50,7 +50,7 @@ export default function FeedbackForm({onClose}) {
                 
             </article>
             <article className="feedback-form__textarea">
-                <label className="feedback-form__subtitle">¿Qué piensas sobre la web? Aceptamos sugerencias 😋</label>
+                <label className="feedback-form__subtitle" aria-label="¿Qué piensas sobre la web? Aceptamos sugerencias">¿Qué piensas sobre la web? Aceptamos sugerencias 😋</label>
                 <textarea className="feedback-form__textarea-field"
                 id="message"
                 value={message}

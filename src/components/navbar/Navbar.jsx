@@ -37,7 +37,7 @@ export default function Navbar({backgroundColor}) {
                 <Link to="/profile" className="profile__button" aria-label="Ir al perfil del usuario">
                     <FontAwesomeIcon icon={faCircleUser} />
                 </Link>
-                <button className="menu__button" aria-label={isMenuOpen ? "Cerrar menú de navegación" : "Abrir menú de navegación"} onClick={toggleMenu}>
+                <button className="menu__button" aria-label={isMenuOpen ? "Cerrar el menú de navegación" : "Abrir el menú de navegación"} onClick={toggleMenu}>
                     <FontAwesomeIcon icon={isMenuOpen ? faTimes : faBars}/>
                 </button>
                 </article>
@@ -45,7 +45,7 @@ export default function Navbar({backgroundColor}) {
         </header>
 
          {/* menu */}
-         <section className={`hamburger-menu ${isMenuOpen ? 'hamburger-menu--open' : ''}`} style={{ backgroundColor: backgroundColor || 'var(--white)' }}>
+         <section className={`hamburger-menu ${isMenuOpen ? 'hamburger-menu--open' : ''}`} style={{ backgroundColor: backgroundColor || 'var(--white)' }}hidden={!isMenuOpen}>
                 <nav className="hamburger-menu__nav">
                     <Link 
                         to="/home" 

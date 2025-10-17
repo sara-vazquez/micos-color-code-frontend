@@ -39,7 +39,7 @@ export default function LoginForm({onSubmit, loading, error, onGoToRegister}) {
     return(
         <>
            <form className="login-form" onSubmit={handleSubmit}>
-                <h1 className='login-form__title'>Iniciar sesión</h1>
+                <h1 className='login-form__title' aria-label="Iniciar sesión">Iniciar sesión</h1>
                 {confirmationMessage && (
                     <div className={`login-form__message ${isConfirmationError ? 'login-form__message--error' : 'login-form__message--success'}`}>
                         {confirmationMessage}
@@ -47,7 +47,7 @@ export default function LoginForm({onSubmit, loading, error, onGoToRegister}) {
                 )}
                 <section className="login-form__input-group">
                     <article className="login-form__input-field">
-                        <label className="login-form__label">Correo electrónico</label>
+                        <label className="login-form__label" aria-label="Correo electrónico">Correo electrónico</label>
                         <input 
                             className="login-form__input" 
                             name="email" 
@@ -59,7 +59,7 @@ export default function LoginForm({onSubmit, loading, error, onGoToRegister}) {
                         />
                     </article>
                     <article className="login-form__input-field">
-                        <label className="login-form__label">Contraseña</label>
+                        <label className="login-form__label" aria-label="Contraseña">Contraseña</label>
                         <input 
                             className="login-form__input" 
                             name="password" 

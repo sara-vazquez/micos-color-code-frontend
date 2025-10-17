@@ -1,17 +1,9 @@
 import React from "react";
-import { BrowserRouter } from "react-router-dom";
 import {render, screen} from '@testing-library/react'
 import {describe, it, expect, vi} from 'vitest';
 import userEvent from "@testing-library/user-event";
 import DaltonicButton from "../../components/daltonicButtons/DaltonicButton";
 
-vi.mock('react-router-dom', async () => {
-    const actual = await vi.importActual('react-router-dom')
-    return {
-      ...actual,
-      useLocation: () => ({ pathname: '/daltonism' })
-    }
-})
 describe('DaltonicButton', () => {
     it('renders button right', () => {
         render(<DaltonicButton />)

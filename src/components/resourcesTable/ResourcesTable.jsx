@@ -6,14 +6,16 @@ export default function ResourcesTable({data, onEdit, onDelete}) {
     return(
         <section className="resources-table__container">
             <table className="resources-table">
-                <thread className="resources-table__thread">
-                    <th>Imagen</th>
-                    <th>PDF</th>
-                    <th>Nombre</th>
-                    <th>Intro</th>
-                    <th>Descripción</th>
-                    <th>Acciones</th>
-                </thread>
+                <thead className="resources-table__thread">
+                  <tr>
+                      <th>Imagen</th>
+                      <th>PDF</th>
+                      <th>Nombre</th>
+                      <th>Intro</th>
+                      <th>Descripción</th>
+                      <th>Acciones</th>
+                    </tr>
+                </thead>
                 <tbody className='resources-table__body'>
           {data.length === 0 ? (
             <tr>
@@ -34,8 +36,8 @@ export default function ResourcesTable({data, onEdit, onDelete}) {
                 <td className="resources-table__pdf-cell">
                   <span className="resources-table__pdf">{resource.pdf}</span>
                 </td>
-                <td className="tresources-table__name-cell">
-                  {resource.nombre}
+                <td className="resources-table__name-cell">
+                  {resource.name}
                 </td>
                 <td className="resources-table__intro-cell">
                   {resource.intro}

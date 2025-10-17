@@ -5,7 +5,7 @@ import ResourcesTable from '../../components/resourcesTable/ResourcesTable';
 import SearchInput from '../../components/searchInput/SearchInput';
 import AddModal from '../../components/addModal/AddModal';
 import NavbarAdmin from '../../components/navbarAdmin/NavbarAdmin';
-// import { getResources, createResource, updateResource, deleteResource } from '../../services/resourcesService';
+import { getAdminResources, createResource, updateResource, deleteResource } from '../../services/resourcesService';
 
 export default function DashboardPage() {
     const [resources, setResources] = useState([]);
@@ -17,75 +17,58 @@ export default function DashboardPage() {
 
     useEffect(() => {
         fetchResources();
-    }, []);
-
-    const fetchResources = async () => {
+      }, []);
+    
+      const fetchResources = async () => {
         setLoading(true);
         try {
-            // const data = await getResources();
-            // setResources(data);
-            // setFilteredResources(data);
-            
-            setResources([]);
-            setFilteredResources([]);
+          const data = await getAdminResources();
+          setResources(data);
+          setFilteredResources(data);
         } catch (err) {
-            setError('Error al cargar los recursos');
-            console.error(err);
+          setError('Error al cargar los recursos');
+          console.error('❌', err);
         } finally {
-            setLoading(false);
+          setLoading(false);
         }
-    };
+      };
 
-    const handleSearch = (searchTerm) => {
-        const filtered = resources.filter(resource =>
-            resource.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            resource.intro.toLowerCase().includes(searchTerm.toLowerCase())
+      const handleSearch = (searchTerm) => {
+        const filtered = resources.filter(r =>
+          r.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          r.intro.toLowerCase().includes(searchTerm.toLowerCase())
         );
         setFilteredResources(filtered);
-    };
-
-    const handleSaveResource = async (resourceData) => {
+      };
+    
+      const handleSaveResource = async (resourceData) => {
         try {
-            if (editingResource) {
-                // const updated = await updateResource(editingResource.id, resourceData);
-                // setResources(resources.map(r => r.id === editingResource.id ? updated : r));
-                
-                // TODO: Reemplazar con llamada real al backend
-                setResources(resources.map(r => 
-                    r.id === editingResource.id ? { ...r, ...resourceData } : r
-                ));
-            } else {
-                // const newResource = await createResource(resourceData);
-                // setResources([...resources, newResource]);
-                
-                // TODO: Reemplazar con llamada real al backend
-                const newResource = {
-                    id: Date.now(),
-                    ...resourceData
-                };
-                setResources([...resources, newResource]);
-            }
-            setFilteredResources(resources);
-            handleCloseModal();
+          if (editingResource) {
+            const updated = await updateResource(editingResource.id, resourceData);
+            setResources(resources.map(r => (r.id === editingResource.id ? updated : r)));
+          } else {
+            const newResource = await createResource(resourceData);
+            setResources([...resources, newResource]);
+          }
+          setFilteredResources(resources);
+          handleCloseModal();
         } catch (err) {
-            console.error('Error al guardar recurso:', err);
-            setError('Error al guardar el recurso');
+          console.error('❌ Error al guardar recurso:', err);
+          setError('Error al guardar el recurso');
         }
-    };
-
-    const handleDelete = async (id) => {
-        if (window.confirm('¿Estás seguro de que quieres eliminar este recurso?')) {
-            try {
-                // await deleteResource(id);
-                
-                // TODO: Reemplazar con llamada real al backend
-                const updated = resources.filter(r => r.id !== id);
-                setResources(updated);
-                setFilteredResources(updated);
-            } catch (err) {
-                console.error('Error al eliminar recurso:', err);
-                setError('Error al eliminar el recurso');
-            }
+      };
+    
+      const handleDelete = async (id) => {
+        if (window.confirm('¿Seguro que quieres eliminar este recurso?')) {
+          try {
+            await deleteResource(id);
+            const updated = resources.filter(r => r.id !== id);
+            setResources(updated);
+            setFilteredResources(updated);
+          } catch (err) {
+            console.error('❌ Error al eliminar recurso:', err);
+            setError('Error al eliminar el recurso');
+          }
         }
     };
 
@@ -103,31 +86,6 @@ export default function DashboardPage() {
         setShowModal(false);
         setEditingResource(null);
     }
-
-    const handleSaveResource = (resourceData) => {
-        if (editingResource) {
-            // PUT: updates existing resource
-            setResources(resources.map(r => 
-                r.id === editingResource.id ? { ...r, ...resourceData } : r
-            ));
-        } else {
-            // POST: create new resource 
-            const newResource = {
-                id: Date.now(), // o generar ID apropiado
-                ...resourceData
-            };
-            setResources([...resources, newResource]);
-        }
-        handleCloseModal();
-    };
-
-    
-    const handleDelete = async (id) => {
-        if (window.confirm('¿Eliminar este recurso?')) {
-          // await fetch(`/resources/${id}`, { method: 'DELETE' });
-          setResources(resources.filter(r => r.id !== id));
-        }
-    };
       
     return(
         <section className="dashboard-page">
@@ -140,7 +98,7 @@ export default function DashboardPage() {
                 <SearchInput onSearch={handleSearch} />
                 </article>
                 {loading ? (
-                    <p>Cargando recursos...</p>
+                    <p className="dashboard-page__loading">Cargando recursos...</p>
                 ) : (
                     <ResourcesTable 
                         data={filteredResources}

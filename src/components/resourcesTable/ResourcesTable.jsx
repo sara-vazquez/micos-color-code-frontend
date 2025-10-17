@@ -28,13 +28,13 @@ export default function ResourcesTable({data, onEdit, onDelete}) {
               <tr key={resource.id}>
                 <td className="resources-table__img-cell">
                   <img 
-                    src={resource.image} 
+                    src={resource.imageFile} 
                     alt={resource.name}
                     className="resources-table__img"
                   />
                 </td>
                 <td className="resources-table__pdf-cell">
-                  <span className="resources-table__pdf">{resource.pdf}</span>
+                  <span className="resources-table__pdf">{resource.pdfFile}</span>
                 </td>
                 <td className="resources-table__name-cell">
                   {resource.name}

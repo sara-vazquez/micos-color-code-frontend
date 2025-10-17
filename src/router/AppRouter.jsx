@@ -31,6 +31,16 @@ export default function AppRouter() {
                     </PublicRoute>} 
             />
             {/* Private routes (need to be logged) */}
+
+            {/* ADMIN ROUTE */}
+            <Route path="/admin/dashboard"
+                element={
+                    <PrivateRoute>
+                        <Dashboard backgroundColor="var(--grey)"/>
+                    </PrivateRoute>}
+            />
+
+            {/* USER ROUTES */}
             <Route path="/home" 
                 element={
                     <PrivateRoute>

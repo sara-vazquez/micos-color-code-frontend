@@ -54,7 +54,7 @@ export default function DashboardPage() {
     return(
         <section className="dashboard-page">
             <header className="dashboard-page__header">
-                <Navbar />
+                <NavbarAdmin />
             </header>
             <main className="dashboard-page__content">
                 <article className="dashboard-page__search-input">

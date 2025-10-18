@@ -4,6 +4,7 @@ import { Pencil, Trash2 } from 'lucide-react';
 
 export default function ResourcesTable({data, onEdit, onDelete}) {
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+    console.log("🧠 Resource:", data);
 
     return(
         <section className="resources-table__container">
@@ -30,7 +31,7 @@ export default function ResourcesTable({data, onEdit, onDelete}) {
               <tr key={resource.id}>
                 <td className="resources-table__img-cell">
                   <img 
-                    src={`${API_BASE_URL}${resource.imageFile}`} 
+                    src={`${API_BASE_URL}${resource.imageFile}`}
                     alt={resource.name}
                     className="resources-table__img"
                   />
@@ -38,7 +39,7 @@ export default function ResourcesTable({data, onEdit, onDelete}) {
                 <td className="resources-table__pdf-cell">
                   {resource.pdfFile ? (
                   <a
-                    href={`${API_BASE_URL}${resource.pdfFile}`}
+                  href={`${API_BASE_URL}${resource.pdfFile}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="resources-table__pdf-link"

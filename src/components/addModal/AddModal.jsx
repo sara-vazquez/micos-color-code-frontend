@@ -98,24 +98,17 @@ export default function AddModal({resource, onSave, onClose}) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
-        if (!validate()) {
-            return;
-        }
-
+    
+        if (!validate()) return;
+    
         const data = new FormData();
         data.append('name', formData.name);
         data.append('intro', formData.intro);
         data.append('description', formData.description);
-        
-        if (formData.imageFile) {
-            data.append('image', formData.imageFile);
-        }
-        
-        if (formData.pdfFile) {
-            data.append('pdf', formData.pdfFile);
-        }
-
+    
+        if (formData.imageFile) data.append('image', formData.imageFile);
+        if (formData.pdfFile) data.append('pdf', formData.pdfFile);
+    
         onSave(data);
     };
 

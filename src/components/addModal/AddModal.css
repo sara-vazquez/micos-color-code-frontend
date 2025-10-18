@@ -13,8 +13,8 @@
 }
 
 .add-modal__content {
-    min-width: 370px;
-    height: auto;
+    min-width: 320px;
+    height: 500px;
     margin: 12px;
     padding: 16px 20px 20px 20px;
     background-color: var(--white);
@@ -37,6 +37,7 @@
 
 .add-modal__img-container {
     margin-top: var(--space-button);
+    margin-bottom: var(--space-button);
     width: 304px;
     height: 160px;
     flex-shrink: 0;
@@ -45,8 +46,13 @@
     align-items: center;    
     margin: 0 auto;  
     background-color: var(--secondary-50);
-    border: 2px solid var(--primary-500);
+    border: none;
     border-radius: var(--border-radius-img);
+    font-family: var(--font-family);
+    font-size: var(--body-size);
+    font-weight: var(--body-weight);
+    color: var(--primary-500);
+    text-align: center;
 }
 
 .add-modal__img {
@@ -60,8 +66,7 @@
     margin-bottom: var(--space-button);
     display: flex;
     flex-direction: column;
-    gap: var(--space-button);
-    align-items: center;
+    align-items: left;
 }
 
 .add-modal__label {

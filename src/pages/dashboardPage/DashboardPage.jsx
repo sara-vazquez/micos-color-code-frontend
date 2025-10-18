@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './DashboardPage.css';
 import AddButton from '../../components/addButton/AddButton';
 import ResourcesTable from '../../components/resourcesTable/ResourcesTable';
-import SearchInput from '../../components/searchInput/SearchInput';
 import AddModal from '../../components/addModal/AddModal';
-import NavbarAdmin from '../../components/navbarAdmin/NavbarAdmin';
 import { getAdminResources, createResource, updateResource, deleteResource } from '../../services/resourcesService';
 
 export default function DashboardPage() {
@@ -31,14 +29,6 @@ export default function DashboardPage() {
         } finally {
           setLoading(false);
         }
-      };
-
-      const handleSearch = (searchTerm) => {
-        const filtered = resources.filter(r =>
-          r.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          r.intro.toLowerCase().includes(searchTerm.toLowerCase())
-        );
-        setFilteredResources(filtered);
       };
     
       const handleSaveResource = async (resourceData) => {
@@ -89,14 +79,8 @@ export default function DashboardPage() {
       
     return(
         <section className="dashboard-page">
-            <header className="dashboard-page__header">
-                <NavbarAdmin />
-            </header>
             <main className="dashboard-page__content">
             {error && <p className="dashboard-page__error">{error}</p>}
-                <article className="dashboard-page__search-input">
-                <SearchInput onSearch={handleSearch} />
-                </article>
                 {loading ? (
                     <p className="dashboard-page__loading">Cargando recursos...</p>
                 ) : (
@@ -106,10 +90,8 @@ export default function DashboardPage() {
                         onDelete={handleDelete}
                     />
                 )}
-                <article className="dashboard-page__btn">
-                    <AddButton onClick={handleOpenAddModal}/>
-                </article>
             </main>
+            <AddButton onClick={handleOpenAddModal}/>
             {showModal && (<AddModal resource={editingResource} onSave={handleSaveResource} onClose={handleCloseModal}/>)}
         </section>
     );

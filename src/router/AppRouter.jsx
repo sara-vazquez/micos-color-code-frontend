@@ -3,10 +3,12 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
 import MainLayout from "../components/mainLayout/MainLayout";
+import MainAdminLayout from "../components/mainAdminLayout/MainAdminLayout";
 
 import LoginPage from "../pages/loginPage/LoginPage";
 import RegisterPage from "../pages/registerPage/RegisterPage";
 
+import DashboardPage from "../pages/dashboardPage/DashboardPage";
 import ProfilePage from "../pages/profilePage/ProfilePage";
 import HomePage from "../pages/homePage/HomePage";
 import DaltonismPage from "../pages/daltonismPage/DaltonismPage";
@@ -36,12 +38,14 @@ export default function AppRouter() {
             <Route path="/admin/dashboard"
                 element={
                     <PrivateRoute>
-                        <Dashboard backgroundColor="var(--grey)"/>
+                        <MainAdminLayout>
+                            <DashboardPage backgroundColor="var(--grey)"/>
+                        </MainAdminLayout>
                     </PrivateRoute>}
             />
 
             {/* USER ROUTES */}
-            <Route path="/home" 
+            <Route path="/users/home" 
                 element={
                     <PrivateRoute>
                         <MainLayout>
@@ -49,7 +53,7 @@ export default function AppRouter() {
                         </MainLayout>
                     </PrivateRoute>} 
             />
-            <Route path="/system" 
+            <Route path="/users/system" 
                 element={
                     <PrivateRoute>
                         <MainLayout>
@@ -57,7 +61,7 @@ export default function AppRouter() {
                         </MainLayout>
                     </PrivateRoute>} 
             />
-            <Route  path="/daltonism" 
+            <Route  path="/users/daltonism" 
                 element={
                     <PrivateRoute>
                         <MainLayout backgroundColor="var(--yellow)">
@@ -65,7 +69,7 @@ export default function AppRouter() {
                         </MainLayout>
                     </PrivateRoute>} 
             />
-            <Route  path="/play" 
+            <Route  path="/users/play" 
                 element={
                     <PrivateRoute>
                         <MainLayout backgroundColor="var(--primary-100)">
@@ -73,7 +77,7 @@ export default function AppRouter() {
                         </MainLayout>
                     </PrivateRoute>} 
             />
-            <Route  path="/resources" 
+            <Route  path="/users/resources" 
                 element={
                     <PrivateRoute>
                         <MainLayout backgroundColor="var(--secondary-100)">
@@ -81,11 +85,11 @@ export default function AppRouter() {
                         </MainLayout>
                     </PrivateRoute>} 
             />
-            <Route path="/profile" 
+            <Route path="/users/profile" 
                 element={
                     <PrivateRoute>
                         <MainLayout>
-                            <ProfilePage backgroundColor="var(--yellow)"/>
+                            <ProfilePage backgroundColor="var(--white)"/>
                         </MainLayout>
                     </PrivateRoute>} 
             />

@@ -1,13 +1,17 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
-import { isAuthenticated } from "../services/authService";
+import { isAuthenticated, getUserRole } from "../services/authService";
 
 export default function PublicRoute({children}) {
     const isAuth = isAuthenticated();
+    const role = getUserRole();
 
     if (isAuth) {
-        // If it's already authenticated, returns home -> this helps logged users to aboid login/signup pages
-        return <Navigate to="/home" replace />;
+        if (role === 'ADMIN') {
+            return <Navigate to="/admin/dashboard" replace />;
+        }
+        return <Navigate to="/users/home" replace />;
     }
+    
     return children;
 }

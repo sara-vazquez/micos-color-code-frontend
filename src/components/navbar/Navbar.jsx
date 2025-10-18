@@ -29,12 +29,12 @@ export default function Navbar({backgroundColor}) {
         <header className= "navbar">
             <section className= "navbar__container">
                 <article className= "logo__container">
-                    <Link to="/home" aria-label="Ir de vuelta a la home">
+                    <Link to="/users/home" aria-label="Ir de vuelta a la home">
                     <img src={Logo} alt="logotype" className="logo"></img>
                     </Link>
                 </article>
                 <article className="navbar__buttons">
-                <Link to="/profile" className="profile__button" aria-label="Ir al perfil del usuario">
+                <Link to="/users/profile" className="profile__button" aria-label="Ir al perfil del usuario">
                     <FontAwesomeIcon icon={faCircleUser} />
                 </Link>
                 <button className="menu__button" aria-label={isMenuOpen ? "Cerrar el menú de navegación" : "Abrir el menú de navegación"} onClick={toggleMenu}>
@@ -49,27 +49,27 @@ export default function Navbar({backgroundColor}) {
                 <nav className="hamburger-menu__nav">
                     <Link 
                         to="/home" 
-                        className={`hamburger-menu__link ${isActive('/home') ? 'hamburger-menu__link--active' : ''}`}
+                        className={`hamburger-menu__link ${isActive('/users/home') ? 'hamburger-menu__link--active' : ''}`}
                         onClick={closeMenu}>Home</Link>
                     
                     <Link 
                         to="/system" 
-                        className={`hamburger-menu__link ${isActive('/system') ? 'hamburger-menu__link--active' : ''}`}
+                        className={`hamburger-menu__link ${isActive('/users/system') ? 'hamburger-menu__link--active' : ''}`}
                         onClick={closeMenu}>Micos color code</Link>
                     
                     <Link 
                         to="/daltonism" 
-                        className={`hamburger-menu__link ${isActive('/daltonism') ? 'hamburger-menu__link--active' : ''}`}
+                        className={`hamburger-menu__link ${isActive('/users/daltonism') ? 'hamburger-menu__link--active' : ''}`}
                         onClick={closeMenu}>Daltonismo</Link>
                     
                     <Link 
                         to="/play" 
-                        className={`hamburger-menu__link ${isActive('/play') ? 'hamburger-menu__link--active' : ''}`}
+                        className={`hamburger-menu__link ${isActive('/users/play') ? 'hamburger-menu__link--active' : ''}`}
                         onClick={closeMenu}>¡A jugar!</Link>
                     
                     <Link 
                         to="/resources" 
-                        className={`hamburger-menu__link ${isActive('/resources') ? 'hamburger-menu__link--active' : ''}`}
+                        className={`hamburger-menu__link ${isActive('/users/resources') ? 'hamburger-menu__link--active' : ''}`}
                         onClick={closeMenu}>Recursos</Link>
                 </nav>
             </section>

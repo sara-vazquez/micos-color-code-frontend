@@ -22,13 +22,16 @@ html, body {
 }
 
 .profile__intro {
-    margin-bottom: var(--space-card);
+    margin-bottom: var(--space-button);
+    display: flex;
+    flex-direction: row;
 }
 
 .profile__header{
     display: flex;
     flex-direction: row;
-    gap: 12px;
+    gap: 8px;
+    margin: 0;
 }
 
 .profile__title {
@@ -84,9 +87,6 @@ html, body {
     background-color: transparent;
 }
 
-.profile__back{
-    margin-right: 8px;
-}
 .profile__menu {
     align-items: end;
 }

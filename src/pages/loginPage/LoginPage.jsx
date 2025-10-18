@@ -17,9 +17,9 @@ export default function LoginPage() {
             const data = await loginUser(formData);
             
             if (data.role === 'ADMIN') {
-                navigate('/admin/home', { replace: true }); //Change to /admin/dashboard
+                navigate('/admin/dashboard', { replace: true });
             } else {
-                navigate('/user/home', { replace: true });
+                navigate('/users/home', { replace: true });
             }
         } catch (err) {
             setError(err.message);

@@ -10,10 +10,10 @@ import DaltonicButton from '../../components/daltonicButtons/DaltonicButton';
 export default function HomePage() {
     
     const navigate = useNavigate();
-    const goToSystem = () => { navigate("/system"); }
-    const goToDaltonism = () => { navigate("/daltonism"); }
-    const goToPlay = () => { navigate("/play");}
-    const goToResources = () => { navigate("/resources"); }
+    const goToSystem = () => { navigate("/users/system"); }
+    const goToDaltonism = () => { navigate("/users/daltonism"); }
+    const goToPlay = () => { navigate("/users/play");}
+    const goToResources = () => { navigate("/users/resources"); }
 
     
     return(

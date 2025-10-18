@@ -9,6 +9,10 @@
     justify-content: center;
     border: none;
     cursor: pointer;
+    position: fixed;
+    bottom:80px;
+    right: 12px;
+    z-index: 1000;
 }
 
 .faPlus {

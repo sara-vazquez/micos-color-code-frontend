@@ -146,7 +146,20 @@ export default function AddModal({resource, onSave, onClose}) {
                         <p className="add-modal__placeholder">Vista previa de tu imagen</p>
                     )}
                 </article>
+            
                 <article className="add-modal__input-group">
+                    <label className="add-modal__label" htmlFor="image-upload">
+                        Imagen {!resource && '*'}
+                    </label>
+                    <input 
+                        id="image-upload"
+                        className="add-modal__input" 
+                        type="file" 
+                        accept="image/*"
+                        onChange={handleImageChange}
+                    />
+                    {errors.image && <span className="add-modal__error">{errors.imageFile}</span>}
+
                     <label className="add-modal__label" htmlFor="name">Nombre *</label>
                     <input 
                         id="name"
@@ -179,18 +192,6 @@ export default function AddModal({resource, onSave, onClose}) {
                         onChange={handleChange}
                     />
                     {errors.description && <span className="add-modal__error">{errors.description}</span>}
-                
-                    <label className="add-modal__label" htmlFor="image-upload">
-                        Imagen {!resource && '*'}
-                    </label>
-                    <input 
-                        id="image-upload"
-                        className="add-modal__input" 
-                        type="file" 
-                        accept="image/*"
-                        onChange={handleImageChange}
-                    />
-                    {errors.image && <span className="add-modal__error">{errors.imageFile}</span>}
 
                     <label className="add-modal__label" htmlFor={fileId}>
                         Archivo PDF {!resource && '*'}

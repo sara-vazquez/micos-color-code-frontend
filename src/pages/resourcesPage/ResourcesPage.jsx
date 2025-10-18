@@ -29,7 +29,7 @@ export default function ResourcesPage() {
           }
         };
         fetchResources();
-      }, []);
+    }, []);
 
     const handleBack = () => {
         navigate(-1);
@@ -47,11 +47,11 @@ export default function ResourcesPage() {
                 <p className='resources__text' aria-label="texto descriptivo de la página actual">Te presentamos la sección de recursos, donde podrás descargar diferentes materiales gráficos para que los peques sigan practicando mientras se manchan las manitas 🎨.</p>
             </article>
             <article className="resources__content">
-            {loading && <p>Cargando recursos...</p>}
+            {loading && <p className="resources__error">Cargando recursos...</p>}
                 {error && <p className="resources__error">{error}</p>}
                 
                 {!loading && !error && resources.length === 0 && (
-                    <p>No hay recursos disponibles en este momento.</p>
+                    <p className="resources__error">No hay recursos disponibles en este momento.</p>
                 )}
 
                 {!loading && resources.map((resource) => (

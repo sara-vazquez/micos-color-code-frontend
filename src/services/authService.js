@@ -1,3 +1,4 @@
+import fetchService from "./fetchService";
 const API_URL = "http://localhost:8080";
 
 export async function loginUser(credentials) {
@@ -33,14 +34,14 @@ export async function loginUser(credentials) {
         // Saves username and role
         const userData = {
             username: data.username,
-            role: data.role
+            role: data.role.replace('ROLE_', '')
         };
         localStorage.setItem('user', JSON.stringify(userData));
         
         return {
             token: data.token,
             username: data.username,
-            role: data.role
+            role: data.role.replace('ROLE_', '')
         };
     } catch (error) {
         console.error("❌ Error en loginUser:", error);
@@ -50,21 +51,8 @@ export async function loginUser(credentials) {
 
 export async function logoutUser() {
     try {
-        const token = localStorage.getItem('token');
-
-        const response = await fetch(`${API_URL}/auth/logout`, {
-            method: "POST",
-            headers: {
-                "Authorization": `Bearer ${token}`,
-                "Content-Type": "application/json",
-            },
-            credentials: "include"
-        });
-
-        if (!response.ok) {
-            throw new Error("Error al cerrar sesión");
-        }
-
+        await fetchService.post('/auth/logout');
+        
         // Cleans localStorage
         localStorage.removeItem('token');
         localStorage.removeItem('user');
@@ -73,7 +61,8 @@ export async function logoutUser() {
         return true;
 
     } catch (error) {
-        console.error("❌ Error en logoutUser:", error);
+       console.error("❌ Error en logoutUser:", error);
+
         localStorage.removeItem('token');
         localStorage.removeItem('user');
         throw error;

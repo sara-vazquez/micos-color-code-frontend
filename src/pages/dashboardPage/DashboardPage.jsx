@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
+import { SearchProvider } from '../../contexts/SearchContext';
 import './DashboardPage.css';
 import AddButton from '../../components/addButton/AddButton';
 import ResourcesTable from '../../components/resourcesTable/ResourcesTable';
@@ -92,6 +93,7 @@ export default function DashboardPage() {
     }
       
     return(
+      <SearchProvider handleSearch={handleSearch}>
         <section className="dashboard-page">
             <main className="dashboard-page__content">
             {error && <p className="dashboard-page__error">{error}</p>}
@@ -108,5 +110,6 @@ export default function DashboardPage() {
             <AddButton onClick={handleOpenAddModal}/>
             {showModal && (<AddModal resource={editingResource} onSave={handleSaveResource} onClose={handleCloseModal}/>)}
         </section>
+        </SearchProvider>
     );
 }

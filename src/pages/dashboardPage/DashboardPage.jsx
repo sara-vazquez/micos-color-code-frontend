@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import './DashboardPage.css';
 import AddButton from '../../components/addButton/AddButton';
 import ResourcesTable from '../../components/resourcesTable/ResourcesTable';
@@ -7,7 +7,7 @@ import { getAdminResources, createResource, updateResource, deleteResource } fro
 
 export default function DashboardPage() {
     const [resources, setResources] = useState([]);
-    const [filteredResources, setFilteredResources] = useState([]);
+    const [searchTerm, setSearchTerm] = useState('');
     const [showModal, setShowModal] = useState(false);
     const [editingResource, setEditingResource] = useState(null); // use null for create and object for edit
     const [loading, setLoading] = useState(false);
@@ -22,7 +22,6 @@ export default function DashboardPage() {
         try {
           const data = await getAdminResources();
           setResources(data);
-          setFilteredResources(data);
         } catch (err) {
           setError('Error al cargar los recursos');
           console.error('❌', err);
@@ -30,6 +29,23 @@ export default function DashboardPage() {
           setLoading(false);
         }
       };
+
+      const handleSearch = (term) => {
+        setSearchTerm(term); 
+    };
+
+    const resourcesToShow = useMemo(() => {
+        if (!searchTerm) {
+            return resources;
+        }
+
+        const term = searchTerm.toLowerCase();
+        
+        return resources.filter(r =>
+            r.name.toLowerCase().includes(term) ||
+            r.intro.toLowerCase().includes(term) 
+        );
+    }, [resources, searchTerm]);
     
       const handleSaveResource = async (resourceData) => {
         try {
@@ -53,7 +69,6 @@ export default function DashboardPage() {
             await deleteResource(id);
             const updated = resources.filter(r => r.id !== id);
             setResources(updated);
-            setFilteredResources(updated);
           } catch (err) {
             console.error('❌ Error al eliminar recurso:', err);
             setError('Error al eliminar el recurso');
@@ -84,7 +99,7 @@ export default function DashboardPage() {
                     <p className="dashboard-page__loading">Cargando recursos...</p>
                 ) : (
                     <ResourcesTable 
-                        data={filteredResources}
+                        data={resourcesToShow}
                         onEdit={handleOpenEditModal}
                         onDelete={handleDelete}
                     />

@@ -38,8 +38,8 @@ export default function AppRouter() {
             <Route path="/admin/dashboard"
                 element={
                     <PrivateRoute>
-                        <MainAdminLayout>
-                            <DashboardPage backgroundColor="var(--grey)"/>
+                        <MainAdminLayout backgroundColor="var(--light-yellow)">
+                            <DashboardPage />
                         </MainAdminLayout>
                     </PrivateRoute>}
             />

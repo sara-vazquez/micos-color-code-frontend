@@ -4,10 +4,12 @@ import Logo from '../../assets/micosLogo.svg';
 import { LogOut } from "lucide-react";
 import { logoutUser } from "../../services/authService";
 import { useNavigate } from "react-router-dom";
+import { useSearch } from "../../contexts/SearchContext";
 import SearchInput from "../searchInput/SearchInput";
 
 export default function NavbarAdmin() {
     const [loading, setLoading] = useState(false);
+    const { handleSearch } = useSearch();
     const navigate = useNavigate();
 
     const handleLogout = async () => {
@@ -30,7 +32,7 @@ export default function NavbarAdmin() {
                     <img src={Logo} alt="logotype" className="logo"></img>
                 </article>
                 <article className="navbar__buttons">
-                    <SearchInput />
+                    <SearchInput onSearch={handleSearch}/>
                     <button type ="button" className="logout__button" onClick={handleLogout} disabled={loading}>
                         <LogOut  size={24}/>
                     </button>

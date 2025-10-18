@@ -1,6 +1,6 @@
 import fetchService from "./fetchService";
 
-const API_URL =  "http://localhost:8080";
+const API_URL = "http://localhost:8080";
 
 // GET
 export async function getResources() {
@@ -36,75 +36,72 @@ export async function getAdminResources() {
 
 // POST
 export async function createResource(resourceData) {
-  try {
-      const formData = new FormData();
-      formData.append("name", resourceData.name);
-      formData.append("intro", resourceData.intro);
-      formData.append("description", resourceData.description);
-      if (resourceData.imageFile) formData.append("image", resourceData.imageFile);
-      if (resourceData.pdfFile) formData.append("pdf", resourceData.pdfFile);
+    try {
+        const token = localStorage.getItem('token');
+        
+        console.log('🔍 URL:', `${API_URL}/admin/resources`);
+        console.log('🔍 Token:', token);
+        console.log('🔍 FormData entries:');
+        for (let pair of resourceData.entries()) {
+            console.log(pair[0] + ':', pair[1]);
+        }
+        
+        const response = await fetch(`${API_URL}/admin/resources`, {
+            method: "POST",
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+            body: resourceData,
+        });
+        
+        console.log('📡 Response status:', response.status);
 
-      const token = localStorage.getItem('token');
-      const response = await fetch(`${API_URL}`, {
-          method: "POST",
-          headers: {
-              Authorization: `Bearer ${token}`,
-          },
-          body: formData,
-      });
+        if (response.status === 401) {
+            localStorage.removeItem('token');
+            window.location.href = '/login';
+            throw new Error('Token expired');
+        }
 
-      if (response.status === 401) {
-          localStorage.removeItem('token');
-          window.location.href = '/login';
-          throw new Error('Token expired');
-      }
+        if (!response.ok) {
+            throw new Error(`Error al crear recurso (${response.status})`);
+        }
 
-      if (!response.ok) {
-          throw new Error(`Error al crear recurso (${response.status})`);
-      }
-
-      return await response.json();
-  } catch (error) {
-      console.error("❌ Error al crear recurso:", error);
-      throw error;
-  }
+        return await response.json();
+    } catch (error) {
+        console.error("❌ Error al crear recurso:", error);
+        throw error;
+    }
 }
 
 
 // PUT
 export async function updateResource(id, resourceData) {
-  try {
-      const formData = new FormData();
-      formData.append("name", resourceData.name);
-      formData.append("intro", resourceData.intro);
-      formData.append("description", resourceData.description);
-      if (resourceData.imageFile) formData.append("image", resourceData.imageFile);
-      if (resourceData.pdfFile) formData.append("pdf", resourceData.pdfFile);
+    try {
+        const token = localStorage.getItem('token');
+        
+        const response = await fetch(`${API_URL}/admin/resources/${id}`, {
+            method: "PUT",
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+            body: resourceData, 
+        });
 
-      const token = localStorage.getItem('token');
-      const response = await fetch(`${API_URL}/admin/resources/${id}`, {
-          method: "PUT",
-          headers: {
-              Authorization: `Bearer ${token}`,
-          },
-          body: formData,
-      });
+        if (response.status === 401) {
+            localStorage.removeItem('token');
+            window.location.href = '/login';
+            throw new Error('Token expired');
+        }
 
-      if (response.status === 401) {
-          localStorage.removeItem('token');
-          window.location.href = '/login';
-          throw new Error('Token expired');
-      }
+        if (!response.ok) {
+            throw new Error(`Error al actualizar recurso (${response.status})`);
+        }
 
-      if (!response.ok) {
-          throw new Error(`Error al actualizar recurso (${response.status})`);
-      }
-
-      return await response.json();
-  } catch (error) {
-      console.error("❌ Error al actualizar recurso:", error);
-      throw error;
-  }
+        return await response.json();
+    } catch (error) {
+        console.error("❌ Error al actualizar recurso:", error);
+        throw error;
+    }
 }
 
 // DELETE

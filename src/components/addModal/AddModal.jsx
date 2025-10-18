@@ -116,10 +116,6 @@ export default function AddModal({resource, onSave, onClose}) {
             data.append('pdf', formData.pdfFile);
         }
 
-        if (resource) {
-            data.append('id', resource.id);
-        }
-
         onSave(data);
     };
 

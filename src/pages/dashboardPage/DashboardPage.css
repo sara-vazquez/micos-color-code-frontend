@@ -26,6 +26,7 @@ html, body {
     display: flex;
     flex-direction: column;
     align-content: center;
+    border-radius: var(--border-radius-card);
 }
 
 .dashboard-page__search-input {

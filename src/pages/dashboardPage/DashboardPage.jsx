@@ -34,19 +34,18 @@ export default function DashboardPage() {
       const handleSaveResource = async (resourceData) => {
         try {
           if (editingResource) {
-            const updated = await updateResource(editingResource.id, resourceData);
-            setResources(resources.map(r => (r.id === editingResource.id ? updated : r)));
+            await updateResource(editingResource.id, resourceData);
           } else {
-            const newResource = await createResource(resourceData);
-            setResources([...resources, newResource]);
+            await createResource(resourceData);
           }
-          setFilteredResources(resources);
+          
+          await fetchResources();
           handleCloseModal();
         } catch (err) {
           console.error('❌ Error al guardar recurso:', err);
           setError('Error al guardar el recurso');
         }
-      };
+    };
     
       const handleDelete = async (id) => {
         if (window.confirm('¿Seguro que quieres eliminar este recurso?')) {

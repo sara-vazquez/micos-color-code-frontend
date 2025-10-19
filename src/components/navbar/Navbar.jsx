@@ -48,27 +48,27 @@ export default function Navbar({backgroundColor}) {
          <section className={`hamburger-menu ${isMenuOpen ? 'hamburger-menu--open' : ''}`} style={{ backgroundColor: backgroundColor || 'var(--white)' }}hidden={!isMenuOpen}>
                 <nav className="hamburger-menu__nav">
                     <Link 
-                        to="/home" 
+                        to="/users/home" 
                         className={`hamburger-menu__link ${isActive('/users/home') ? 'hamburger-menu__link--active' : ''}`}
                         onClick={closeMenu}>Home</Link>
                     
                     <Link 
-                        to="/system" 
+                        to="/users/system" 
                         className={`hamburger-menu__link ${isActive('/users/system') ? 'hamburger-menu__link--active' : ''}`}
                         onClick={closeMenu}>Micos color code</Link>
                     
                     <Link 
-                        to="/daltonism" 
+                        to="/users/daltonism" 
                         className={`hamburger-menu__link ${isActive('/users/daltonism') ? 'hamburger-menu__link--active' : ''}`}
                         onClick={closeMenu}>Daltonismo</Link>
                     
                     <Link 
-                        to="/play" 
+                        to="/users/play" 
                         className={`hamburger-menu__link ${isActive('/users/play') ? 'hamburger-menu__link--active' : ''}`}
                         onClick={closeMenu}>¡A jugar!</Link>
                     
                     <Link 
-                        to="/resources" 
+                        to="/users/resources" 
                         className={`hamburger-menu__link ${isActive('/users/resources') ? 'hamburger-menu__link--active' : ''}`}
                         onClick={closeMenu}>Recursos</Link>
                 </nav>

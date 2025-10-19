@@ -1,6 +1,5 @@
 const API_URL =  "http://localhost:8080";
 
-
 class FetchService {
     constructor(baseURL) {
       this.baseURL = baseURL;

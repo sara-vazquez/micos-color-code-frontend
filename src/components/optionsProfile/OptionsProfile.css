@@ -16,8 +16,8 @@
     height: 80px;
     padding: 8px 0;
     position: fixed;
-    /*bottom: 160px;
-    right: 12px;*/
+    top: 180px;
+    right: 36px;
     z-index: 1100;
 }
 

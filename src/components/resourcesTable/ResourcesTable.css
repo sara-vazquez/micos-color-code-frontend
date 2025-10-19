@@ -1,16 +1,18 @@
 .resources-table__container {
-    border-radius: var(--border-radius-card);
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
     font-family: var(--font-family);
     color: var(--primary-500);
     overflow-x: auto;
     min-width: 420px;
     height: auto;
+    border-radius: var(--border-radius-card);
+    overflow: hidden;
 }
 
 .resources-table {
     width: 100%;
     border-collapse: collapse;
+    border-radius: var(--border-radius-card);
 }
 
 .resources-table__thread {

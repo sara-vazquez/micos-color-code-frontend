@@ -10,9 +10,9 @@
 
 .edit-modal {
     height: auto;
-    width: 370px;
+    width: 320px;
     padding: 20px;
-    border: var(--border-radius-card);
+    border-radius: var(--border-radius-card);
     background-color: var(--primary-100);
 }
 
@@ -68,6 +68,7 @@
     flex-direction: row;
     gap: var(--space-button);
     margin-bottom: var(--space-section);
+    justify-content: center;
 }
 
 .edit-modal__error {

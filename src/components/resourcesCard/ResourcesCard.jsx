@@ -5,11 +5,13 @@ import ModalResources from '../modalResources/ModalResources';
 
 export default function ResourcesCard({ resource }) {
     const [openModalResources, setOpenModalResources] = useState(false);
+    const API_BASE_URL = import.meta.env.VITE_API_BASE_URL  || 'http://localhost:8080';
 
     const handleDownload = () => {
         const link = document.createElement('a');
-        link.href = resource.pdfUrl;
-        link.download = resource.pdf;
+        link.href = `${API_BASE_URL}${resource.pdfFile}`;
+        link.download = resource.name + '.pdf';
+        link.target = '_blank';
         link.click();
     };
 

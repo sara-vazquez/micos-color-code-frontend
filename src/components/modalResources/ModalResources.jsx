@@ -5,6 +5,7 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 
 export default function ModalResources({resource, onClose}) {
+    const API_BASE_URL = import.meta.env.VITE_API_BASE_URL  || 'http://localhost:8080';
     
     return(
         <div className="modal-resources__overlay" onClick={onClose}>
@@ -16,7 +17,10 @@ export default function ModalResources({resource, onClose}) {
                 </header>
                 <article className="modal-resources__content">
                     <section className="modal-resources__img-container">
-                    <img src={resource.imageFile} className="modal-resources__img" alt={resource.name} aria-label="imagen del recurso seleccionado" />
+                    <img src={`${API_BASE_URL}${resource.imageFile}`} 
+                            className="modal-resources__img" 
+                            alt={resource.name} 
+                            aria-label="imagen del recurso seleccionado" />
                     </section>
                     <h3 className="modal-resources__title">{resource.name}</h3>
                     <p className='modal-resources__text'>{resource.description}</p>                    

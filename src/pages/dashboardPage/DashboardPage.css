@@ -3,7 +3,6 @@ html, body {
     width: 100%;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
 }
 
 .dashboard-page {
@@ -12,13 +11,14 @@ html, body {
     width: 100%;
     margin: 0;
     padding: 0 12px;
+    top: 120px;
     box-sizing: border-box;
     position: relative;
     display: flex;
     flex-direction: column;  
     align-content: center;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    overflow-x: auto;
 }
 
 .dashboard-page__content {
@@ -26,11 +26,6 @@ html, body {
     flex-direction: column;
     align-content: center;
     border-radius: var(--border-radius-card);
-}
-
-.dashboard-page__search-input {
-    display: flex;
-    align-items: end;
 }
 
 .dashboard-page__btn {

@@ -5,10 +5,9 @@ import ResourcesTable from '../../components/resourcesTable/ResourcesTable';
 import AddModal from '../../components/addModal/AddModal';
 import { getAdminResources, createResource, updateResource, deleteResource } from '../../services/resourcesService';
 
-export default function DashboardPage() {
+export default function DashboardPage({searchTerm}) {
   
     const [resources, setResources] = useState([]);
-    const [searchTerm, setSearchTerm] = useState('');
     const [showModal, setShowModal] = useState(false);
     const [editingResource, setEditingResource] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -31,20 +30,12 @@ export default function DashboardPage() {
         }
     };
 
-    const handleSearch = (term) => {
-        setSearchTerm(term); 
-    };
-
     const resourcesToShow = useMemo(() => {
-        if (!searchTerm) {
-            return resources;
-        }
-
+        if (!searchTerm) return resources;
         const term = searchTerm.toLowerCase();
-        
         return resources.filter(r =>
-            r.name.toLowerCase().includes(term) ||
-            r.intro.toLowerCase().includes(term) 
+          r.name.toLowerCase().includes(term) ||
+          r.intro.toLowerCase().includes(term)
         );
     }, [resources, searchTerm]);
     
@@ -102,7 +93,6 @@ export default function DashboardPage() {
                         data={resourcesToShow}
                         onEdit={handleOpenEditModal}
                         onDelete={handleDelete}
-                        onSearch={handleSearch}
                     />
                 )}
             </main>

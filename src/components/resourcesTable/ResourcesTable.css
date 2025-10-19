@@ -6,13 +6,14 @@
     min-width: 420px;
     height: auto;
     border-radius: var(--border-radius-card);
-    overflow: hidden;
+    
 }
 
 .resources-table {
     width: 100%;
     border-collapse: collapse;
     border-radius: var(--border-radius-card);
+    overflow: hidden;
 }
 
 .resources-table__thread {
@@ -59,19 +60,24 @@
     border-radius: var(--border-radius-img);
 }
 
-.resources-table__actions-cell {
-    display: flex;
-    flex-direction: row;
-    gap: 16px;
-}
-
-.resources-table__img-cell, .resources-table__pdf-cell, 
-.resources-table__name-cell, .resources-table__intro-cell,
-.resources-table__description-cell, .resources-table__actions-cell {
+.resources-table__img-cell,
+.resources-table__pdf-cell,
+.resources-table__name-cell,
+.resources-table__intro-cell,
+.resources-table__description-cell {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  max-width: 216px;
+  max-width: 216px; 
+}
+
+.resources-table__actions-cell {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  max-width: none; 
+  white-space: normal; 
+  overflow: visible;
 }
 
 .btn-edit,

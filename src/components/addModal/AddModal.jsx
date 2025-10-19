@@ -3,12 +3,16 @@ import './AddModal.css';
 import Button from '../buttons/Button';
 
 export default function AddModal({resource, onSave, onClose}) {
+    const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+    
     const [formData, setFormData] = useState({
         name: '',
         intro: '',
         description: '',
         imageFile: null,
-        pdfFile: null
+        pdfFile: null,
+        existingImagePath: '', 
+        existingPdfPath: ''    
     })
 
     const [previewImage, setPreviewImage] = useState(null);
@@ -18,16 +22,33 @@ export default function AddModal({resource, onSave, onClose}) {
 
     useEffect(() => {
         if (resource) {
+            console.log('🔍 Recurso a editar:', resource);
+            
             setFormData({
                 name: resource.name || '',
                 intro: resource.intro || '',
                 description: resource.description || '',
                 imageFile: null,
-                pdfFile: null
+                pdfFile: null,
+                existingImagePath: resource.imageFile || '', 
+                existingPdfPath: resource.pdfFile || ''      
             });
-            setPreviewImage(resource.imageFile || null);
+            if (resource.imageFile) {
+                setPreviewImage(`${API_BASE_URL}${resource.imageFile}`);
+            }
+        } else {
+            setFormData({
+                name: '',
+                intro: '',
+                description: '',
+                imageFile: null,
+                pdfFile: null,
+                existingImagePath: '',
+                existingPdfPath: ''
+            });
+            setPreviewImage(null);
         }
-    }, [resource]);
+    }, [resource, API_BASE_URL]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -53,8 +74,13 @@ export default function AddModal({resource, onSave, onClose}) {
                 setPreviewImage(reader.result);
             };
             reader.readAsDataURL(file);
+            
+            if (errors.imageFile) {
+                setErrors({ ...errors, imageFile: null });
+            }
         }
     };
+
     const handlePdfChange = (e) => {
         const file = e.target.files[0];
         if (file) {
@@ -106,8 +132,31 @@ export default function AddModal({resource, onSave, onClose}) {
         data.append('intro', formData.intro);
         data.append('description', formData.description);
     
-        if (formData.imageFile) data.append('image', formData.imageFile);
-        if (formData.pdfFile) data.append('pdf', formData.pdfFile);
+        if (formData.imageFile) {
+            data.append('image', formData.imageFile);
+            console.log('📤 Enviando imagen nueva');
+        } else if (resource && formData.existingImagePath) {
+            data.append('existingImagePath', formData.existingImagePath);
+            console.log('📤 Manteniendo imagen existente:', formData.existingImagePath);
+        }
+        
+        if (formData.pdfFile) {
+            data.append('pdf', formData.pdfFile);
+            console.log('📤 Enviando PDF nuevo');
+        } else if (resource && formData.existingPdfPath) {
+            data.append('existingPdfPath', formData.existingPdfPath);
+            console.log('📤 Manteniendo PDF existente:', formData.existingPdfPath);
+        }
+        
+        console.log('📤 FormData a enviar:', {
+            name: formData.name,
+            intro: formData.intro,
+            description: formData.description,
+            hasNewImage: !!formData.imageFile,
+            hasNewPdf: !!formData.pdfFile,
+            existingImagePath: formData.existingImagePath,
+            existingPdfPath: formData.existingPdfPath
+        });
     
         onSave(data);
     };
@@ -124,7 +173,7 @@ export default function AddModal({resource, onSave, onClose}) {
                 <h2 className="add-modal__title">
                     {resource ? 'Editar recurso' : 'Añadir nuevo recurso'}
                 </h2>
-                <article className="add-modal__img-container" placeholder="Vista previa de tu archivo">
+                <article className="add-modal__img-container">
                     {previewImage ? (
                         <img 
                             src={previewImage} 
@@ -139,6 +188,7 @@ export default function AddModal({resource, onSave, onClose}) {
                 <article className="add-modal__input-group">
                     <label className="add-modal__label" htmlFor="image-upload">
                         Imagen {!resource && '*'}
+                        {resource && ' (opcional - dejar vacío para mantener la actual)'}
                     </label>
                     <input 
                         id="image-upload"
@@ -147,7 +197,7 @@ export default function AddModal({resource, onSave, onClose}) {
                         accept="image/*"
                         onChange={handleImageChange}
                     />
-                    {errors.image && <span className="add-modal__error">{errors.imageFile}</span>}
+                    {errors.imageFile && <span className="add-modal__error">{errors.imageFile}</span>}
 
                     <label className="add-modal__label" htmlFor="name">Nombre *</label>
                     <input 
@@ -184,6 +234,7 @@ export default function AddModal({resource, onSave, onClose}) {
 
                     <label className="add-modal__label" htmlFor={fileId}>
                         Archivo PDF {!resource && '*'}
+                        {resource && ' (opcional - dejar vacío para mantener el actual)'}
                     </label>
                     <input 
                         id={fileId}
@@ -192,7 +243,7 @@ export default function AddModal({resource, onSave, onClose}) {
                         accept="application/pdf"
                         onChange={handlePdfChange}
                     />
-                    {errors.pdf && <span className="add-modal__error">{errors.pdfFile}</span>}
+                    {errors.pdfFile && <span className="add-modal__error">{errors.pdfFile}</span>}
                 </article>
 
                 <article className="add-modal__actions">

@@ -60,12 +60,15 @@ export default function ResourcesTable({data, onEdit, onDelete}) {
                   {resource.description}
                 </td>
                 <td className="resources-table__actions-cell">
+                  <div className="resources-table__actions-wrapper">
                   <button onClick={() => onEdit(resource)} className="btn-edit" aria-label="Editar recurso">
                     <Pencil size={24} />
                   </button>
                   <button onClick={() => onDelete(resource.id)} className="btn-delete" aria-label="Eliminar recurso">
                     <Trash2 size={24} />
                   </button>
+                  </div>
+                  
                 </td>
               </tr>
             ))

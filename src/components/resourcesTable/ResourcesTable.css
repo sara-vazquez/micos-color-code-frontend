@@ -72,13 +72,18 @@
 }
 
 .resources-table__actions-cell {
-  display: flex;
-  flex-direction: row;
-  gap: 16px;
-  max-width: none; 
-  white-space: normal; 
-  overflow: visible;
+    max-width: 216px; 
+    white-space: normal; 
+    overflow: visible;
+    vertical-align: middle;
 }
+
+.resources-table__actions-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    align-items: center;
+  }
 
 .btn-edit,
 .btn-delete {
@@ -161,7 +166,7 @@
         -webkit-box-orient: vertical;
     }
 
-    .resources-table__actions-cell {
+    .resources-table__actions-wrapper {
         gap: 20px;
     }
 }

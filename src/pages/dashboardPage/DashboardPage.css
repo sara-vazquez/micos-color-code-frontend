@@ -41,3 +41,41 @@ html, body {
     text-align: center;
     color: var(--primary-500);
 }
+
+/* TABLET */
+@media (min-width: 768px) {
+    .resources-table__thread th {
+        padding: 16px 20px;
+    }
+
+    .resources-table__body td {
+        padding: 16px 20px;
+    }
+
+    .resources-table__image {
+        width: 64px;
+        height: 64px;
+    }
+
+    .resources-table__description{
+        display: table-cell;
+        max-width: 250px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+   .dashboard-page {
+    align-items: center;
+   }
+}
+
+/* DESKTOP LARGE */
+@media (min-width: 1440px) {
+    .dashboard-page {
+        align-items: center;
+       }
+}

@@ -111,3 +111,40 @@
     border: 1px solid #f5c6cb;
 }
 
+/* TABLET */
+@media (min-width: 768px) {
+
+    .login-form {
+        width: 500px;
+    }
+
+    .login-form__input {
+        width: 478px;
+
+    }
+
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+    .login-form {
+        width: 600px;
+    }
+
+    .login-form__input {
+        width: 578px;
+
+    }
+}
+
+/* DESKTOP LARGE */
+@media (min-width: 1440px) {
+    .login-form {
+        width: 800px;
+    }
+
+    .login-form__input {
+        width: 778px;
+
+    }
+}

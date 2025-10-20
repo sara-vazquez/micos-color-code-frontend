@@ -65,15 +65,15 @@
 .signup-form__footer {
     text-align: center;
     margin-top: 20px;
-  }
+}
   
   .signup-form__footer-text {
     font-size: var(--body-size);
     color: var(--primary-500);
     font-family: var(--font-family);
-  }
+}
   
-  .login-link {
+.login-link {
     background: none;
     border: none;
     color: var(--primary-500);
@@ -82,9 +82,46 @@
     text-decoration: underline;
     font-family: var(--font-family);
     font-size: var(--button-size);
-  }
+}
   
-  .login-link:hover {
+.login-link:hover {
     color: var(--primary-300);
-  }
+}
   
+/* TABLET */
+@media (min-width: 768px) {
+
+    .signup-form {
+        width: 500px;
+    }
+
+    .signup-form__input {
+        width: 478px;
+
+    }
+
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+    .signup-form {
+        width: 600px;
+    }
+
+    .signup-form__input {
+        width: 578px;
+
+    }
+}
+
+/* DESKTOP LARGE */
+@media (min-width: 1440px) {
+    .signup-form {
+        width: 800px;
+    }
+
+    .signup-form__input {
+        width: 778px;
+
+    }
+}

@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import FeedbackButton from '../../components/feedbackButtons/FeedbackButton'
 import CardPlay from '../../components/cardPlay/CardPlay';
+import memory from '../../assets/memory.png';
+
 
 export default function LetsPlayPage() {
     const navigate = useNavigate();
@@ -24,7 +26,10 @@ export default function LetsPlayPage() {
                 <p className = "play-page__text">Aquí tienes una selección de juegos para poner en práctica lo aprendido y seguir mejorando cada día un poquito más.</p>
             </header>
             <main className="play-page__content">
-                <CardPlay />
+                <CardPlay 
+                title="Memoriza la carta"
+                description="Encuentra la pareja de cada carta según sus colores y formas"
+                img={memory}/>
 
             </main>
             <article className="feedback__flying-button">

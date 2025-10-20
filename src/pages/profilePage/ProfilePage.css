@@ -13,7 +13,7 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     overflow: hidden;
     margin: 0;
     padding: 12px;
@@ -21,17 +21,14 @@ html, body {
     position: relative;
 }
 
-.profile__intro {
-    margin-bottom: var(--space-button);
+.profile__header {
+    min-width: 100%;
     display: flex;
     flex-direction: row;
-}
-
-.profile__header{
-    display: flex;
-    flex-direction: row;
-    gap: 8px;
     margin: 0;
+    position: sticky;
+    justify-content: space-between;
+    margin-bottom: var(--space-button);
 }
 
 .profile__title {
@@ -87,6 +84,29 @@ html, body {
     background-color: transparent;
 }
 
-.profile__menu {
-    align-items: end;
+.profile__back {
+    align-items: start;
+}
+
+
+/* TABLET */
+@media (min-width: 768px) {
+    .profile__container {
+        width: 420px;
+    }
+  
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+    .profile__container {
+        width: 520px;
+    }
+}
+
+/* DESKTOP LARGE */
+@media (min-width: 1440px) {
+    .profile__container {
+        width: 620px;
+    }
 }

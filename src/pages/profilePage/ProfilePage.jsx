@@ -46,13 +46,11 @@ export default function ProfilePage() {
 
     return(
       <section className="profile__page">
-        <header className="profile__intro">
-          <article className="profile__header">
+        <header className="profile__header">
             <button className="profile__back" aria-label="botón para volver atrás" onClick={handleBack}>
                 <FontAwesomeIcon icon={faArrowLeft}/>
             </button>
             <h2 className="profile__title">¡Hola, {profile.username}!</h2>
-          </article>
             <button className="profile__menu" aria-label="menú opciones del perfil" onClick={handleOpenOptions}>
                 <FontAwesomeIcon icon={faEllipsisVertical}/>
             </button>

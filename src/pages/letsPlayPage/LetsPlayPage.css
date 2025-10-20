@@ -17,7 +17,8 @@ html, body {
 }
 
 .play-page__intro {
-margin-bottom: var(--space-card);
+    width: 370px;
+    margin-bottom: var(--space-card);
 }
 
 .play-page__header {
@@ -60,4 +61,45 @@ margin-bottom: var(--space-card);
     display: flex;
     flex-direction: column;
     gap: var(--space-card);
+}
+
+/* TABLET */
+@media (min-width: 768px) {
+    .play-page__intro {
+        width: 600px;
+    }
+
+    .play-page__content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-card);
+        margin-left: 12px;
+        margin-right: 12px;
+    }
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+    .play-page__intro {
+        width: 600px;
+    }
+
+    .play-page__content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-card);
+    }
+}
+
+/* DESKTOP LARGE */
+@media (min-width: 1440px) {
+    .play-page__intro {
+        width: 600px;
+    }
+
+    .resources__content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-card);
+    }
 }

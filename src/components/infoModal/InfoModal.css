@@ -62,3 +62,29 @@
     color: var(--primary-500);
     margin-bottom: var(--space-body); 
 }
+
+/* TABLET */
+@media (min-width: 768px) {
+
+    .info-modal {
+        width: 500px;
+        height: 760px;
+    }
+
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+    .info-modal {
+        width: 600px;
+        height: 860px;
+    }
+}
+
+/* DESKTOP LARGE */
+@media (min-width: 1440px) {
+    .info-modal {
+        width: 700px;
+        height: 860px;
+    }
+}

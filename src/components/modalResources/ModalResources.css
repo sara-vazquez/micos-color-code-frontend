@@ -16,7 +16,7 @@
     background-color: var(--secondary-50);
     border-radius: var(--border-radius-card);
     height: auto;
-    min-width: 344px;
+    width: 344px;
     padding: 16px 20px 20px 20px;
     overflow-y: auto;
 }
@@ -82,4 +82,42 @@
     font-weight: var(--body-weight);
     font-size: var(--body-size);
     margin-bottom: var(--space-card);
+}
+
+/* TABLET */
+@media (min-width: 768px) {
+
+    .modal-resources {
+        width: 500px;
+    }
+
+    .modal-resources__img-container {
+        width: 420px;
+        height: 200px;
+    }
+
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+    .modal-resources {
+        width: 600px;
+    }
+
+    .modal-resources__img-container {
+        width: 520px;
+        height: 280px;
+    }
+}
+
+/* DESKTOP LARGE */
+@media (min-width: 1440px) {
+    .modal-resources {
+        width: 700px;
+    }
+
+    .modal-resources__img-container {
+        width: 620px;
+        height: 400px;
+    }
 }

@@ -6,7 +6,7 @@
     border: none;
     position: relative; 
     z-index: 11;
-    overflow: hidden;
+    overflow: visible; 
     margin-top: 12px; 
     background: none !important;
 }
@@ -16,6 +16,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    
 }
 
 .logo {
@@ -36,7 +37,9 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 20px;
+    gap: 8px; 
+    flex: 1;
+    justify-content: flex-end;
 }
 
 .logout__button {

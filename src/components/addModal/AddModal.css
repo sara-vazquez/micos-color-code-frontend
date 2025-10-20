@@ -13,7 +13,7 @@
 }
 
 .add-modal__content {
-    min-width: 320px;
+    width: 320px;
     height: 500px;
     margin: 12px;
     padding: 16px 20px 20px 20px;
@@ -74,18 +74,15 @@
     font-family: var(--font-family);
     font-size: var(--button-size);
     font-weight: var(--button-weight);
+    margin-top: 8px;
 }
 
 .add-modal__input {
     height: 32px;
-    width: 280px;
-    padding: 4px 8px;
 }
 
 .add-modal_textarea {
-    min-height: 60px;
-    width: 280px;
-    padding: 4px 8px;
+    height: 180px;
 }
 
 .add-modal__input, .add-modal__textarea {
@@ -99,6 +96,9 @@
     margin-bottom: var(--space-card);
     margin-top: var(--space-button);
     text-align: left;
+    width: 280px;
+    padding: 4px 8px;
+
 }   
 
 .add-modal__actions {
@@ -113,13 +113,64 @@
     font-weight: var(--body-weight);
     color: var(--gray);
     text-align: center;
-  }
+}
   
-  .add-modal__error {
+.add-modal__error {
     color: var(--secondary-500);
     font-family: var(--font-family);
     font-size: var(--body-size);
     font-weight: var(--body-weight);
     margin-top: 8px;
     display: block;
-  }
+}
+
+/* TABLET */
+@media (min-width: 768px) {
+    .add-modal__content {
+        width: 500px;
+        height: 700px;
+    }
+
+    .add-modal__img-container {
+        width: 420px;
+        height: 200px;
+    }
+
+    .add-modal__input, .add-modal__textarea {
+        width: 420px;
+    }
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+    .add-modal__content {
+        width: 600px;
+        height: 800px;
+    }
+
+    .add-modal__img-container {
+        width: 520px;
+        height: 280px;
+    }
+
+    .add-modal__input, .add-modal__textarea {
+        width: 520px;
+    }
+}
+
+/* DESKTOP LARGE */
+@media (min-width: 1440px) {
+    .add-modal__content {
+        width: 800px;
+        height: 900px;
+    }
+
+    .add-modal__img-container {
+        width: 620px;
+        height: 400px;
+    }
+
+    .add-modal__input, .add-modal__textarea {
+        width: 620px;
+    }
+}

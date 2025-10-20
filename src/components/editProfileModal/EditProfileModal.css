@@ -78,3 +78,36 @@
     color: var(--primary-500);
     text-align: center;
 }
+
+/* TABLET */
+@media (min-width: 768px) {
+    .edit-modal {
+        width: 500px;
+    }
+
+    .edit-modal__input  {
+        width: 420px;
+    }
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+    .edit-modal {
+        width: 600px;
+    }
+
+    .edit-modal__input  {
+        width: 520px;
+    }
+}
+
+/* DESKTOP LARGE */
+@media (min-width: 1440px) {
+    .edit-modal {
+        width: 800px;
+    }
+
+    .edit-modal__input  {
+        width: 620px;
+    }
+}

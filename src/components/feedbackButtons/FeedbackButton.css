@@ -36,3 +36,50 @@
   font-size: var(--button-size);
 }
   
+/* TABLET */
+@media (min-width: 768px) {
+  .feedback-wrapper {
+    right: 24px;
+    width: 72px;
+    height: 72px;
+  }
+
+  .feedback {
+    width: 52px;
+    height: 52px;
+    top: 10px;
+    left: 10px;
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+  .feedback-wrapper {
+    right: 24px;
+    width: 72px;
+    height: 72px;
+  }
+
+  .feedback {
+    width: 52px;
+    height: 52px;
+    top: 10px;
+    left: 10px;
+  }
+}
+
+/* DESKTOP LARGE */
+@media (min-width: 1440px) {
+  .feedback-wrapper {
+    right: 24px;
+    width: 72px;
+    height: 72px;
+  }
+
+  .feedback {
+    width: 52px;
+    height: 52px;
+    top: 10px;
+    left: 10px;
+  }
+}

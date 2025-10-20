@@ -30,7 +30,7 @@ export default function NavbarAdmin({onSearch}) {
                     <img src={Logo} alt="logotype" className="logo"></img>
                 </article>
                 <article className="navbar__buttons">
-                    <SearchInput onChange={(e) => onSearch(e.target.value)}/>
+                    <SearchInput onSearch={onSearch}/>
                     <button type ="button" className="logout__button" onClick={handleLogout} disabled={loading}>
                         <LogOut  size={24}/>
                     </button>

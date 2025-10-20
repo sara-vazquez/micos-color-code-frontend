@@ -18,3 +18,30 @@
     left: 0;
     transform: rotate(15deg);
 }
+
+/* TABLET */
+@media (min-width: 768px) {
+    .daltonic {
+        height: 200px;
+        width: 200px;
+        left: -8px;
+    }
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+    .daltonic {
+        height: 220px;
+        width: 220px;
+        left: -20px;
+    }
+}
+
+/* DESKTOP LARGE */
+@media (min-width: 1440px) {
+    .daltonic {
+        height: 260px;
+        width: 260px;
+        left: -20px;
+    }
+}

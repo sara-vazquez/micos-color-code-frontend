@@ -77,7 +77,6 @@ html, body {
     font-weight: var(--body-weight);
     color: var(--primary-500);
     margin-bottom: var(--space-card);
-    line-height: 1.6;
 }
 
 .system__grid {

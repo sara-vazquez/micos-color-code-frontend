@@ -21,52 +21,69 @@ export default function SystemPage() {
     }
     return(
         <section className="system" id="top">
-        <section className="system__container">
-            <article className="system__header">
+        <article className="system__intro">
+            <header className="system__header">
             <button className="system__back" aria-label="botón para volver a la página anterior" onClick={handleBack}>
                 <FontAwesomeIcon icon={faArrowLeft} />
             </button>
             <h1 className="system__title">Micos, el sistema</h1>
-            </article>
+            </header>
+            <article className="system__intro-content">
             <p className="system__text">MICOS color code es un proyecto social con vocación inclusiva enfocado hacia un <strong>público infantil de entre 3 y 8 años con daltonismo dicromático</strong>. El fin de MICOS es facilitar a niños y niñas con esta alteración visual el <strong>aprendizaje de los colores de forma lúdica y aumentativa</strong> a partir de las tres figuras básicas (círculo, triángulo y cuadrado) y la superposición de estas, asociándolas a un color.</p>
             <div className="system-img__container">
                 <img src={sistema} aria-label="Ilustración del sistema" className="system__image" />
             </div>
-        </section>
+            </article>
+        </article>
         <section className="system__container">
-            <h2 className="system__h2">Paso a paso</h2>
-            <p className="system__text">Con este sistema conseguimos representar 21 tonos, los colores primarios, secundarios, colores claros y oscuros. Estos últimos se logran con la suma del blanco o el negro.</p>
-            <article className="system__container">
+        <h2 className="system__h2">Paso a paso</h2>
+        <p className="system__text system__text--intro">Con este sistema conseguimos representar 21 tonos, los colores primarios, secundarios, colores claros y oscuros. Estos últimos se logran con la suma del blanco o el negro.</p>
+        
+        <div className="system__grid">
+            <article className="system__card">
                 <h3 className="system__h3">Colores primarios</h3>
-                <article className="system-img__container">
+                <div className="system-img__container">
                     <img src={coloresPrimarios} aria-label="Ilustración de los colores primarios" className="system__image" />
-                </article>
+                </div>
                 <p className="system__text">Los colores primarios se representan con las formas básicas, asociándolas a un color determinado según la teoría del color de Kandinsky. Por tanto, el azul es el circulo, el rojo el cuadrado y el amarillo el triangulo.</p>
+            </article>
+
+            <article className="system__card">
                 <h3 className="system__h3">Colores secundarios</h3>
-                <article className="system-img__container">
+                <div className="system-img__container">
                     <img src={coloresSecundarios} aria-label="Ilustración de los colores secundarios" className="system__image" />
-                </article>
+                </div>
                 <p className="system__text">Cuando mezclamos los colores primarios entre ellos, nacen los colores secundarios. Entonces, cuando sumamos el azul y el amarillo obtenemos el verde, un triangulo contenido en un circulo, el amarillo con el rojo suman el naranja, con el triangulo en el interior del cuadrado. Y por último el rojo con el azul forman el púrpura, es decir, un circulo dentro de un cuadrado.</p>
+            </article>
+
+            <article className="system__card">
                 <h3 className="system__h3">Colores neutros</h3>
-                <article className="system-img__container">
+                <div className="system-img__container">
                     <img src={coloresNeutros} aria-label="Ilustración de los colores neutros" className="system__image" />
-                </article>
+                </div>
                 <p className="system__text">También existen los colores neutros: blanco, negro y gris. Son necesarios para crear nuevos tonos. Estos los representamos con otra forma geométrica: el rectángulo. El gris sería un rectángulo medio relleno, el blanco hueco y el negro con otro rectángulo en su espacio interior.</p>
+            </article>
+
+            <article className="system__card">
                 <h3 className="system__h3">Colores oscuros</h3>
-                <article className="system-img__container">
+                <div className="system-img__container">
                     <img src={coloresOscuros} aria-label="Ilustración de los colores oscuros" className="system__image" />
-                </article>
+                </div>
                 <p className="system__text">Los colores oscuros se consiguen sumando el negro al resto de tonalidades. Estos colores se basan en la misma filosofía que utiliza con el negro, rellenando el interior.</p>
+            </article>
+
+            <article className="system__card">
                 <h3 className="system__h3">Colores claros</h3>
-                <article className="system-img__container">
+                <div className="system-img__container">
                     <img src={coloresClaros} aria-label="Ilustración de los colores claros" className="system__image" />
-                </article>
+                </div>
                 <p className="system__text">Los colores claros por su parte, se obtienen añadiendo el blanco. Logramos representarlos también siguiendo la filosofía de este tono, por tanto dejamos los interiores huecos.</p>
             </article>
-        </section>
-        <ScrollUpButton />
-        <FeedbackButton className="feedback__flying-button"/>
-        
-        </section>
+        </div>
+    </section>
+
+    <ScrollUpButton />
+    <FeedbackButton className="feedback__flying-button"/>
+</section>
     )
 }

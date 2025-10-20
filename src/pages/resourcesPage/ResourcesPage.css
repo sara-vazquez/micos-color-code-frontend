@@ -73,7 +73,6 @@ html, body {
     .resources__content {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 200px 200px;
     }
 }
 
@@ -86,7 +85,6 @@ html, body {
     .resources__content {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 200px 200px;
     }
 }
 
@@ -99,6 +97,5 @@ html, body {
     .resources__content {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 200px 200px;
     }
 }

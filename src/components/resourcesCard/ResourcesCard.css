@@ -2,11 +2,12 @@
     background-color: var(--secondary-200);
     border-radius: var(--border-radius-card);
     height: auto;
-    min-width: 390;
+    width: 342px;
     margin: 12px;
     padding: 12px;
     display: flex;
     flex-direction: column;
+    margin-left: 0;
 }
 
 .resources-card__content {

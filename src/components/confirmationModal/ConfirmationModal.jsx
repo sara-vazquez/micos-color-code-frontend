@@ -14,9 +14,9 @@ export default function ConfirmationModal() {
 
                 <article className="confirmation-modal__actions">
                 <Button variant="secondary" aria-label="botón para salir de la partida">SALIR</Button>
-                <Button variant="primary" aria-label="botón para continuar la partida">QUEDARSE</Button>
+                <Button variant="primary" aria-label="botón para continuar la partida">QUEDARME</Button>
                 </article>
-                
+
             </section>
         </div>
     );

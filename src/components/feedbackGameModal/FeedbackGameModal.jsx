@@ -2,7 +2,11 @@ import React from "react";
 import './FeedbackGameModal.css'
 import Button from "../buttons/Button";
 
-export default function FeedbackGameModal() {
+export default function FeedbackGameModal({onRankingChart}) {
+    const handleOpenRanking = () => {
+        onRankingChart();
+        onclose();
+    }
     return(
         <div className="feedback-game__overlay">
             <main className="feedback-game">
@@ -15,7 +19,7 @@ export default function FeedbackGameModal() {
                 </section>
                 <section className="feedback-game__actions">
                     <Button type= "button" variant="primary" aria-label="botón para jugar de nuevo">JUGAR DE NUEVO</Button>
-                    <Button type= "button" variant="secondary" aria-label="botón para ver la clasificación">VER CLASIFICACIÓN</Button>
+                    <Button type= "button" variant="secondary" aria-label="botón para ver la clasificación" onClick={handleOpenRanking}>VER CLASIFICACIÓN</Button>
                 </section>
             </main>
         </div>

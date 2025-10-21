@@ -1,8 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import './ConfirmationModal.css';
 import Button from "../buttons/Button";
 
-export default function ConfirmationModal() {
+export default function ConfirmationModal({onClose}) {
+    const navigate = useNavigate();
+    const goToPlayPage = () => { navigate("/users/play") }
     return(
         <div className="confirmation-modal__overlay">
             <main className="confirmation-modal">
@@ -13,8 +16,8 @@ export default function ConfirmationModal() {
                 </section>
 
                 <section className="confirmation-modal__actions">
-                <Button variant="secondary" aria-label="botón para salir de la partida">SALIR</Button>
-                <Button variant="primary" aria-label="botón para continuar la partida">QUEDARME</Button>
+                <Button variant="secondary" aria-label="botón para salir de la partida" onClick={goToPlayPage}>SALIR</Button>
+                <Button variant="primary" aria-label="botón para continuar la partida" onClick={onClose}>QUEDARME</Button>
                 </section>
 
             </main>

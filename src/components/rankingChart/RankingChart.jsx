@@ -14,7 +14,17 @@ export default function RankingChart() {
                     <article className="ranking-chart__bar">
                         <h3 className="ranking-chart__bar-username">{username}</h3>
                         <p className="ranking-chart__bar-points">{points} puntos</p>
-                        <h1 className="ranking-chart__bar-position">{position}</h1>
+                        <h1 className="ranking-chart__bar-position--1">{position}</h1>
+                    </article>
+                    <article className="ranking-chart__bar">
+                        <h3 className="ranking-chart__bar-username">{username}</h3>
+                        <p className="ranking-chart__bar-points">{points} puntos</p>
+                        <h1 className="ranking-chart__bar-position--2">{position}</h1>
+                    </article>
+                    <article className="ranking-chart__bar">
+                        <h3 className="ranking-chart__bar-username">{username}</h3>
+                        <p className="ranking-chart__bar-points">{points} puntos</p>
+                        <h1 className="ranking-chart__bar-position--3">{position}</h1>
                     </article>
                 </section>
                 <section className="ranking-chart__personal-card">

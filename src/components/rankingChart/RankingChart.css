@@ -36,6 +36,97 @@
     height: auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--space-body);
+    margin-bottom: var(--space-card);
+}
+
+.ranking-chart__bar {
+    display: flex;
+    flex-direction: column;
+    width: 92px;
+    height: 250px;
+}
+
+.ranking-chart__bar-username {
+    font-family: var(--font-family);
+    font-size: var(--h3-size);
+    font-weight: var(--h3-weight);
+    text-align: center;
+    color: var(--primary-500);
+    margin-bottom: 8px;
+}
+
+.ranking-chart__bar-points {
+    font-family: var(--font-family);
+    font-size: var(--body-size);
+    font-weight: var(--body-weight);
+    text-align: center;
+    color: var(--primary-500);
+    margin-bottom: 8px;
+}
+
+.ranking-chart__bar-position--1 {
+    font-family: var(--font-family);
+    font-size: var(--h1-size);
+    font-weight: var(--h1-weight);
+    text-align: center;
+    color: var(--primary-500);
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 140px;
+    background-color: var(--primary-200);
+    border-radius: var(--border-radius-card);
+}
+
+.ranking-chart__bar-position--2 {
+    font-family: var(--font-family);
+    font-size: var(--h1-size);
+    font-weight: var(--h1-weight);
+    text-align: center;
+    color: var(--primary-500);
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 120px;
+    background-color: var(--secondary-300);
+    border-radius: var(--border-radius-card);
+}
+
+.ranking-chart__bar-position--3 {
+    font-family: var(--font-family);
+    font-size: var(--h1-size);
+    font-weight: var(--h1-weight);
+    text-align: center;
+    color: var(--primary-500);
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 100px;
+    background-color: var(--yellow);
+    border-radius: var(--border-radius-card);
+}
+
+.ranking-chart__personal-card {
+    width: 287px;
+    height: 92px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: var(--border-radius-card);
+    background-color: var(--secondary-100);
+    padding: 12px;
+    margin-bottom: var(--space-card);
+}
+
+.rankging-chart__personal-card--username,
+.rankging-chart__personal-card--points,
+.rankging-chart__personal-card--position  {
+    font-family: var(--font-family);
+    font-size: var(--button-size);
+    font-weight: var(--button-weight);
+    text-align: center;
+    color: var(--primary-500);
 }
 
 .ranking-chart__actions {

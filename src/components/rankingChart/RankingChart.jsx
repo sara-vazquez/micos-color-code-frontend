@@ -4,7 +4,7 @@ import './RankingChart.css';
 import Button from '../buttons/Button';
 
 export default function RankingChart() {
-    const [rankgingChart, setRankingChart] = useState(null);
+    const [rankingChart, setRankingChart] = useState(null);
     const navigate = useNavigate();
     const goToPlayPage = () => { navigate("/users/play"); }
     const gameId = 1;

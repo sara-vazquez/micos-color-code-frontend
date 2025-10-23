@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './MemoryCardsGamePage.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faVolumeHigh, faVolumeXmark } from "@fortawesome/free-solid-svg-icons";
+import SingleMemoryCard from '../../components/singleMemoryCard/SingleMemoryCard';
 
 export default function MemoryCardsGamePage() {
     const navigate = useNavigate();
@@ -52,12 +53,7 @@ export default function MemoryCardsGamePage() {
         </header>
         <main className="memory-cards__grid">
             {cards.map(card => (
-                <section className="memory-cards__card" key={card.id}>
-                    <article>
-                        <img  className="memory-cards__card-front" src={card.src} alt="cara de arriba de la carta"/>
-                        <img className="memory-cards__card-back" src="/img/cover.png" alt="cara de abajo de la carta"/>
-                    </article>
-                </section>
+                <SingleMemoryCard key={card.id} card={card}/>
             ))}  
         </main>
         </>

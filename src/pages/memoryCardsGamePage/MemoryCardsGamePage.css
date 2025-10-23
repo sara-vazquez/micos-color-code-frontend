@@ -4,7 +4,7 @@
     flex-direction: column;
     margin: 0;
     position: sticky;
-    margin-bottom: var(--space-button);
+    margin-bottom: var(--space-section);
 }
 
 .memory-card__header-main {
@@ -63,5 +63,5 @@
 .memory-cards__grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--space-button);
+    grid-gap: var(--space-button);
 }

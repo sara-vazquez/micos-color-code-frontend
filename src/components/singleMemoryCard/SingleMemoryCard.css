@@ -1,0 +1,10 @@
+.memory-card {
+    position:relative;
+}
+
+.memory-card img {
+    width: 100%;
+    display: block;
+    border: 6px solid var(--secondary-100);
+    border-radius: var(--border-radius-card);
+}

@@ -36,17 +36,29 @@ export default function MemoryCardsGamePage() {
     }
     return(<>
         <header className="memory-cards__header">
-            <button className="memory-card__back" aria-label="botón para volver atrás" onClick={handleBack}>
-                <FontAwesomeIcon icon={faArrowLeft}/>
-            </button>
-            <h1 className="memory-cards__title">Memoriza la carta</h1>
-            <button className="memory-card__volume" aria-label={ariaLabelText} onClick={toggleVolume}>
-                <FontAwesomeIcon icon={isVolumeOn ? faVolumeHigh : faVolumeXmark}/>
-            </button>
-
+            <article className='memory-cards__main-header'>
+                <button className="memory-card__back" aria-label="botón para volver atrás" onClick={handleBack}>
+                    <FontAwesomeIcon icon={faArrowLeft}/>
+                </button>
+                <h1 className="memory-cards__title">Memoriza la carta</h1>
+                <button className="memory-card__volume" aria-label={ariaLabelText} onClick={toggleVolume}>
+                    <FontAwesomeIcon icon={isVolumeOn ? faVolumeHigh : faVolumeXmark}/>
+                </button>
+            </article>
+            <article className='memory-cards__info'>
+                <p className="memory-cards__level">NIVEL {level}</p>
+                <p className="memory-cards__timer">0:00</p> {/* ARREGLAR ESTE CRONO */}
+            </article>
         </header>
-        <main className="memory-cards__page">
-
+        <main className="memory-cards__grid">
+            {cards.map(card => (
+                <section className="memory-cards__card" key={card.id}>
+                    <article>
+                        <img  className="memory-cards__card-front" src={card.src} alt="cara de arriba de la carta"/>
+                        <img className="memory-cards__card-back" src="/img/cover.png" alt="cara de abajo de la carta"/>
+                    </article>
+                </section>
+            ))}  
         </main>
         </>
     );

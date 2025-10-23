@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import './MemoryCardsGamePage.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,8 +8,11 @@ import SingleMemoryCard from '../../components/singleMemoryCard/SingleMemoryCard
 export default function MemoryCardsGamePage() {
     const navigate = useNavigate();
     const [isVolumeOn, setIsVolumeOn] = useState(true);
-    const [cards, setCards] = useState([])
-    const [turns, setTurns] = useState(0)
+    const [cards, setCards] = useState([]);
+    const [turns, setTurns] = useState(0);
+    const [choiceOne, setChoiceOne] = useState(null); /* user chooses the first card for pairing */
+    const [choiceTwo, setChoiceTwo] = useState(null); /* user chooses the second card for pairing */
+
 
     const handleBack = () => {
         navigate(-1);
@@ -26,15 +29,41 @@ export default function MemoryCardsGamePage() {
         
     }]
 
-    //function that duplicates cards
+    // function that duplicates cards
     const shuffleCards = () => {
         const shuffleCards = [...cardImages, ...cardImages]
             .sort(() => Math.random() - 0.5)
             .map((card) => ({...card, id: Math.random()})) //generates id card
 
         setCards(shuffleCards)
-        setTurns(0) //reset the turn back to 0 when user click de button "play again"
+        setTurns(0) // reset the turn back to 0 when user click de button "play again"
     }
+
+    // handle a choice
+    const handleChoice = (card) => {
+        choiceOne ? setChoiceTwo(card) : setChoiceOne(card)
+    }
+
+    // compare 2 selected cards
+    useEffect(() => {
+        if(choiceOne && choiceTwo) {
+            if(choiceOne.src === choiceTwo.src) {
+                console.log('Pareja correcta')
+                resetTurn()
+            } else {
+                console.log('Pareja incorrecta')
+                resetTurn()
+            }
+        }
+    }, [choiceOne, choiceTwo])
+
+    // reset choices & increase turn
+    const resetTurn = () => {
+        setChoiceOne(null)
+        setChoiceTwo(null)
+        setTurns(prevTurns => prevTurns + 1)
+    }
+
     return(<>
         <header className="memory-cards__header">
             <article className='memory-cards__main-header'>
@@ -53,7 +82,10 @@ export default function MemoryCardsGamePage() {
         </header>
         <main className="memory-cards__grid">
             {cards.map(card => (
-                <SingleMemoryCard key={card.id} card={card}/>
+                <SingleMemoryCard 
+                    key={card.id} 
+                    card={card} 
+                    handleChoice={handleChoice}/>
             ))}  
         </main>
         </>

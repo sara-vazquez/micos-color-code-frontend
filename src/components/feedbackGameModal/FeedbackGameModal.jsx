@@ -13,8 +13,8 @@ export default function FeedbackGameModal({onRankingChart}) {
                 <section className="feedback-game__content">
                     <h2 className="feedback-game__title">¡BIEN HECHO! 🎉</h2>
                     <article className="feedback-game__text">
-                        <p><strong>Puntuación:</strong> {currentUser.points}</p>
-                        <p><strong>Puntuación total:</strong> {currentUser.totalPoints}</p>
+                        <p><strong>Puntuación:</strong> {currentUser.sessionPoints}</p>
+                        <p><strong>Puntuación total:</strong> {currentUser.newTotalPoints}</p>
                     </article>
                 </section>
                 <section className="feedback-game__actions">

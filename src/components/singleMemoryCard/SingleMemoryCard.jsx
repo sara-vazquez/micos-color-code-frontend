@@ -1,9 +1,11 @@
 import React from "react";
 import './SingleMemoryCard.css';
 
-export default function SingleMemoryCard({card, handleChoice, flipped}) {
+export default function SingleMemoryCard({card, handleChoice, flipped, disabled}) {
     const handleClick = () => {
-        handleChoice(card);
+        if(!disabled) {
+            handleChoice(card);
+        }
     }
 
     return(

@@ -17,8 +17,18 @@
 
 .flipped .memory-card__front {
     transform: rotateY(0deg);
+    transition-delay: 0.2s;
+
 }
 
-.memory-card__back {
+/* BACK CARD (cover) */
+.memory-card .memory-card__back {
+    transition: all ease-in 0.2s;
+    transition-delay: 0.2s;
+}
+
+.flipped .memory-card__back {
+    transform: rotateY(90deg);
+    transition-delay: 0s;
 
 }

@@ -26,9 +26,11 @@ export default function MemoryCardsGamePage() {
     const ariaLabelText = isVolumeOn ? "Botón para silenciar el sonido" : "Botón para activar el sonido";
 
     // Cards
-    const cardImages = [{
-        
-    }]
+    const cardImages = [
+        {"src": "/img/sun.png"},
+        {"src": "/img/watermelon.png"},
+        {"src": "/img/flower.png"}
+    ]
 
     // function that duplicates cards
     const shuffleCards = () => {

@@ -48,11 +48,18 @@ export default function MemoryCardsGamePage() {
     useEffect(() => {
         if(choiceOne && choiceTwo) {
             if(choiceOne.src === choiceTwo.src) {
-                console.log('Pareja correcta')
+                setCards(prevCards => {
+                    return prevCards.map(card => {
+                        if(card.src === choiceOne.src) {
+                            return {...card, matched: true}
+                        } else {
+                            return card
+                        }
+                    })
+                })
                 resetTurn()
             } else {
-                console.log('Pareja incorrecta')
-                resetTurn()
+                setTimeout(() =>resetTurn(), 1000)
             }
         }
     }, [choiceOne, choiceTwo])
@@ -85,7 +92,8 @@ export default function MemoryCardsGamePage() {
                 <SingleMemoryCard 
                     key={card.id} 
                     card={card} 
-                    handleChoice={handleChoice}/>
+                    handleChoice={handleChoice}
+                    flipped={card === choiceOne || card === choiceTwo || card.matched}/>
             ))}  
         </main>
         </>

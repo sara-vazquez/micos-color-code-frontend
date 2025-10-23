@@ -1,14 +1,14 @@
 import React from "react";
 import './SingleMemoryCard.css';
 
-export default function SingleMemoryCard({card, handleChoice}) {
+export default function SingleMemoryCard({card, handleChoice, flipped}) {
     const handleClick = () => {
         handleChoice(card);
     }
 
     return(
         <main className="memory-card">
-            <section>
+            <section className={flipped ? "flipped" : ""}>
                 <img  
                     className="memory-card__front" 
                     src={card.src} 
@@ -17,7 +17,8 @@ export default function SingleMemoryCard({card, handleChoice}) {
                     className="memory-card__back" 
                     src="/img/cover.png" 
                     onClick={handleClick} 
-                    alt="cara de abajo de la carta"/>
+                    alt="cara de abajo de la carta"
+                    />
             </section>
         </main>
     );

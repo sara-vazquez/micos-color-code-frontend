@@ -8,3 +8,17 @@
     border: 6px solid var(--secondary-100);
     border-radius: var(--border-radius-card);
 }
+
+/* FRONT CARD */
+.memory-card .memory-card__front {
+    transform: rotateY(90deg);
+    position: absolute;
+}
+
+.flipped .memory-card__front {
+    transform: rotateY(0deg);
+}
+
+.memory-card__back {
+
+}

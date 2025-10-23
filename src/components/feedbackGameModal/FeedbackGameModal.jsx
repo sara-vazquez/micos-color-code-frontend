@@ -18,7 +18,7 @@ export default function FeedbackGameModal({onRankingChart}) {
                     </article>
                 </section>
                 <section className="feedback-game__actions">
-                    <Button type= "button" variant="primary" aria-label="botón para jugar de nuevo">JUGAR DE NUEVO</Button>
+                    <Button type= "button" variant="primary" aria-label="botón para jugar de nuevo" onClick={shuffleCards}>JUGAR DE NUEVO</Button>
                     <Button type= "button" variant="secondary" aria-label="botón para ver la clasificación" onClick={handleOpenRanking}>VER CLASIFICACIÓN</Button>
                 </section>
             </main>

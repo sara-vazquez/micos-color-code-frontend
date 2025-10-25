@@ -29,8 +29,9 @@ export default function LetsPlayPage() {
                 <CardPlay 
                 title="Memoriza la carta"
                 description="Encuentra la pareja de cada carta según sus colores y formas"
-                img={memory}/>
-
+                img={memory}
+                path="/memory-cards"
+                />
             </main>
             <article className="feedback__flying-button">
                 <FeedbackButton />

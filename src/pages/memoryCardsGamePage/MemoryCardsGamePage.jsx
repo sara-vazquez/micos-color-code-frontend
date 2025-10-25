@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useMemo} from 'react';
 import { useNavigate } from 'react-router-dom';
 import './MemoryCardsGamePage.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,13 +13,21 @@ export default function MemoryCardsGamePage() {
     const [choiceOne, setChoiceOne] = useState(null); /* user chooses the first card for pairing */
     const [choiceTwo, setChoiceTwo] = useState(null); /* user chooses the second card for pairing */
     const [disabled, setDisabled] = useState(false);
-
-
+    
     const handleBack = () => {
         navigate(-1);
     }
 
     // Volume 
+    const correctSound = useMemo(() => new Audio("/audio/correct.wav"), []);
+
+    const playCorrectSound = () => {
+        if(isVolumeOn) {
+            correctSound.currentTime = 0;
+            correctSound.play();
+        }
+    };
+
     const toggleVolume = () => {
         setIsVolumeOn(prev => !prev);
     };
@@ -54,6 +62,7 @@ export default function MemoryCardsGamePage() {
         if(choiceOne && choiceTwo) {
             setDisabled(true)
             if(choiceOne.src === choiceTwo.src) {
+                playCorrectSound();
                 setCards(prevCards => {
                     return prevCards.map(card => {
                         if(card.src === choiceOne.src) {

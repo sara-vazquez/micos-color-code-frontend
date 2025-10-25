@@ -30,7 +30,7 @@ export default function LetsPlayPage() {
                 title="Memoriza la carta"
                 description="Encuentra la pareja de cada carta según sus colores y formas"
                 img={memory}
-                path="/memory-cards"
+                path="/users/play/memory-cards"
                 />
             </main>
             <article className="feedback__flying-button">

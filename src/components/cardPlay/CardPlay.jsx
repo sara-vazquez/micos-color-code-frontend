@@ -12,10 +12,12 @@ export default function CardPlay({title, description, img, path}) {
                     <p className='play-card__text'>{description}</p>   
                     <section className="play-card__img-container">
                     <img src={img}  className="play-card__img" aria-label="ilustración descriptiva sobre el juego" alt={title} />
-                    </section>    
+                    </section> 
+                    <article className="play-card__button">   
                     <Link to={path}>
-                        <Button variant="primary">JUGAR</Button>      
-                    </Link>       
+                        <Button  variant="primary">JUGAR</Button>      
+                    </Link>     
+                    </article>  
                 </article>
             </section>
     );

@@ -14,6 +14,7 @@ import HomePage from "../pages/homePage/HomePage";
 import DaltonismPage from "../pages/daltonismPage/DaltonismPage";
 import SystemPage from "../pages/systemPage/SystemPage";
 import LetsPlayPage from "../pages/letsPlayPage/LetsPlayPage";
+import MemoryCardsGamePage from "../pages/memoryCardsGamePage/MemoryCardsGamePage";
 import ResourcesPage from "../pages/resourcesPage/ResourcesPage";
 
 export default function AppRouter() {

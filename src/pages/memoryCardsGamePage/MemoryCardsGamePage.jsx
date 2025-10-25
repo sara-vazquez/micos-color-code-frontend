@@ -259,24 +259,22 @@ export default function MemoryCardsGamePage() {
     };
 
     return(
-        <>
+        <div className="memory-cards">
         <header className="memory-cards__header">
-            <article className='memory-cards__main-header'>
-                <button className="memory-card__back" aria-label="botón para volver atrás" onClick={handleBack}>
+                <button className="memory-cards__back" aria-label="botón para volver atrás" onClick={handleBack}>
                     <FontAwesomeIcon icon={faArrowLeft}/>
                 </button>
                 <h1 className="memory-cards__title">Memoriza la carta</h1>
-                <button className="memory-card__volume" aria-label={ariaLabelText} onClick={toggleVolume}>
+                <button className="memory-cards__volume" aria-label={ariaLabelText} onClick={toggleVolume}>
                     <FontAwesomeIcon icon={isVolumeOn ? faVolumeHigh : faVolumeXmark}/>
                 </button>
-            </article>
-            <article className='memory-cards__info'>
-                <p className="memory-cards__level">NIVEL {currentLevel.id}</p>
-                <p className={`memory-cards__timer ${timeRemaining <= 10 ? 'memory-cards__timer--warning' : ''}`}>
-                    {formatTime(timeRemaining)}
-                </p>
-            </article>
         </header>
+        <section className='memory-cards__info'>
+                <h3 className="memory-cards__level">NIVEL {currentLevel.id}</h3>
+                <h3 className={`memory-cards__timer ${timeRemaining <= 10 ? 'memory-cards__timer--warning' : ''}`}>
+                    {formatTime(timeRemaining)}
+                </h3>
+        </section>
         <main className={`memory-cards__grid memory-cards__grid--${currentLevel.grid}`}>
             {cards.map(card => (
                 <SingleMemoryCard 
@@ -301,6 +299,6 @@ export default function MemoryCardsGamePage() {
 
         {/* Ranking Chart */}
         {showRankingChart && <RankingChart />}
-        </>
+        </div>
     );
 }

@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {useNavigate} from 'react-router-dom';
 import './RankingChart.css';
 import Button from '../buttons/Button';
+import { rankingService } from '../../services/rankingService';
 
 export default function RankingChart() {
     const [rankingChart, setRankingChart] = useState(null);

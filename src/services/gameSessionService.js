@@ -1,24 +1,28 @@
-const API_URL = "http://localhost:8080"
+const API_URL = 'http://localhost:8080';
 
 export const gameSessionService = {
     async completeSession(gameId, points, timeCompleted = null) {
         const token = localStorage.getItem('token');
-
-        const response = await fetch(`${API_URL}/play/${gameId}/sessions`, {
-            method: "POST",
+        
+        const response = await fetch(`${API_URL}/users/play/${gameId}/sessions`, {
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer${token}`
+                'Authorization': `Bearer ${token}`
             },
-            body: JSON.stringify({points,timeCompleted})
+            body: JSON.stringify({
+                points,
+                timeCompleted
+            })
         });
 
-        if(!response.ok) {
-            if(response.status === 401) {
+        if (!response.ok) {
+            if (response.status === 401) {
                 throw new Error('No autorizado. Por favor, inicia sesión nuevamente.');
             }
-            throw new Error('Error al obtener el ranking');
+            throw new Error('Error al guardar la partida');
         }
+
         return await response.json();
     }
-}
+};

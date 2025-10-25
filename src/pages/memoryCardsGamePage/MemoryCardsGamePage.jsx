@@ -1,9 +1,11 @@
-import React, {useEffect, useState, useMemo} from 'react';
+import React, {useEffect, useState, useMemo, useRef} from 'react';
 import { useNavigate } from 'react-router-dom';
 import './MemoryCardsGamePage.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faVolumeHigh, faVolumeXmark } from "@fortawesome/free-solid-svg-icons";
 import SingleMemoryCard from '../../components/singleMemoryCard/SingleMemoryCard';
+import RankingChart from '../../components/rankingChart/RankingChart';
+import FeedbackGameModal from '../../components/feedbackGameModal/FeedbackGameModal';
 import {LEVELS} from '../../constants/gameConfig';
 
 export default function MemoryCardsGamePage() {
@@ -22,7 +24,6 @@ export default function MemoryCardsGamePage() {
 
     // Preview de cards
     const [showPreview, setShowPreview] = useState(false);
-    const [gameStarted, setGameStarted] = useState(false);
     
     // Crono
     const [time, setTime] = useState(0);
@@ -34,8 +35,9 @@ export default function MemoryCardsGamePage() {
     const [gameStarted, setGameStarted] = useState(false);
 
     // Overlays (feedback and ranking)
-    const [showResultModal, setShowResultModal] = useState(false);
-    const [rankingChartModal, setRankingChartModal] = useState(null);
+    const [showFeedbackModal, setShowFeedbackModal] = useState(false);
+    const [showRankingChart, setShowRankingChart] = useState(false);
+    const [sessionResult, setSessionResult] = useState(null);
 
     const GAME_ID = 1;
     
@@ -220,14 +222,12 @@ export default function MemoryCardsGamePage() {
                         timeUsed
                     );
                     
-                    setGameResult({
+                    setSessionResult({
                         sessionPoints: result.sessionPoints,
-                        totalPoints: result.newTotalPoints,
-                        turns: turns,
-                        timeUsed: timeUsed,
-                        completed: true
+                        totalPoints: result.newTotalPoints
                     });
-                    setShowResultModal(true);
+                    
+                    setShowFeedbackModal(true);
 
                     if (currentLevelIndex < LEVELS.length - 1) {
                         setCurrentLevelIndex(prev => prev + 1);
@@ -246,21 +246,19 @@ export default function MemoryCardsGamePage() {
         checkGameComplete();
     }, [cards, timeRemaining, turns, currentLevelIndex, navigate]);
 
-    //game starts automatically
-    useEffect(() => {
-        shuffleCards();
-    }, [currentLevelIndex]);
-
     const handlePlayAgain = () => {
-        setShowResultModal(false);
+        setShowFeedbackModal(false);
+        setShowRankingChart(false);
         shuffleCards();
     };
 
-    const handleViewRanking = () => {
-        navigate('/ranking/memory-cards');
+    const handleOpenRanking = () => {
+        setShowFeedbackModal(false);
+        setShowRankingChart(true);
     };
 
-    return(<>
+    return(
+        <>
         <header className="memory-cards__header">
             <article className='memory-cards__main-header'>
                 <button className="memory-card__back" aria-label="botón para volver atrás" onClick={handleBack}>
@@ -286,6 +284,18 @@ export default function MemoryCardsGamePage() {
                     disabled={disabled}/>
             ))}  
         </main>
+        {/* Modal de feedback */}
+        {showFeedbackModal && sessionResult && (
+            <FeedbackGameModal
+                sessionPoints={sessionResult.sessionPoints}
+                totalPoints={sessionResult.totalPoints}
+                onPlayAgain={handlePlayAgain}
+                onRankingChart={handleOpenRanking}
+            />
+        )}
+
+        {/* Ranking Chart */}
+        {showRankingChart && <RankingChart />}
         </>
     );
 }

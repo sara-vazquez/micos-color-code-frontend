@@ -7,6 +7,7 @@ import SingleMemoryCard from '../../components/singleMemoryCard/SingleMemoryCard
 import RankingChart from '../../components/rankingChart/RankingChart';
 import FeedbackGameModal from '../../components/feedbackGameModal/FeedbackGameModal';
 import {LEVELS} from '../../constants/gameConfig';
+import { gameSessionService } from '../../services/gameSessionService';
 
 export default function MemoryCardsGamePage() {
     const navigate = useNavigate();
@@ -14,8 +15,8 @@ export default function MemoryCardsGamePage() {
     const [isVolumeOn, setIsVolumeOn] = useState(true);
     const [cards, setCards] = useState([]);
     const [turns, setTurns] = useState(0);
-    const [choiceOne, setChoiceOne] = useState(null); /* user chooses the first card for pairing */
-    const [choiceTwo, setChoiceTwo] = useState(null); /* user chooses the second card for pairing */
+    const [choiceOne, setChoiceOne] = useState(null);
+    const [choiceTwo, setChoiceTwo] = useState(null);
     const [disabled, setDisabled] = useState(false);
 
     // Level
@@ -24,15 +25,12 @@ export default function MemoryCardsGamePage() {
 
     // Preview de cards
     const [showPreview, setShowPreview] = useState(false);
+    const [gameStarted, setGameStarted] = useState(false);
     
-    // Crono
-    const [time, setTime] = useState(0);
+    // Cronómetro
+    const [timeRemaining, setTimeRemaining] = useState(currentLevel.timeLimitSeconds);
     const [isRunning, setIsRunning] = useState(false);
     const timerRef = useRef(null);
-
-    // Levels
-    const [level, setLevel] = useState(1);
-    const [gameStarted, setGameStarted] = useState(false);
 
     // Overlays (feedback and ranking)
     const [showFeedbackModal, setShowFeedbackModal] = useState(false);
@@ -67,7 +65,7 @@ export default function MemoryCardsGamePage() {
         return `${mins}:${secs.toString().padStart(2, '0')}`;
     };
 
-    // Crono
+    // Crono - time remaining
     useEffect(() => {
         if (isRunning && timeRemaining > 0) {
             timerRef.current = setInterval(() => {
@@ -93,12 +91,11 @@ export default function MemoryCardsGamePage() {
         };
     }, [isRunning, timeRemaining]);
 
-    // Cards
-    const cardImages = [
+    const allCardImages = [
         {"src": "/img/sun.png"},
         {"src": "/img/watermelon.png"},
-        {"src": "/img/flower.png"}
-    ]
+        {"src": "/img/flower.png"},
+    ];
 
     // function that duplicates cards and mix them
     const shuffleCards = () => {
@@ -137,7 +134,6 @@ export default function MemoryCardsGamePage() {
 
         choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
     };
-
 
     // compare 2 selected cards
     useEffect(() => {
@@ -183,14 +179,14 @@ export default function MemoryCardsGamePage() {
                 timeUsed
             );
             
-            setGameResult({
+            setSessionResult({
                 sessionPoints: result.sessionPoints,
                 totalPoints: result.newTotalPoints,
                 turns: turns,
                 timeUsed: timeUsed,
                 completed: false
             });
-            setShowResultModal(true);
+            setShowFeedbackModal(true);
         } catch (error) {
             console.error('Error al guardar partida:', error);
             alert(error.message);
@@ -246,6 +242,11 @@ export default function MemoryCardsGamePage() {
         checkGameComplete();
     }, [cards, timeRemaining, turns, currentLevelIndex, navigate]);
 
+    // Init game when level changes
+    useEffect(() => {
+        shuffleCards();
+    }, [currentLevelIndex]);
+
     const handlePlayAgain = () => {
         setShowFeedbackModal(false);
         setShowRankingChart(false);
@@ -271,7 +272,9 @@ export default function MemoryCardsGamePage() {
             </article>
             <article className='memory-cards__info'>
                 <p className="memory-cards__level">NIVEL {currentLevel.id}</p>
-                <p className={`memory-cards__timer ${timeRemaining <= 10 ? 'memory-cards__timer--warning' : ''}`}>{formatTime(timeRemaining)}</p>
+                <p className={`memory-cards__timer ${timeRemaining <= 10 ? 'memory-cards__timer--warning' : ''}`}>
+                    {formatTime(timeRemaining)}
+                </p>
             </article>
         </header>
         <main className={`memory-cards__grid memory-cards__grid--${currentLevel.grid}`}>
@@ -281,10 +284,12 @@ export default function MemoryCardsGamePage() {
                     card={card} 
                     handleChoice={handleChoice}
                     flipped={card === choiceOne || card === choiceTwo || card.matched || showPreview}
-                    disabled={disabled}/>
+                    disabled={disabled}
+                />
             ))}  
         </main>
-        {/* Modal de feedback */}
+
+        {/* Feedback game modal */}
         {showFeedbackModal && sessionResult && (
             <FeedbackGameModal
                 sessionPoints={sessionResult.sessionPoints}

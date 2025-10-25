@@ -77,6 +77,12 @@ export default function AppRouter() {
                         </MainLayout>
                     </PrivateRoute>} 
             />
+            <Route path="users/play/memory-cards"
+                element={
+                    <PrivateRoute>
+                        <MemoryCardsGamePage backgroundColor="var(--primary-100)"/>
+                    </PrivateRoute>}
+            />
             <Route  path="/users/resources" 
                 element={
                     <PrivateRoute>

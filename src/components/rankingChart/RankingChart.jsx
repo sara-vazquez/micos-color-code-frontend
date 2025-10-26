@@ -40,7 +40,7 @@ export default function RankingChart({onPlayAgain}) {
         return (
             <div className="ranking-chart__overlay">
                 <div className="ranking-chart">
-                    <p>Cargando clasificación...</p>
+                    <p className="ranking-chart__message">Cargando clasificación...</p>
                 </div>
             </div>
         );
@@ -50,7 +50,7 @@ export default function RankingChart({onPlayAgain}) {
         return (
             <div className="ranking-chart__overlay">
                 <div className="ranking-chart">
-                    <p>Error al cargar la clasificación: {error}</p>
+                    <p className="ranking-chart__message">Error al cargar la clasificación: {error}</p>
                     <Button onClick={goToPlayPage}>VOLVER AL MENÚ</Button>
                 </div>
             </div>

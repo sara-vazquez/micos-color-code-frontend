@@ -6,6 +6,7 @@ import { faArrowLeft, faVolumeHigh, faVolumeXmark } from "@fortawesome/free-soli
 import SingleMemoryCard from '../../components/singleMemoryCard/SingleMemoryCard';
 import RankingChart from '../../components/rankingChart/RankingChart';
 import FeedbackGameModal from '../../components/feedbackGameModal/FeedbackGameModal';
+import ConfirmationModal from '../../components/confirmationModal/ConfirmationModal';
 import {LEVELS} from '../../constants/gameConfig';
 import { gameSessionService } from '../../services/gameSessionService';
 
@@ -32,16 +33,13 @@ export default function MemoryCardsGamePage() {
     const [isRunning, setIsRunning] = useState(false);
     const timerRef = useRef(null);
 
-    // Overlays (feedback and ranking)
+    // Overlays (confirmation, feedback and ranking)
     const [showFeedbackModal, setShowFeedbackModal] = useState(false);
     const [showRankingChart, setShowRankingChart] = useState(false);
     const [sessionResult, setSessionResult] = useState(null);
+    const [showConfirmationModal, setShowConfirmationModal] = useState(false);
 
     const GAME_ID = 1;
-    
-    const handleBack = () => {
-        navigate(-1);
-    }
 
     // Volume 
     const correctSound = useMemo(() => new Audio("/audio/correct.wav"), []);
@@ -247,6 +245,14 @@ export default function MemoryCardsGamePage() {
         shuffleCards();
     }, [currentLevelIndex]);
 
+    const handleOpenConfirmation = () => {
+        setShowConfirmationModal(true);
+    }
+
+    const handleCloseConfirmation = () => {
+        setShowConfirmationModal(false);
+    };
+
     const handlePlayAgain = () => {
         setShowFeedbackModal(false);
         setShowRankingChart(false);
@@ -261,7 +267,7 @@ export default function MemoryCardsGamePage() {
     return(
         <div className="memory-cards">
         <header className="memory-cards__header">
-                <button className="memory-cards__back" aria-label="botón para volver atrás" onClick={handleBack}>
+                <button className="memory-cards__back" aria-label="botón para volver atrás" onClick={handleOpenConfirmation}>
                     <FontAwesomeIcon icon={faArrowLeft}/>
                 </button>
                 <h1 className="memory-cards__title">Memoriza la carta</h1>
@@ -289,6 +295,9 @@ export default function MemoryCardsGamePage() {
         </section>
         </main>
 
+        {/* Confirmation modal */}
+        {showConfirmationModal && <ConfirmationModal onClose={handleCloseConfirmation}/>}
+
         {/* Feedback game modal */}
         {showFeedbackModal && sessionResult && (
             <FeedbackGameModal
@@ -300,7 +309,7 @@ export default function MemoryCardsGamePage() {
         )}
 
         {/* Ranking Chart */}
-        {showRankingChart && <RankingChart />}
+        {showRankingChart && <RankingChart onPlayAgain={handlePlayAgain}/>}
         </div>
     );
 }

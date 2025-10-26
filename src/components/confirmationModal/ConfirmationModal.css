@@ -18,6 +18,7 @@
     background-color: var(--white);
     border-radius: var(--border-radius-card);
     padding: 20px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .confirmation-modal__title {
@@ -42,5 +43,5 @@
     display:flex;
     flex-direction: row;
     gap: var(--space-button);
-    align-items: center;
+    justify-content: center;
 }

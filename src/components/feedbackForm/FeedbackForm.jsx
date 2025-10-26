@@ -3,7 +3,7 @@ import './FeedbackForm.css';
 import Button from '../buttons/Button';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import { sendFeedback } from '../../services/FeedbackService';
+import { sendFeedback } from '../../services/feedbackService';
 
 export default function FeedbackForm({onClose}) {
     const [email, setEmail] = useState("");
@@ -11,8 +11,13 @@ export default function FeedbackForm({onClose}) {
     const [status, setStatus] = useState(null);
 
     const handleSubmit = async (e) => {
-        console.log("📩 Enviando feedback...", { email, message });
         e.preventDefault();
+
+        console.log("📩 Estado antes de enviar:");
+        console.log("  Email:", email);
+        console.log("  Message:", message);
+        console.log("  Email length:", email.length);
+        console.log("  Message length:", message.length);
 
         if(!message.trim()) {
             setStatus("Por favor, escribe tu mensaje antes de enviar");
@@ -20,12 +25,17 @@ export default function FeedbackForm({onClose}) {
         }
 
         try {
-            await sendFeedback({ email, message});
-                setStatus("¡Gracias por tu feedback!🤗 ✅");
-                setEmail("");
-                setMessage("");
-        } catch {
-            setStatus("Parece que ha habido un error 😔, inténtalo de nuevo")
+           const payload = { email, message };
+        console.log("📦 Payload a enviar:", payload);
+        console.log("📦 Payload JSON:", JSON.stringify(payload));
+        
+        const result = await sendFeedback(payload);
+        setStatus(result); 
+        setEmail("");
+        setMessage("");
+    } catch (error) {
+        console.error("❌ Error capturado:", error);
+        setStatus("Parece que ha habido un error 😔, inténtalo de nuevo");
         }
     }
 

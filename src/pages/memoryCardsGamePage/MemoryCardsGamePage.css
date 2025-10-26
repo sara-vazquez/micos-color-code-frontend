@@ -23,12 +23,12 @@ body {
 }
 
 .memory-cards__header {
-    min-width: 100%;
+    width: 100%;
     display: flex;
     flex-direction: row;
-    margin: 0;
-    position: sticky;
     justify-content: space-between;
+    align-items: center;
+    gap: 12px;
 }
 
 .memory-cards__title {
@@ -37,6 +37,7 @@ body {
     font-weight: var(--h1-weight);
     text-align: center;
     color: var(--primary-500);
+    margin: 0;
 }
 
 .memory-cards__back, .memory-cards__volume {
@@ -44,15 +45,17 @@ body {
     color: var(--primary-500);
     border: none;
     background-color: transparent;
+    cursor: pointer;
+    padding: 8px;
 }
 
 .memory-cards__info {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    text-align: center;
+    align-items: center;
     gap: var(--space-button);
-    margin-bottom: var(--space-button);
+    margin-bottom: var(--space-card);
 }
 
 .memory-cards__level {
@@ -63,6 +66,7 @@ body {
     padding: 4px 8px;
     background-color: var(--primary-500);
     border-radius: var(--border-radius-button);
+    margin: 0;
 }
 
 .memory-cards__timer {
@@ -73,15 +77,125 @@ body {
     padding: 4px 8px;
     background-color: var(--secondary-200);
     border-radius: var(--border-radius-button);
+    margin: 0;
 }
+
+.memory-cards__timer--warning {
+    background-color: #ff6b6b;
+    color: white;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* GRID - Mobile First */
 
 .memory-cards__grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: var(--space-button);
+    gap: 12px;
     width: 100%;
-    margin-left: -10px;
-    padding: 0;
-    justify-content: center;
+    max-width: 100%;
+    justify-items: center;
+    align-items: center;
     box-sizing: border-box;
+    padding: 0 12px;
+}
+
+/* Grid 2x2 (levels 1 & 2) - Mobile */
+.memory-cards__grid--2x2 {
+    grid-template-columns: repeat(2, minmax(140px, 180px));
+    grid-template-rows: repeat(2, auto);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Grid 2x3 (levels 3 & 4) - Mobile */
+.memory-cards__grid--2x3 {
+    grid-template-columns: repeat(2, minmax(140px, 180px));
+    grid-template-rows: repeat(3, auto);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* TABLET (768px+) */
+@media (min-width: 768px) {
+    .memory-cards {
+        padding: 20px;
+    }
+
+    .memory-cards__header {
+        max-width: 800px;
+        margin: 0 auto 20px;
+    }
+
+    .memory-cards__title {
+        font-size: calc(var(--h1-size) * 1.2);
+    }
+
+    .memory-cards__grid {
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    /* Grid 2x2 - Tablet */
+    .memory-cards__grid--2x2 {
+        grid-template-columns: repeat(2, minmax(200px, 250px));
+        max-width: 600px;
+    }
+
+    /* Grid 2x3 - Tablet */
+    .memory-cards__grid--2x3 {
+        grid-template-columns: repeat(2, minmax(200px, 250px));
+        max-width: 600px;
+    }
+}
+
+/* DESKTOP (1024px+) */
+@media (min-width: 1024px) {
+    .memory-cards {
+        padding: 30px;
+    }
+
+    .memory-cards__header {
+        max-width: 1000px;
+        margin-bottom: 20px;
+    }
+
+    .memory-cards__grid {
+        gap: 24px;
+    }
+
+    /* Grid 2x2 - Desktop */
+    .memory-cards__grid--2x2 {
+        grid-template-columns: repeat(2, 280px);
+        max-width: 640px;
+    }
+
+    /* Grid 2x3 - Desktop */
+    .memory-cards__grid--2x3 {
+        grid-template-columns: repeat(2, 280px);
+        max-width: 640px;
+    }
+}
+
+/* DESKTOP LARGE (1440px+) */
+@media (min-width: 1440px) {
+    .memory-cards__grid {
+        gap: 30px;
+    }
+
+    /* Grid 2x2 - Desktop Large */
+    .memory-cards__grid--2x2 {
+        grid-template-columns: repeat(2, 320px);
+        max-width: 720px;
+    }
+
+    /* Grid 2x3 - Desktop Large */
+    .memory-cards__grid--2x3 {
+        grid-template-columns: repeat(2, 320px);
+        max-width: 720px;
+    }
 }

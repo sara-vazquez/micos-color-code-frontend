@@ -275,7 +275,8 @@ export default function MemoryCardsGamePage() {
                     {formatTime(timeRemaining)}
                 </h3>
         </section>
-        <main className={`memory-cards__grid memory-cards__grid--${currentLevel.grid}`}>
+        <main className="memory-cards__grid-container">
+        <section className={`memory-cards__grid memory-cards__grid--${currentLevel.grid}`}>
             {cards.map(card => (
                 <SingleMemoryCard 
                     key={card.id} 
@@ -285,6 +286,7 @@ export default function MemoryCardsGamePage() {
                     disabled={disabled}
                 />
             ))}  
+        </section>
         </main>
 
         {/* Feedback game modal */}

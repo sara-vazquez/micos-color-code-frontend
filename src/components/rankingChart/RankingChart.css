@@ -15,8 +15,8 @@
 .ranking-chart {
     background-color: var(--white);
     border-radius: var(--border-radius-card);
-    width: 360px;
-    height: 592px;
+    width: 320px;
+    height: 600px;
     padding: 20px;
     display: flex;
     flex-direction: column;

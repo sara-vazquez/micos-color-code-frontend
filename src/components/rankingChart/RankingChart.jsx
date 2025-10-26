@@ -4,7 +4,7 @@ import './RankingChart.css';
 import Button from '../buttons/Button';
 import { rankingService } from '../../services/rankingService';
 
-export default function RankingChart() {
+export default function RankingChart({onPlayAgain}) {
     const [rankingChart, setRankingChart] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -106,7 +106,7 @@ export default function RankingChart() {
                     type="button" 
                     variant='primary' 
                     aria-label="botón para volver a jugar" 
-                    onClick={() => navigate("/users/play/memory-cards")}
+                    onClick={onPlayAgain}
                 >JUGAR DE NUEVO</Button>
                 <Button 
                     type="button" 

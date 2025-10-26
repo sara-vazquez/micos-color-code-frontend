@@ -72,7 +72,7 @@ export default function RankingChart({onPlayAgain}) {
         <div className="ranking-chart__overlay">
         <main className='ranking-chart'>
             <section className='ranking-chart__title'>
-                <h1>CLASIFICACIÓN</h1>
+                <h2>CLASIFICACIÓN</h2>
             </section>
 
             <section className="ranking-chart__bar-group">
@@ -92,11 +92,11 @@ export default function RankingChart({onPlayAgain}) {
                     <p className="ranking-chart__personal-card--username">
                         {rankingChart.currentUser.username}
                     </p>
-                    <p className="ranking-chart__personal-card--points">
+                            <p className="ranking-chart__personal-card--points">
                         {rankingChart.currentUser.totalPoints} puntos
                     </p>
                     <p className="ranking-chart__personal-card--position">
-                        {rankingChart.currentUser.position}º
+                     {rankingChart.currentUser.position}º
                     </p>
                 </section>
             )}

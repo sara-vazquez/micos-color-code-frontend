@@ -1,7 +1,7 @@
 const API_URL = 'http://localhost:8080';
 
 export const gameSessionService = {
-    async completeSession(gameId, points, timeCompleted = null) {
+    async completeSession(gameId, points, timeCompleted = null, level, completed) {
         const token = localStorage.getItem('token');
         
         const response = await fetch(`${API_URL}/users/play/${gameId}/sessions`, {
@@ -12,7 +12,9 @@ export const gameSessionService = {
             },
             body: JSON.stringify({
                 points,
-                timeCompleted
+                timeCompleted,
+                level,
+                completed
             })
         });
 

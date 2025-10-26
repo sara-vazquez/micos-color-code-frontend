@@ -9,6 +9,7 @@ import FeedbackGameModal from '../../components/feedbackGameModal/FeedbackGameMo
 import ConfirmationModal from '../../components/confirmationModal/ConfirmationModal';
 import {LEVELS} from '../../constants/gameConfig';
 import { gameSessionService } from '../../services/gameSessionService';
+import { rankingService } from '../../services/rankingService';
 
 export default function MemoryCardsGamePage() {
     const navigate = useNavigate();
@@ -22,6 +23,7 @@ export default function MemoryCardsGamePage() {
 
     // Level
     const [currentLevelIndex, setCurrentLevelIndex] = useState(0);
+    const [isLoadingLevel, setIsLoadingLevel] = useState(true);
     const currentLevel = LEVELS[currentLevelIndex];
 
     // Preview de cards
@@ -62,6 +64,25 @@ export default function MemoryCardsGamePage() {
         const secs = seconds % 60;
         return `${mins}:${secs.toString().padStart(2, '0')}`;
     };
+
+    // Load current level from back
+    useEffect(() => {
+        const loadCurrentLevel = async () => {
+            try {
+                setIsLoadingLevel(true);
+                const data = await rankingService.getRanking(GAME_ID);
+                const levelFromBackend = data.currentLevel || 1;
+                setCurrentLevelIndex(levelFromBackend - 1); 
+            } catch (error) {
+                console.error('Error al cargar nivel:', error);
+                setCurrentLevelIndex(0); 
+            } finally {
+                setIsLoadingLevel(false);
+            }
+        };
+
+        loadCurrentLevel();
+    }, []);
 
     // Crono - time remaining
     useEffect(() => {
@@ -155,7 +176,7 @@ export default function MemoryCardsGamePage() {
         }
     }, [choiceOne, choiceTwo]);
 
-    // reset choices & increase turn
+    // Reset turn
     const resetTurn = () => {
         setChoiceOne(null);
         setChoiceTwo(null);
@@ -174,16 +195,18 @@ export default function MemoryCardsGamePage() {
             const result = await gameSessionService.completeSession(
                 GAME_ID,
                 points,
-                timeUsed
+                timeUsed,
+                currentLevel.id,
+                false
             );
             
             setSessionResult({
                 sessionPoints: result.sessionPoints,
-                totalPoints: result.newTotalPoints,
-                turns: turns,
-                timeUsed: timeUsed,
-                completed: false
+                totalPoints: result.newTotalPoints
             });
+            
+            setCurrentLevelIndex(result.currentLevel - 1);
+            
             setShowFeedbackModal(true);
         } catch (error) {
             console.error('Error al guardar partida:', error);
@@ -213,7 +236,9 @@ export default function MemoryCardsGamePage() {
                     const result = await gameSessionService.completeSession(
                         GAME_ID,
                         Math.round(points),
-                        timeUsed
+                        timeUsed,
+                        currentLevel.id,
+                        true 
                     );
                     
                     setSessionResult({
@@ -221,11 +246,9 @@ export default function MemoryCardsGamePage() {
                         totalPoints: result.newTotalPoints
                     });
                     
+                    setCurrentLevelIndex(result.currentLevel - 1);
+                    
                     setShowFeedbackModal(true);
-
-                    if (currentLevelIndex < LEVELS.length - 1) {
-                        setCurrentLevelIndex(prev => prev + 1);
-                    }
                 } catch (error) {
                     console.error('Error al guardar partida:', error);
                     alert(error.message);
@@ -238,7 +261,7 @@ export default function MemoryCardsGamePage() {
         };
 
         checkGameComplete();
-    }, [cards, timeRemaining, turns, currentLevelIndex, navigate]);
+    }, [cards]);
 
     // Init game when level changes
     useEffect(() => {
@@ -263,6 +286,10 @@ export default function MemoryCardsGamePage() {
         setShowFeedbackModal(false);
         setShowRankingChart(true);
     };
+
+    if (isLoadingLevel) {
+        return <div className="memory-cards__message">Cargando nivel...</div>;
+    }
 
     return(
         <div className="memory-cards">

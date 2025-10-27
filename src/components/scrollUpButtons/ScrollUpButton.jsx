@@ -14,7 +14,7 @@ export default function ScrollUpButton() {
     return (
         <>
            
-            <button className="scroll-up" type="button" onClick={handleClick}>
+            <button className="scroll-up" type="button" onClick={handleClick} aria-label="botón para volver arriba">
                 <FontAwesomeIcon icon={faArrowUp} className="faArrowUp" />
             </button>
         

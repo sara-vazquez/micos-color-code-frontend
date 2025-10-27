@@ -196,6 +196,7 @@ export default function AddModal({resource, onSave, onClose}) {
                         type="file" 
                         accept="image/*"
                         onChange={handleImageChange}
+                        aria-label='campo para seleccionar imágen'
                     />
                     {errors.imageFile && <span className="add-modal__error">{errors.imageFile}</span>}
 
@@ -207,6 +208,7 @@ export default function AddModal({resource, onSave, onClose}) {
                         placeholder='Nombre del recurso'
                         value={formData.name}
                         onChange={handleChange}
+                        aria-label='campo para poner el nombre'
                     />
                     {errors.name && <span className="add-modal__error">{errors.name}</span>}
 
@@ -218,6 +220,7 @@ export default function AddModal({resource, onSave, onClose}) {
                         placeholder='Cuenta brevemente qué es el archivo'
                         value={formData.intro}
                         onChange={handleChange}
+                        aria-label='campo para la introducción'
                     />
                     {errors.intro && <span className="add-modal__error">{errors.intro}</span>}
 
@@ -229,6 +232,7 @@ export default function AddModal({resource, onSave, onClose}) {
                         placeholder="Describe en qué consiste este recurso"
                         value={formData.description}
                         onChange={handleChange}
+                        aria-label='campo para la descripción'
                     />
                     {errors.description && <span className="add-modal__error">{errors.description}</span>}
 
@@ -242,15 +246,16 @@ export default function AddModal({resource, onSave, onClose}) {
                         type="file" 
                         accept="application/pdf"
                         onChange={handlePdfChange}
+                        aria-label='campo para seleccionar el pdf'
                     />
                     {errors.pdfFile && <span className="add-modal__error">{errors.pdfFile}</span>}
                 </article>
 
                 <article className="add-modal__actions">
-                    <Button type="button" onClick={onClose} variant="secondary">
+                    <Button type="button" onClick={onClose} variant="secondary" aria-label="botón para cancelar la acción">
                         Cancelar
                     </Button>
-                    <Button type="submit" variant="primary">
+                    <Button type="submit" variant="primary" aria-label="botón para guardar los cambios">
                         {resource ? 'Actualizar' : 'Guardar'}
                     </Button>
                 </article>

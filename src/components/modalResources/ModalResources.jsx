@@ -22,8 +22,8 @@ export default function ModalResources({resource, onClose}) {
                             alt={resource.name} 
                             aria-label="imagen del recurso seleccionado" />
                     </section>
-                    <h3 className="modal-resources__title">{resource.name}</h3>
-                    <p className='modal-resources__text'>{resource.description}</p>                    
+                    <h3 className="modal-resources__title" aria-label="título del recurso">{resource.name}</h3>
+                    <p className='modal-resources__text' aria-label="texto descriptivo del recurso">{resource.description}</p>                    
                 </article>
             </section>
         </div>

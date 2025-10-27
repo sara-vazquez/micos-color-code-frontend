@@ -43,7 +43,7 @@ export default function Captcha({ onCaptchaSolved }) {
         <section className="captcha">
             {captcha ? (
                 <>
-                    <p className="captcha__question">{captcha.question}</p>
+                    <p className="captcha__question" aria-label="pregunta del captcha">{captcha.question}</p>
                     <div className="captcha__input-group">
                         <input
                             type="text"
@@ -51,6 +51,7 @@ export default function Captcha({ onCaptchaSolved }) {
                             placeholder="Tu respuesta"
                             onChange={handleAnswerChange}
                             className="captcha__input"
+                            aria-label='campo para añadir la respuesta del captcha'
                         />
                         <button 
                             type="button" 

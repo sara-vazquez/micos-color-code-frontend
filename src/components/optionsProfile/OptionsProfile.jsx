@@ -30,7 +30,7 @@ export default function OptionsProfile({ onEditProfile, onClose }) {
             <section className="options-profile" role="dialog" aria-modal="true" onClick={(e) => e.stopPropagation()}>
                 <article className="options-profile__actions">
                     <button type="button" className="options-profile__link" aria-label="botón para editar perfil" onClick={handleEdit} disabled={loading}>Editar perfil</button>
-                    <button type="button" className="options-profile__link" onClick={handleLogout} disabled={loading}>{loading ? '⏳ Cerrando sesión...' : 'Cerrar sesión'}</button>
+                    <button type="button" className="options-profile__link" aria-label="botón para cerrar sesión" onClick={handleLogout} disabled={loading}>{loading ? '⏳ Cerrando sesión...' : 'Cerrar sesión'}</button>
                 </article>
             </section>
         </div>

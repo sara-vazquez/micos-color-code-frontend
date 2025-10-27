@@ -51,7 +51,7 @@ export default function RankingChart({onPlayAgain}) {
             <div className="ranking-chart__overlay">
                 <div className="ranking-chart">
                     <p className="ranking-chart__message">Error al cargar la clasificación: {error}</p>
-                    <Button onClick={goToPlayPage}>VOLVER AL MENÚ</Button>
+                    <Button onClick={goToPlayPage} aria-lable="botón para volver al menú de juegos">VOLVER AL MENÚ</Button>
                 </div>
             </div>
         );
@@ -62,7 +62,7 @@ export default function RankingChart({onPlayAgain}) {
             <div className="ranking-chart__overlay">
                 <div className="ranking-chart">
                     <p>No hay datos de clasificación disponibles</p>
-                    <Button onClick={goToPlayPage}>VOLVER AL MENÚ</Button>
+                    <Button onClick={goToPlayPage} aria-lable="botón para volver al menú de juegos">VOLVER AL MENÚ</Button>
                 </div>
             </div>
         );

@@ -50,27 +50,37 @@ export default function Navbar({backgroundColor}) {
                     <Link 
                         to="/users/home" 
                         className={`hamburger-menu__link ${isActive('/users/home') ? 'hamburger-menu__link--active' : ''}`}
-                        onClick={closeMenu}>Home</Link>
+                        onClick={closeMenu}
+                        aria-label="botón para ir a la página principal"
+                        >Home</Link>
                     
                     <Link 
                         to="/users/system" 
                         className={`hamburger-menu__link ${isActive('/users/system') ? 'hamburger-menu__link--active' : ''}`}
-                        onClick={closeMenu}>Micos color code</Link>
+                        onClick={closeMenu}
+                        aria-label="botón para ir a la página del sistema"
+                        >Micos color code</Link>
                     
                     <Link 
                         to="/users/daltonism" 
                         className={`hamburger-menu__link ${isActive('/users/daltonism') ? 'hamburger-menu__link--active' : ''}`}
-                        onClick={closeMenu}>Daltonismo</Link>
+                        onClick={closeMenu}
+                        aria-label="botón para ir a la página de daltonismo"
+                        >Daltonismo</Link>
                     
                     <Link 
                         to="/users/play" 
                         className={`hamburger-menu__link ${isActive('/users/play') ? 'hamburger-menu__link--active' : ''}`}
-                        onClick={closeMenu}>¡A jugar!</Link>
+                        onClick={closeMenu}
+                        aria-label="botón para ir a la página de juegos"
+                        >¡A jugar!</Link>
                     
                     <Link 
                         to="/users/resources" 
                         className={`hamburger-menu__link ${isActive('/users/resources') ? 'hamburger-menu__link--active' : ''}`}
-                        onClick={closeMenu}>Recursos</Link>
+                        onClick={closeMenu}
+                        aria-label="botón para ir a la página de recursos"
+                        >Recursos</Link>
                 </nav>
             </section>
 

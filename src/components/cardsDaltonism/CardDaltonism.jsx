@@ -6,11 +6,11 @@ export default function CardDaltonism({ title, text, image }) {
         <>
         <section className='daltonism-card__container'>
             <article className="daltonsim-card__content">
-                <h3 className='daltonism-card__h3'>{title}</h3>
-                <p className="daltonism-card__text">{text}</p>
+                <h3 className='daltonism-card__h3' aria-label="título que indica el tipo de daltonismo">{title}</h3>
+                <p className="daltonism-card__text" aria-label="texto descriptivo del tipo de daltonismo">{text}</p>
             </article>
             <article className="daltonism-card__image">
-                <img src={image} alt={title} />
+                <img src={image} alt={title} aria-label="imagen que indica el tipo de daltonismo" />
             </article>
         </section>
         </>

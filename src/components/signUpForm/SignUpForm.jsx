@@ -42,6 +42,7 @@ export default function SignUpForm({ onSubmit, loading, error, success, onGoToLo
                             id="username"
                             className="signup-form__input" 
                             name="username" 
+                            aria-label="nombre de usuario"
                             value={formData.username} 
                             onChange={handleChange} 
                             placeholder="lisasimpson8" 
@@ -56,6 +57,7 @@ export default function SignUpForm({ onSubmit, loading, error, success, onGoToLo
                             className="signup-form__input" 
                             name="email"
                             type="email"
+                            aria-label="correo electrónico"
                             value={formData.email} 
                             onChange={handleChange} 
                             placeholder="lisasimpson@gmail.com" 
@@ -70,6 +72,7 @@ export default function SignUpForm({ onSubmit, loading, error, success, onGoToLo
                             className="signup-form__input" 
                             name="password" 
                             type="password" 
+                            aria-label="contraseña"
                             value={formData.password} 
                             onChange={handleChange} 
                             placeholder="UsaUnaContraseñaSegura123!" 
@@ -95,6 +98,7 @@ export default function SignUpForm({ onSubmit, loading, error, success, onGoToLo
                         type="button" 
                         className="login-link" 
                         onClick={onGoToLogin}
+                        aria-label="botón para redirigir a la página de iniciar sesión"
                     >
                         Inicia sesión aquí
                     </button>

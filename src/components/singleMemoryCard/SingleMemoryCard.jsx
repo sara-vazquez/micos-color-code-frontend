@@ -14,12 +14,14 @@ export default function SingleMemoryCard({card, handleChoice, flipped, disabled}
                 <img  
                     className="memory-card__front" 
                     src={card.src} 
-                    alt="cara de arriba de la carta"/>
+                    alt="cara de arriba de la carta"
+                    aria-label="carta boca arriba"/>
                 <img 
                     className="memory-card__back" 
                     src="/img/cover.png" 
                     onClick={handleClick} 
                     alt="cara de abajo de la carta"
+                    aria-label="carta boca abajo"
                     />
             </section>
         </main>

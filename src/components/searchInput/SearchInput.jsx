@@ -28,7 +28,7 @@ export default function SearchInput({ placeholder="Buscar...", onSearch }) {
                 <article className="search-input__container">
                     <FontAwesomeIcon icon={faMagnifyingGlass} className="faMagnifyingGlass"/>
                     <input type="text" value={searchValue} onChange={handleInputChange} placeholder={placeholder} className="search-input__field" />
-                    <button type="submit" style={{ display: 'none' }}></button>
+                    <button type="submit" aria-label="botón para buscar" style={{ display: 'none' }}></button>
                 </article>
             </form>
         </section>

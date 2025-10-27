@@ -72,7 +72,7 @@ export default function LoginForm({onSubmit, loading, error, onGoToRegister}) {
                     </article>
                 </section>
                 
-                <Button type="submit" variant="primary" disabled={loading}>
+                <Button type="submit" variant="primary" disabled={loading} aria-label="botón para iniciar sesión">
                     {loading ? "Iniciando sesión..." : "Iniciar sesión"}
                 </Button>
                 {error && <p className="login-form__error">{error}</p>}
@@ -85,6 +85,7 @@ export default function LoginForm({onSubmit, loading, error, onGoToRegister}) {
                         type="button" 
                         className="register-link" 
                         onClick={onGoToRegister}
+                        aria-label="botón para ir al registro"
                     >
                         Regístrate aquí
                     </button>

@@ -9,12 +9,12 @@ export default function InfoModal({onClose}) {
         <div className="info-modal__overlay" onClick={onClose}>
         <section className="info-modal">
             <article className="info-modal__header">
-                <button className="info-modal__exit">
+                <button className="info-modal__exit" aria-label="botón para cerrar la guía de uso">
                     <FontAwesomeIcon icon={faXmark} onClick={onClose}/>
                 </button>
             </article>
             <article classNae="info-modal__content">
-                <h1 className="info-modal__title">📚 Consejos de uso</h1>
+                <h1 className="info-modal__title" aria-label="consejos de uso">📚 Consejos de uso</h1>
                     <p className="info-modal__body">Esta web está pensada para acompañar a niños y niñas con daltonismo dicromático en el aprendizaje de los colores de una manera <strong>lúdica, visual y sencilla.</strong> Aquí encontraréis juegos, recursos y explicaciones que podéis compartir y disfrutar juntos.</p>
                 <h2 className="info-modal__subtitle">🎨 Cómo funciona</h2>
                     <p className="info-modal__body">

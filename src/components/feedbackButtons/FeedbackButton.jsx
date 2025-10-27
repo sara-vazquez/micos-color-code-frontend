@@ -10,7 +10,7 @@ export default function FeedbackButton() {
     return(
         <div className="feedback-wrapper">
             <div className="wavy-background"></div>
-            <button className="feedback" onClick={() => setIsOpen(true)}>
+            <button className="feedback" aria-label="botón para dar feedback o ver los consejos de uso" onClick={() => setIsOpen(true)}>
                 <FontAwesomeIcon icon={faHandPointUp} size="2x" />   
             </button>
             {isOpen && <OptionsModal onClose={() => setIsOpen(false)} />}

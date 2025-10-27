@@ -38,13 +38,14 @@ export default function EditProfileModal({profile, onClose, onProfileUpdate}) {
         <div className="edit-modal__overlay" onClick={onClose}>
         <section className="edit-modal" onSubmit={handleSubmit}>
             <header className="edit-modal__header">
-                <h2 className="edit-modal__title">Editar perfil</h2>
+                <h2 className="edit-modal__title" aria-label="Editar el perfil">Editar perfil</h2>
             </header>
             <article className="edit-modal__content">
             <article className="edit-modal__input-field">
                         <label className="edit-modal__label">Nombre de usuario</label>
                         <input 
                             className="edit-modal__input" 
+                            aria-label="campo para rellenar el nombre de usuario"
                             name="username" 
                             value={formData.username} 
                             onChange={handleChange} 
@@ -56,6 +57,7 @@ export default function EditProfileModal({profile, onClose, onProfileUpdate}) {
                         <label className="edit-modal__label">Correo electrónico</label>
                         <input 
                             className="edit-modal__input" 
+                            aria-label="campo para rellenar el correo electrónico"
                             name="email"
                             type="email"
                             value={formData.email} 
@@ -68,6 +70,7 @@ export default function EditProfileModal({profile, onClose, onProfileUpdate}) {
                         <label className="edit-modal__label">Contraseña</label>
                         <input 
                             className="edit-modal__input" 
+                            aria-label="campo para rellenar la contraseña"
                             name="password" 
                             type="password" 
                             value={formData.password} 

@@ -13,8 +13,8 @@ export default function FeedbackGameModal({sessionPoints, totalPoints, onPlayAga
                 <section className="feedback-game__content">
                     <h2 className="feedback-game__title">¡BIEN HECHO! 🎉</h2>
                     <article className="feedback-game__text">
-                        <p><strong>Puntuación:</strong> {sessionPoints}</p>
-                        <p><strong>Puntuación total:</strong> {totalPoints}</p>
+                        <p aria-label="puntos de la partida actual"><strong>Puntuación:</strong> {sessionPoints}</p>
+                        <p aria-label="puntos totales"><strong>Puntuación total:</strong> {totalPoints}</p>
                     </article>
                 </section>
                 <section className="feedback-game__actions">

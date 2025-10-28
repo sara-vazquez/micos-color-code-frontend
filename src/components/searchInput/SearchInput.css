@@ -23,6 +23,7 @@
     font-size: var(--body-size);
     font-weight: var(--body-weight);
     color: var(--primary-500);
+    width: 100%;
 }
 
 .search-input__field::placeholder {

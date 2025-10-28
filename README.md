@@ -1,6 +1,6 @@
 # MICOS COLOR CODE
 
-MICOS es una web (mobile-first) dirigida a niños y niñas de entre 3 y 8 años con daltonismo dicromático. Surge tras la creación del sistema visual "Micos color code" creado para facilitar la identificación de los colores por parte de los peques con esta alteración visual. 
+MICOS es una web (mobile-first) dirigida a niños y niñas de entre 3 y 8 años con daltonismo dicromático. Surge tras la creación del sistema visual "Micos color code", pensado para facilitar la identificación de los colores por parte de los peques con esta alteración visual. 
 
 Con la web se pretende que mediante una forma lúdica, visual y sencilla, continúen con el aprendizaje también a través de las pantallas. 
 
@@ -112,25 +112,21 @@ flowchart TD
 ## 🚀 Instalación y ejecución
 
 1. Hacer un fork del repositorio
-
-2. Entrar en la carpeta
-
-3. Instalar dependencias
-
-   [Aquí tienes una guía con instalaciones necesarias para el front](https://www.notion.so/sara-vazquez/Instalaciones-front-281d5565c5b680d28ff8d736e262e840)
+2. Crea una rama para tu feature/fix
+3. Instalar dependencias [Aquí tienes una guía con instalaciones necesarias para el front](https://www.notion.so/sara-vazquez/Instalaciones-front-281d5565c5b680d28ff8d736e262e840)
     ```
     npm install
     ````
-
+4. Haz tus cambios y crea un pull request
 5. Levantar el servidor
     ```
     npm run dev
     ```
-
 6. Abrir en el navegador
     ```
     http://localhost:5173
     ```
+
 
 ## 📋 Funcionalidades principales del ADMIN
 

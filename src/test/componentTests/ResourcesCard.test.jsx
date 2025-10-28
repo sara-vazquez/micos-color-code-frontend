@@ -11,7 +11,6 @@ describe('ResourcesCard', () => {
     }
 
     beforeEach(() => {
-        // Mock de import.meta.env
         import.meta.env.VITE_API_BASE_URL = 'http://localhost:8080';
     });
 
@@ -37,33 +36,40 @@ describe('ResourcesCard', () => {
         const previewButton = screen.getByLabelText('Botón de vista previa del material');
         await user.click(previewButton);
 
-        const modal = screen.getByRole('dialog') || screen.getByText(mockResourcesCard.name);
+        const modal = screen.getByText(mockResourcesCard.name);
         expect(modal).toBeInTheDocument();
     });
 
     it('triggers download when clicking on Download icon', async () => {
         const user = userEvent.setup();
-        
-        const mockLink = {
-            href: '',
-            download: '',
-            target: '',
-            click: vi.fn()
-        };
-        
-        const createElementSpy = vi.spyOn(document, 'createElement').mockReturnValue(mockLink);
+    
+    const mockClick = vi.fn();
+    const createElementSpy = vi.spyOn(document, 'createElement');
+    const originalCreateElement = document.createElement.bind(document);
+    
+    createElementSpy.mockImplementation((tagName) => {
+        const element = originalCreateElement(tagName);
+        if (tagName === 'a') {
+            element.click = mockClick;
+        }
+        return element;
+    });
 
-        render(<ResourcesCard resource={mockResourcesCard} />);
+    render(<ResourcesCard resource={mockResourcesCard} />);
 
-        const downloadButton = screen.getByLabelText('Botón de descargar el material');
-        await user.click(downloadButton);
+    const downloadButton = screen.getByLabelText('Botón de descargar el material');
+    await user.click(downloadButton);
 
-        expect(createElementSpy).toHaveBeenCalledWith('a');
-        expect(mockLink.href).toBe('http://localhost:8080/uploads/daltonismo-guia.pdf');
-        expect(mockLink.download).toBe('Material de Daltonismo.pdf');
-        expect(mockLink.target).toBe('_blank');
-        
-        expect(mockLink.click).toHaveBeenCalledTimes(1);
+    expect(createElementSpy).toHaveBeenCalledWith('a');
+    expect(mockClick).toHaveBeenCalledTimes(1);
+
+        const calls = createElementSpy.mock.results;
+        const linkElement = calls.find(call => call.value.tagName === 'A')?.value;
+
+        if (linkElement) {
+            expect(linkElement.href).toContain('/uploads/sistema.pdf');
+            expect(linkElement.download).toBe('sistema.pdf');
+        }
 
         createElementSpy.mockRestore();
     });

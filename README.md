@@ -1,4 +1,9 @@
 # MICOS COLOR CODE
+
+MICOS es una web (mobile-first) dirigida a niños y niñas de entre 3 y 8 años con daltonismo dicromático. Surge tras la creación del sistema visual "Micos color code" creado para facilitar la identificación de los colores por parte de los peques con esta alteración visual. 
+
+Con la web se pretende que mediante una forma lúdica, visual y sencilla, continúen con el aprendizaje también a través de las pantallas. 
+
 ## Proceso de diseño y documentación
 - [Aquí tienes el enlace a figma para ver cómo fue el proceso de diseño](https://www.figma.com/design/YueEJOk6QapJxU4PCOoqim/micos?node-id=0-1&t=ewvxFKvqEnRvRAFa-1)
 

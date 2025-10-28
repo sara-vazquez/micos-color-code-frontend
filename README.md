@@ -1,4 +1,11 @@
 # MICOS COLOR CODE
+## Proceso de diseño y documentación
+- [Aquí tienes el enlace a figma para ver cómo fue el proceso de diseño](https://www.figma.com/design/YueEJOk6QapJxU4PCOoqim/micos?node-id=0-1&t=ewvxFKvqEnRvRAFa-1)
+
+- [Si accedes a este enlace te encontrarás con la documentación del proyecto](https://www.notion.so/sara-vazquez/MICOS-PROYECTO-FINAL-23fd5565c5b68048a775fc74e9a9f749)
+
+## Recorridos admin y user
+[![admin flow](https://i.vimeocdn.com/video/2075148736-bdd7a3e1caa2e91e0eaee74867a0ad777029fa3bdecd1111e74bb60b31511ca3-d_640x360?&region=us)](https://vimeo.com/1131261688)[![user flow](https://i.vimeocdn.com/video/2075148817-7c65448b05d2442369ff45dc126c7c0f58252e9c874804a18fe9b180a1636e3b-d_640x360?&region=us)](https://vimeo.com/1131261736)
 
 ## User flow
 ```mermaid
@@ -81,3 +88,52 @@ flowchart TD
     style I3 fill:#99B2E6,stroke:#142852,stroke-width:2px,color:#142852
 
 ```
+
+## 🛠️ Tecnologías
+
+- React
+- CSS Modules
+- Fetch API para consumir el backend
+- React Router para navegación
+
+## 📦 Requisitos previos
+
+```
+- Node.js >= 22.15
+- npm >= 10.9.2
+- Acceso al backend del proyecto [aquí](https://github.com/sara-vazquez/micos-color-code-backend)
+```
+
+## 🚀 Instalación y ejecución
+
+1. Hacer un fork del repositorio
+
+2. Entrar en la carpeta
+
+3. Instalar dependencias
+
+   [Aquí tienes una guía con instalaciones necesarias para el front](https://www.notion.so/sara-vazquez/Instalaciones-front-281d5565c5b680d28ff8d736e262e840)
+    ```
+    npm install
+    ````
+
+5. Levantar el servidor
+    ```
+    npm run dev
+    ```
+
+6. Abrir en el navegador
+    ```
+    http://localhost:5173
+    ```
+
+## 📋 Funcionalidades principales del ADMIN
+
+- Gestión de recursos:
+  - Listar 📄
+  - Añadir ➕
+  - Editar ✏️
+  - Eliminar 🗑
+
+
+## 🧪 Cobertura de tests

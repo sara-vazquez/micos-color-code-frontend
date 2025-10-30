@@ -40,9 +40,9 @@ describe('RankingChart', () => {
                 }
             ],
             currentUser: {
-                username: "vicentabenito",
-                totalPoints: 15000,
-                position: 1
+                username: "juancuesta",
+                totalPoints: 2100,
+                position: 32
             }
         };
 
@@ -91,7 +91,7 @@ describe('RankingChart', () => {
             expect(screen.getByText('CLASIFICACIÓN')).toBeInTheDocument();
         });
 
-        const personalCard = screen.getByText('vicentabenito').closest('.ranking-chart__personal-card');
+        const personalCard = screen.getByText('juancuesta').closest('.ranking-chart__personal-card');
         expect(personalCard).toBeInTheDocument();
     });
 

@@ -1,24 +1,22 @@
 # MICOS COLOR CODE
-## Una plataforma lúdica para el aprendizaje de colores en niños con daltonismo
-
-### 🧩 Descripción
-<p align="center">
-  <img src="src/assets/preview_admin.png" alt="admin preview" width="48%" />
-  <img src="src/assets/preview_user.png" alt="user home preview" width="48%" />
+## 🧩 Descripción
+<p align="left">
+  <img src="src/assets/preview_admin.png" alt="admin preview" height="48%" />
+  <img src="src/assets/preview_user.png" alt="user home preview" height="48%" />
 </p>
 MICOS es una web (mobile-first) dirigida a niños y niñas de **entre 3 y 8 años** con daltonismo dicromático. Surge tras la creación del sistema visual "Micos color code", pensado para **facilitar la identificación de los colores** por parte de los peques con esta alteración visual. 
 
 Con la web se pretende que mediante una forma **lúdica, visual y sencilla**, continúen con el aprendizaje también a través de las pantallas. 
 
-### 🧠 Proceso de diseño y documentación
+## 🧠 Proceso de diseño y documentación
 - [Ver proceso de diseño en Figma ↗︎](https://www.figma.com/design/YueEJOk6QapJxU4PCOoqim/micos?node-id=0-1&t=ewvxFKvqEnRvRAFa-1)
 
 - [Ver documentación del proyecto en Notion ↗︎](https://www.notion.so/sara-vazquez/MICOS-PROYECTO-FINAL-23fd5565c5b68048a775fc74e9a9f749)
 
-### 🧭 Recorridos admin y user
+## 🧭 Recorridos admin y user
 [![admin flow ↗︎](https://i.vimeocdn.com/video/2075148736-bdd7a3e1caa2e91e0eaee74867a0ad777029fa3bdecd1111e74bb60b31511ca3-d_640x360?&region=us)](https://vimeo.com/1131261688)[![user flow ↗︎](https://i.vimeocdn.com/video/2075148817-7c65448b05d2442369ff45dc126c7c0f58252e9c874804a18fe9b180a1636e3b-d_640x360?&region=us)](https://vimeo.com/1131261736)
 
-### User flow
+## User flow
 ```mermaid
 flowchart TD
     A[Inicio - Landing Page] --> B{Usuario autenticado?}
@@ -100,14 +98,14 @@ flowchart TD
 
 ```
 
-### 🛠️ Tecnologías
+## 🛠️ Tecnologías
 
 - React
 - CSS Modules
 - Fetch API para consumir el backend
 - React Router para navegación
 
-### 📦 Requisitos previos
+## 📦 Requisitos previos
 
 ```
 - Node.js >= 22.15
@@ -115,7 +113,7 @@ flowchart TD
 - Acceso al backend del proyecto [aquí](https://github.com/sara-vazquez/micos-color-code-backend)
 ```
 
-### 🚀 Instalación y ejecución
+## 🚀 Instalación y ejecución
 
 1. **Hacer un fork del repositorio**
 
@@ -146,7 +144,7 @@ flowchart TD
     ```
 
 
-### 📋 Funcionalidades principales del ADMIN
+## 📋 Funcionalidades principales del ADMIN
 
 - **Gestión de recursos:**
   - Listar 📄
@@ -155,9 +153,8 @@ flowchart TD
   - Eliminar 🗑
 
 
-### 🧪 Cobertura de tests
+## 🧪 Cobertura de tests
 !["covertura provisional de los tests"](src/assets/coverageFront.png)
 
 ### Autora
-
 Sara Vázquez

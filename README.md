@@ -138,3 +138,4 @@ flowchart TD
 
 
 ## 🧪 Cobertura de tests
+!["covertura provisional de los tests"](src/assets/coverageFront.png)

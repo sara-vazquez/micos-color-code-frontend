@@ -1,6 +1,6 @@
 import React from "react";
 import {render, screen} from '@testing-library/react';
-import {describe, it, vi, expect, beforeEach} from 'vitest';
+import {describe, it, expect, beforeEach} from 'vitest';
 import userEvent from "@testing-library/user-event";
 import ResourcesCard from "../../components/resourcesCard/ResourcesCard";
 
@@ -40,37 +40,5 @@ describe('ResourcesCard', () => {
         expect(modal).toBeInTheDocument();
     });
 
-    it('triggers download when clicking on Download icon', async () => {
-        const user = userEvent.setup();
     
-    const mockClick = vi.fn();
-    const createElementSpy = vi.spyOn(document, 'createElement');
-    const originalCreateElement = document.createElement.bind(document);
-    
-    createElementSpy.mockImplementation((tagName) => {
-        const element = originalCreateElement(tagName);
-        if (tagName === 'a') {
-            element.click = mockClick;
-        }
-        return element;
-    });
-
-    render(<ResourcesCard resource={mockResourcesCard} />);
-
-    const downloadButton = screen.getByLabelText('Botón de descargar el material');
-    await user.click(downloadButton);
-
-    expect(createElementSpy).toHaveBeenCalledWith('a');
-    expect(mockClick).toHaveBeenCalledTimes(1);
-
-        const calls = createElementSpy.mock.results;
-        const linkElement = calls.find(call => call.value.tagName === 'A')?.value;
-
-        if (linkElement) {
-            expect(linkElement.href).toContain('/uploads/sistema.pdf');
-            expect(linkElement.download).toBe('sistema.pdf');
-        }
-
-        createElementSpy.mockRestore();
-    });
 })

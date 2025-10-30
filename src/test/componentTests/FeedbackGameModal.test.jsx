@@ -52,6 +52,4 @@ describe('FeedbackGameModal', () => {
 
         expect(mockOnRankingChart).toHaveBeenCalledTimes(1);
     }) 
-    
-
 })

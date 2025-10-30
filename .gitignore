@@ -25,3 +25,9 @@ dist-ssr
 
 .env.development
 .env
+
+*.coverage
+coverage.json
+.nyc_output/
+*.lcov
+.vitest/

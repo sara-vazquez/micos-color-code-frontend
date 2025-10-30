@@ -1,0 +1,49 @@
+.resources__button {
+    height: 210px;
+    width: 210px;
+    border-radius: var(--border-radius-card);
+    border: none;
+    background-color: #CC0004;
+    color: var(--white);
+    font-family: var(--font-family);
+    font-size: var(--h2-size);
+    font-weight: var(--h2-weight);
+    position: absolute;
+    top: 198px;
+    left: 0;
+    transform: rotate(25deg);
+    margin: 0;
+    cursor: pointer;
+}
+
+/* TABLET */
+@media (min-width: 768px) {
+    .resources__button {
+        height: 240px;
+        width: 240px;
+        top: 220px;
+        left: 180px;
+    }
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+    .resources__button {
+        height: 260px;
+        width: 260px;
+        top: 100px;
+        left: 280px;
+        transform: rotate(20deg);
+    }
+}
+
+/* DESKTOP LARGE */
+@media (min-width: 1440px) {
+    .resources__button {
+        height: 380px;
+        width: 380px;
+        top: 220px;
+        left: 280px;
+        transform: rotate(20deg);
+    }
+}

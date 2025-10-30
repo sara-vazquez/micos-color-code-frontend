@@ -1,0 +1,42 @@
+.lets-play {
+    height: 260px;
+    width: 260px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--primary-300);
+    color: var(--primary-500);
+    font-family: var(--font-family);
+    font-size: var(--h1-size);
+    font-weight: var(--h1-weight);
+    position: absolute;
+    top: 0;
+    left: 160px;
+    transform: rotate(-15deg);
+}
+
+/* TABLET */
+@media (min-width: 768px) {
+    .lets-play {
+        height: 280px;
+        width: 280px;
+        left: 540px;
+    }
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+    .lets-play {
+        height: 300px;
+        width: 300px;
+        left: 700px;
+    }
+}
+
+/* DESKTOP LARGE */
+@media (min-width: 1440px) {
+    .lets-play {
+        height: 400px;
+        width: 400px;
+        left: 1000px;
+    }
+}

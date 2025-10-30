@@ -1,0 +1,112 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.profile__page{
+    flex: 1;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    margin: 0;
+    padding: 12px;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.profile__header {
+    min-width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    position: sticky;
+    justify-content: space-between;
+    margin-bottom: var(--space-button);
+}
+
+.profile__title {
+    font-family: var(--font-family);
+    font-size: var(--h1-size);
+    font-weight: var(--h1-weight);
+    text-align: left;
+    color: var(--primary-500);
+}
+
+.profile__container {
+    width: 320px;
+    height: auto;
+    padding: 20px;
+    background-color: var(--light-yellow);
+    border-radius: var(--border-radius-card);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom: var(--space-section);
+}
+
+.profile__label {
+    font-family: var(--font-family);
+    font-size: var(--button-size);
+    font-weight: var(--button-weight);
+    text-align: left;
+    color: var(--primary-500);
+}
+
+.profile__text {
+    font-family: var(--font-family);
+    font-size: var(--body-size);
+    font-weight: var(--body-weight);
+    text-align: left;
+    color: var(--primary-500);
+    padding: 8px;
+    border: 1px solid var(--primary-500);
+    background-color: var(--blur);
+    border-radius: var(--border-radius-img);
+}
+
+.profile__loading, .profile__error {
+    font-family: var(--font-family);
+    font-size: var(--body-size);
+    font-weight: var(--body-weight);
+    text-align: center;
+    color: var(--primary-500);
+}
+
+.profile__back, .profile__menu {
+    font-size: 24px;
+    color: var(--primary-500);
+    border: none;
+    background-color: transparent;
+}
+
+.profile__back {
+    align-items: start;
+}
+
+
+/* TABLET */
+@media (min-width: 768px) {
+    .profile__container {
+        width: 420px;
+    }
+  
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+    .profile__container {
+        width: 520px;
+    }
+}
+
+/* DESKTOP LARGE */
+@media (min-width: 1440px) {
+    .profile__container {
+        width: 620px;
+    }
+}

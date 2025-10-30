@@ -1,0 +1,200 @@
+.ranking-chart__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1200;
+    padding: var(--space-card);
+}
+
+.ranking-chart {
+    background-color: var(--white);
+    border-radius: var(--border-radius-card);
+    width: 340px;
+    max-height: 90vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.ranking-chart__title h2 {
+    text-align: center;
+    font-family: var(--font-family);
+    font-size: var(--h2-size);
+    font-weight: var(--h2-weight);
+    color: var(--primary-500);
+    margin: 0;
+}
+
+.ranking-chart__bar-group {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end; 
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.ranking-chart__bar:nth-child(1) {
+    order: 2; 
+}
+
+.ranking-chart__bar:nth-child(2) {
+    order: 1; 
+}
+
+.ranking-chart__bar:nth-child(3) {
+    order: 3; 
+}
+
+.ranking-chart__bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    flex: 0 0 auto;
+}
+
+.ranking-chart__bar-username {
+    font-family: var(--font-family);
+    font-size: 14px;
+    font-weight: var(--h3-weight);
+    text-align: center;
+    color: var(--primary-500);
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 80px;
+}
+
+.ranking-chart__bar-points {
+    font-family: var(--font-family);
+    font-size: 12px;
+    font-weight: var(--body-weight);
+    text-align: center;
+    color: var(--primary-500);
+    margin: 0;
+}
+
+.ranking-chart__bar-position--1,
+.ranking-chart__bar-position--2,
+.ranking-chart__bar-position--3 {
+    font-family: var(--font-family);
+    font-size: 32px;
+    font-weight: var(--h1-weight);
+    text-align: center;
+    color: var(--primary-500);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 72px;
+    border-radius: var(--border-radius-card);
+}
+
+.ranking-chart__bar-position--1 {
+    height: 140px;
+    background-color: var(--primary-200);
+}
+
+.ranking-chart__bar-position--2 {
+    height: 110px;
+    background-color: var(--secondary-300);
+}
+
+.ranking-chart__bar-position--3 {
+    height: 90px;
+    background-color: var(--yellow);
+}
+
+.ranking-chart__personal-card {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: var(--border-radius-card);
+    background-color: var(--secondary-100);
+    padding: 16px 12px;
+    box-sizing: border-box;
+}
+
+.ranking-chart__personal-card--username,
+.ranking-chart__personal-card--points,
+.ranking-chart__personal-card--position {
+    font-family: var(--font-family);
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    color: var(--primary-500);
+    margin: 0;
+    flex: 1;
+}
+
+.ranking-chart__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.ranking-chart__actions button {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.ranking-chart__message {
+    font-family: var(--font-family);
+    color: var(--primary-500);
+    font-size: var(--body-size);
+    font-weight: var(--body-weight);
+    text-align: center;
+}
+
+/* RESPONSIVE */
+@media (max-width: 400px) {
+    .ranking-chart {
+        width: 90vw;
+        max-width: 340px;
+        padding: 16px;
+    }
+
+    .ranking-chart__bar-username {
+        font-size: 12px;
+        max-width: 60px;
+    }
+
+    .ranking-chart__bar-points {
+        font-size: 10px;
+    }
+
+    .ranking-chart__bar-position--1,
+    .ranking-chart__bar-position--2,
+    .ranking-chart__bar-position--3 {
+        width: 60px;
+        font-size: 28px;
+    }
+
+    .ranking-chart__bar-position--1 {
+        height: 120px;
+    }
+
+    .ranking-chart__bar-position--2 {
+        height: 95px;
+    }
+
+    .ranking-chart__bar-position--3 {
+        height: 75px;
+    }
+}

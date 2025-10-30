@@ -1,0 +1,125 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.daltonism {
+    flex: 1;
+    width: 100%;
+    margin: 0;
+    padding: 0 12px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.daltonism__intro {
+    width: 370px;
+}
+
+.daltonism__header {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    margin: 0;
+}
+
+.daltonism__types {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--space-card);
+}
+
+.daltonism__title {
+    font-family: var(--font-family);
+    font-size: var(--h1-size);
+    font-weight: var(--h1-weight);
+    color: var(--primary-500);
+    margin-bottom: var(--space-body);
+    margin: 0;
+    margin-top: var(--space-body);
+}
+
+.daltonism__h2 {
+    font-family: var(--font-family);
+    font-size: var(--h2-size);
+    font-weight: var(--h2-weight);
+    color: var(--primary-500);
+    margin: 0 !important;
+}
+
+.daltonism__text {
+    font-family: var(--font-family);
+    font-size: var(--body-size);
+    font-weight: var(--body-weight);
+    color: var(--primary-500);
+    margin-bottom: var(--space-card);
+    grid-column: 1 / -1;
+}
+
+.daltonism__back {
+    font-size: 24px;
+    color: var(--primary-500);
+    border: none;
+    background-color: transparent;
+    margin-top: var(--space-body);
+}
+
+/* TABLET */
+@media (min-width: 768px) {
+    .daltonism__intro {
+        width: 600px;
+    }
+    
+    .daltonism__text{
+        width: 600px;
+    }
+
+    .daltonism__cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-left: 12px;
+        margin-right: 12px;
+        overflow-x: auto;
+    }
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+
+    .daltonism__intro {
+        width: 600px;
+    }
+
+    .daltonism__text{
+        width: 600px;
+    }
+
+    .daltonism__cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-left: 12px;
+        margin-right: 12px;
+        overflow-x: auto;
+    }
+}
+
+/* DESKTOP LARGE */
+@media (min-width: 1440px) {
+    .daltonism__intro {
+        width: 600px;
+    }
+
+    .daltonism__text{
+        width: 600px;
+    }
+
+    .daltonism__cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        margin-left: 12px;
+        margin-right: 12px;
+        overflow-x: auto;
+    }
+}

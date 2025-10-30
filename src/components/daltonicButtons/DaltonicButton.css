@@ -1,0 +1,47 @@
+.daltonic {
+    height: 165px;
+    width: 165px;
+    background-color: var(--yellow);
+    border: none;
+    color: var(--primary-500);
+    font-family: var(--font-family);
+    font-size: var(--button-size);
+    font-weight: var(--button-weight);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    -webkit-mask: url("/daltonic-01.svg") center/contain no-repeat;
+    mask: url("/daltonic-01.svg") center/contain no-repeat;
+    position: absolute;
+    top: 6px;
+    left: 0;
+    transform: rotate(15deg);
+}
+
+/* TABLET */
+@media (min-width: 768px) {
+    .daltonic {
+        height: 200px;
+        width: 200px;
+        left: -8px;
+    }
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+    .daltonic {
+        height: 220px;
+        width: 220px;
+        left: -20px;
+    }
+}
+
+/* DESKTOP LARGE */
+@media (min-width: 1440px) {
+    .daltonic {
+        height: 260px;
+        width: 260px;
+        left: -20px;
+    }
+}

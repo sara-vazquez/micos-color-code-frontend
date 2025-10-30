@@ -1,0 +1,50 @@
+.navbar-admin {
+    width: 100%;
+    height: auto;
+    padding: 12px;
+    box-sizing: border-box;
+    border: none;
+    position: relative; 
+    z-index: 11;
+    overflow: visible; 
+    margin-top: 12px; 
+    background: none !important;
+}
+
+.navbar-admin__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.logo {
+    width: 100vw;
+    height: 100px;
+    object-fit: contain;
+}
+    
+.logo__container {
+    width: 160px;
+    height: 50px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-admin__actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px; 
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.logout__button {
+    color: var(--primary-500);
+    padding: 4px;
+    border: none;
+    background-color: transparent;
+}

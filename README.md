@@ -1,18 +1,21 @@
 # MICOS COLOR CODE
+## Una plataforma lúdica para el aprendizaje de colores en niños con daltonismo
 
-MICOS es una web (mobile-first) dirigida a niños y niñas de entre 3 y 8 años con daltonismo dicromático. Surge tras la creación del sistema visual "Micos color code", pensado para facilitar la identificación de los colores por parte de los peques con esta alteración visual. 
+### 🧩 Descripción
 
-Con la web se pretende que mediante una forma lúdica, visual y sencilla, continúen con el aprendizaje también a través de las pantallas. 
+MICOS es una web (mobile-first) dirigida a niños y niñas de **entre 3 y 8 años** con daltonismo dicromático. Surge tras la creación del sistema visual "Micos color code", pensado para **facilitar la identificación de los colores** por parte de los peques con esta alteración visual. 
 
-## Proceso de diseño y documentación
-- [Aquí tienes el enlace a figma para ver cómo fue el proceso de diseño](https://www.figma.com/design/YueEJOk6QapJxU4PCOoqim/micos?node-id=0-1&t=ewvxFKvqEnRvRAFa-1)
+Con la web se pretende que mediante una forma **lúdica, visual y sencilla**, continúen con el aprendizaje también a través de las pantallas. 
 
-- [Si accedes a este enlace te encontrarás con la documentación del proyecto](https://www.notion.so/sara-vazquez/MICOS-PROYECTO-FINAL-23fd5565c5b68048a775fc74e9a9f749)
+### 🧠 Proceso de diseño y documentación
+- [Ver proceso de diseño en Figma ↗︎](https://www.figma.com/design/YueEJOk6QapJxU4PCOoqim/micos?node-id=0-1&t=ewvxFKvqEnRvRAFa-1)
 
-## Recorridos admin y user
-[![admin flow](https://i.vimeocdn.com/video/2075148736-bdd7a3e1caa2e91e0eaee74867a0ad777029fa3bdecd1111e74bb60b31511ca3-d_640x360?&region=us)](https://vimeo.com/1131261688)[![user flow](https://i.vimeocdn.com/video/2075148817-7c65448b05d2442369ff45dc126c7c0f58252e9c874804a18fe9b180a1636e3b-d_640x360?&region=us)](https://vimeo.com/1131261736)
+- [Ver documentación del proyecto en Notion ↗︎](https://www.notion.so/sara-vazquez/MICOS-PROYECTO-FINAL-23fd5565c5b68048a775fc74e9a9f749)
 
-## User flow
+### 🧭 Recorridos admin y user
+[![admin flow ↗︎](https://i.vimeocdn.com/video/2075148736-bdd7a3e1caa2e91e0eaee74867a0ad777029fa3bdecd1111e74bb60b31511ca3-d_640x360?&region=us)](https://vimeo.com/1131261688)[![user flow ↗︎](https://i.vimeocdn.com/video/2075148817-7c65448b05d2442369ff45dc126c7c0f58252e9c874804a18fe9b180a1636e3b-d_640x360?&region=us)](https://vimeo.com/1131261736)
+
+### User flow
 ```mermaid
 flowchart TD
     A[Inicio - Landing Page] --> B{Usuario autenticado?}
@@ -94,14 +97,14 @@ flowchart TD
 
 ```
 
-## 🛠️ Tecnologías
+### 🛠️ Tecnologías
 
 - React
 - CSS Modules
 - Fetch API para consumir el backend
 - React Router para navegación
 
-## 📦 Requisitos previos
+### 📦 Requisitos previos
 
 ```
 - Node.js >= 22.15
@@ -109,33 +112,49 @@ flowchart TD
 - Acceso al backend del proyecto [aquí](https://github.com/sara-vazquez/micos-color-code-backend)
 ```
 
-## 🚀 Instalación y ejecución
+### 🚀 Instalación y ejecución
 
-1. Hacer un fork del repositorio
-2. Crea una rama para tu feature/fix
-3. Instalar dependencias [Aquí tienes una guía con instalaciones necesarias para el front](https://www.notion.so/sara-vazquez/Instalaciones-front-281d5565c5b680d28ff8d736e262e840)
+1. **Hacer un fork del repositorio**
+
+2. **Crea una rama para tu feature/fix**
+    ```
+    git checkout -b feature/nueva-funcionalidad
+    ````
+
+3. **Instalar dependencias**
+    [Consulta la guía de instalaciones ↗︎](https://www.notion.so/sara-vazquez/Instalaciones-front-281d5565c5b680d28ff8d736e262e840)
     ```
     npm install
     ````
-4. Haz tus cambios y crea un pull request
-5. Levantar el servidor
+
+4. **Haz tus cambios y crea un pull request**
+    ```
+    git commit -m "Descripción breve del cambio"
+    git push origin feature/nueva-funcionalidad
+    ````
+5. **Levantar el servidor**
     ```
     npm run dev
     ```
-6. Abrir en el navegador
+
+6. **Abrir en el navegador**
     ```
     http://localhost:5173
     ```
 
 
-## 📋 Funcionalidades principales del ADMIN
+### 📋 Funcionalidades principales del ADMIN
 
-- Gestión de recursos:
+- **Gestión de recursos:**
   - Listar 📄
   - Añadir ➕
   - Editar ✏️
   - Eliminar 🗑
 
 
-## 🧪 Cobertura de tests
+### 🧪 Cobertura de tests
 !["covertura provisional de los tests"](src/assets/coverageFront.png)
+
+### Autora
+
+Sara Vázquez

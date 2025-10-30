@@ -1,8 +1,8 @@
 # MICOS COLOR CODE
 ## 🧩 Descripción
 <p align="left">
-  <img src="src/assets/preview_admin.png" alt="admin preview" height="48%" />
-  <img src="src/assets/preview_user.png" alt="user home preview" height="48%" />
+  <img src="src/assets/preview_admin.png" alt="admin preview" height="45%" />
+  <img src="src/assets/preview_user.png" alt="user home preview" height="45%" />
 </p>
 MICOS es una web (mobile-first) dirigida a niños y niñas de **entre 3 y 8 años** con daltonismo dicromático. Surge tras la creación del sistema visual "Micos color code", pensado para **facilitar la identificación de los colores** por parte de los peques con esta alteración visual. 
 

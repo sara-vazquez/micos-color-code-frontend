@@ -13,9 +13,6 @@ Con la web se pretende que mediante una forma **lúdica, visual y sencilla**, co
 
 - [Ver documentación del proyecto en Notion ↗︎](https://www.notion.so/sara-vazquez/MICOS-PROYECTO-FINAL-23fd5565c5b68048a775fc74e9a9f749)
 
-## 🧭 Recorridos admin y user
-[![admin flow ↗︎](https://i.vimeocdn.com/video/2075148736-bdd7a3e1caa2e91e0eaee74867a0ad777029fa3bdecd1111e74bb60b31511ca3-d_640x360?&region=us)](https://vimeo.com/1131261688)[![user flow ↗︎](https://i.vimeocdn.com/video/2075148817-7c65448b05d2442369ff45dc126c7c0f58252e9c874804a18fe9b180a1636e3b-d_640x360?&region=us)](https://vimeo.com/1131261736)
-
 ## User flow
 ```mermaid
 flowchart TD
@@ -151,6 +148,9 @@ flowchart TD
   - Añadir ➕
   - Editar ✏️
   - Eliminar 🗑
+ 
+## 🧭 Recorridos admin y user
+[![admin flow ↗︎](https://i.vimeocdn.com/video/2075148736-bdd7a3e1caa2e91e0eaee74867a0ad777029fa3bdecd1111e74bb60b31511ca3-d_640x360?&region=us)](https://vimeo.com/1131261688)[![user flow ↗︎](https://i.vimeocdn.com/video/2075148817-7c65448b05d2442369ff45dc126c7c0f58252e9c874804a18fe9b180a1636e3b-d_640x360?&region=us)](https://vimeo.com/1131261736)
 
 
 ## 🧪 Cobertura de tests

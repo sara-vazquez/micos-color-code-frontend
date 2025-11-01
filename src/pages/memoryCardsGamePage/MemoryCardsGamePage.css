@@ -180,16 +180,18 @@ body {
         gap: 24px;
     }
 
-    /* Grid 2x2 - Desktop */
+    /* Grid 2x2 - Desktop (ahora 3x2) */
     .memory-cards__grid--2x2 {
-        grid-template-columns: repeat(2, 280px);
-        max-width: 640px;
+        grid-template-columns: repeat(3, 200px);
+        grid-template-rows: repeat(2, auto);
+        max-width: 700px;
     }
 
-    /* Grid 2x3 - Desktop */
+    /* Grid 2x3 - Desktop (ahora 3x2) */
     .memory-cards__grid--2x3 {
-        grid-template-columns: repeat(2, 280px);
-        max-width: 640px;
+        grid-template-columns: repeat(3, 200px);
+        grid-template-rows: repeat(2, auto);
+        max-width: 700px;
     }
 }
 
@@ -199,15 +201,17 @@ body {
         gap: 30px;
     }
 
-    /* Grid 2x2 - Desktop Large */
+    /* Grid 2x2 - Desktop Large (3x2) */
     .memory-cards__grid--2x2 {
-        grid-template-columns: repeat(2, 320px);
-        max-width: 720px;
+        grid-template-columns: repeat(3, 240px);
+        grid-template-rows: repeat(2, auto);
+        max-width: 810px;
     }
 
-    /* Grid 2x3 - Desktop Large */
+    /* Grid 2x3 - Desktop Large (3x2) */
     .memory-cards__grid--2x3 {
-        grid-template-columns: repeat(2, 320px);
-        max-width: 720px;
+        grid-template-columns: repeat(3, 240px);
+        grid-template-rows: repeat(2, auto);
+        max-width: 810px;
     }
 }
